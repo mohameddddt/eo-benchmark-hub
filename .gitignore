@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.env
+node_modules/
+dist/
+data/
+!data/.gitkeep
+.pytest_cache/
+.ruff_cache/
+evaluation/tests/golden/*
+!evaluation/tests/golden/README.md
