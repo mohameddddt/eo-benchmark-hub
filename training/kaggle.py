@@ -36,6 +36,11 @@ KERNELS = {
         "entry": 'from eobench_train.run_classification import main\n'
                  'main("resisc45", str(find_input("aqibrehmanpirzada/nwpuresisc45")), 256, 160)',
     },
+    "bigearthnet": {
+        "dataset": "abhay0203/bigearthnet-s2",
+        "entry": 'from eobench_train.run_bigearthnet import main\n'
+                 'main(str(find_input("abhay0203/bigearthnet-s2")))',
+    },
     "landcoverai": {
         "dataset": "adrianboguszewski/landcoverai",
         "entry": 'from eobench_train.segmentation import main\n'

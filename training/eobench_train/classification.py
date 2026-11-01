@@ -179,15 +179,23 @@ def throughput(model: nn.Module, img_size: int, batch: int = 128, iters: int = 2
 # ---------------------------------------------------------------- train / predict
 @torch.no_grad()
 def predict_probs(model: nn.Module, x: torch.Tensor, img_size: int, norm: str = "imagenet",
-                  bs: int = 256) -> np.ndarray:
+                  bs: int = 256, multilabel: bool = False) -> np.ndarray:
     model.eval()
     out = []
     for i in range(0, len(x), bs):
         xb = gpu_batch(x[i:i + bs].to(DEVICE, non_blocking=True), img_size, train=False, norm=norm)
         with torch.autocast(DEVICE, dtype=torch.float16, enabled=DEVICE == "cuda"):
             logits = model(xb)
-        out.append(F.softmax(logits.float(), dim=1).cpu())
+        out.append((torch.sigmoid(logits.float()) if multilabel else F.softmax(logits.float(), dim=1)).cpu())
     return torch.cat(out).numpy()
+
+
+def macro_ap(y_true: np.ndarray, scores: np.ndarray) -> float:
+    """Mean average precision over classes with at least one positive (multi-label)."""
+    from sklearn.metrics import average_precision_score
+
+    has = y_true.sum(0) > 0
+    return float(np.mean([average_precision_score(y_true[:, j], scores[:, j]) for j in np.flatnonzero(has)]))
 
 
 @torch.no_grad()
@@ -212,10 +220,13 @@ def pick_norm(spec: Spec, x_tr, y_tr, x_val, y_val, n_classes: int) -> tuple[str
     for norm in NORMS:
         ftr, fva = feats(x_tr[tr], norm), feats(x_val[va], norm)
         nn_idx = (fva @ ftr.T).topk(20, dim=1).indices
-        votes = F.one_hot(ytr[nn_idx], n_classes).sum(1)
-        scores[norm] = float((votes.argmax(1) == yva).float().mean())
+        if ytr.ndim == 2:   # multi-label: neighbours' mean label vector, scored by macro mAP
+            scores[norm] = macro_ap(yva.cpu().numpy(), ytr[nn_idx].float().mean(1).cpu().numpy())
+        else:
+            votes = F.one_hot(ytr[nn_idx], n_classes).sum(1)
+            scores[norm] = float((votes.argmax(1) == yva).float().mean())
     best = max(scores, key=scores.get)
-    log(f"  {spec.id} normalization probe (20-NN val acc): {scores} -> {best}")
+    log(f"  {spec.id} normalization probe (20-NN val score): {scores} -> {best}")
     return best, scores
 
 
@@ -243,9 +254,11 @@ def train(spec: Spec, x_tr, y_tr, x_val, y_val, n_classes: int) -> tuple[nn.Modu
 
     sched = torch.optim.lr_scheduler.LambdaLR(opt, lr_at)
     scaler = torch.amp.GradScaler(DEVICE, enabled=DEVICE == "cuda")
-    crit = nn.CrossEntropyLoss(label_smoothing=spec.label_smoothing)
-    y_tr_t = torch.as_tensor(y_tr)
-    history, best = [], {"val_acc": -1.0, "epoch": -1, "state": None}
+    multilabel = np.ndim(y_tr) == 2
+    crit = nn.BCEWithLogitsLoss() if multilabel else nn.CrossEntropyLoss(label_smoothing=spec.label_smoothing)
+    key = "val_map" if multilabel else "val_acc"
+    y_tr_t = torch.as_tensor(y_tr, dtype=torch.float32 if multilabel else torch.long)
+    history, best = [], {key: -1.0, "epoch": -1, "state": None}
     t_start = time.time()
 
     for epoch in range(spec.epochs):
@@ -268,24 +281,30 @@ def train(spec: Spec, x_tr, y_tr, x_val, y_val, n_classes: int) -> tuple[nn.Modu
             scaler.update()
             sched.step()
             loss_sum += loss.item() * len(idx)
-            correct += (logits.argmax(1) == yb).sum().item()
+            if not multilabel:
+                correct += (logits.argmax(1) == yb).sum().item()
             seen += len(idx)
 
-        probs = predict_probs(model, x_val, spec.img_size, spec.norm)
-        val_loss = float(-np.log(np.clip(probs[np.arange(len(y_val)), y_val], 1e-12, 1)).mean())
-        val_acc = float((probs.argmax(1) == y_val).mean())
-        rec = {"epoch": epoch + 1, "train_loss": loss_sum / seen, "train_acc": correct / seen,
-               "val_loss": val_loss, "val_acc": val_acc, "lr": opt.param_groups[0]["lr"],
-               "time_s": time.time() - t0}
+        probs = predict_probs(model, x_val, spec.img_size, spec.norm, multilabel=multilabel)
+        rec = {"epoch": epoch + 1, "train_loss": loss_sum / seen}
+        if multilabel:
+            p = np.clip(probs, 1e-7, 1 - 1e-7)
+            rec["val_loss"] = float(-(y_val * np.log(p) + (1 - y_val) * np.log(1 - p)).mean())
+            rec["val_map"] = macro_ap(y_val, probs)
+        else:
+            rec["train_acc"] = correct / seen
+            rec["val_loss"] = float(-np.log(np.clip(probs[np.arange(len(y_val)), y_val], 1e-12, 1)).mean())
+            rec["val_acc"] = float((probs.argmax(1) == y_val).mean())
+        rec.update({"lr": opt.param_groups[0]["lr"], "time_s": time.time() - t0})
         history.append(rec)
         log(f"  {spec.id} ep{epoch + 1}/{spec.epochs} loss {rec['train_loss']:.4f} "
-            f"train {rec['train_acc']:.4f} val {val_acc:.4f} ({rec['time_s']:.0f}s)")
-        if val_acc > best["val_acc"]:
-            best = {"val_acc": val_acc, "epoch": epoch + 1,
+            f"{key} {rec[key]:.4f} ({rec['time_s']:.0f}s)")
+        if rec[key] > best[key]:
+            best = {key: rec[key], "epoch": epoch + 1,
                     "state": copy.deepcopy({k: v.detach().cpu() for k, v in model.state_dict().items()})}
 
     model.load_state_dict(best["state"])
-    return model, {"history": history, "best_epoch": best["epoch"], "val_acc": best["val_acc"],
+    return model, {"history": history, "best_epoch": best["epoch"], key: best[key],
                    "train_time_s": time.time() - t_start}
 
 
