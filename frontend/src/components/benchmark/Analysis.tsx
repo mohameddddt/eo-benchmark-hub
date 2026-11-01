@@ -96,6 +96,9 @@ function PerClass({ bm, entries }: { bm: BenchmarkDetail; entries: LeaderboardEn
   const hardest = mean.filter((m) => !Number.isNaN(m.value)).sort((a, b) => a.value - b.value).slice(0, 8);
   const metricName = { iou: "IoU", ap: "AP", f1: "F1" }[key];
   const many = classes.length > 15;
+  const first = details[0]?.data?.details;
+  const minSupport: number = first?.min_support ?? 1;
+  const excluded = classes.filter((c) => first?.per_class?.[c]?.in_macro === false);
   return (
     <div className={many ? "stack" : "grid g2"} style={many ? undefined : { gridTemplateColumns: "minmax(0,2fr) minmax(0,1fr)" }}>
       <div className="card">
@@ -109,6 +112,11 @@ function PerClass({ bm, entries }: { bm: BenchmarkDetail; entries: LeaderboardEn
                  tipFor={(i, j) => (<><div className="tt-title">{entries[i].model_name}</div>
                    <div className="tt-row">{pretty(classes[j])} <b>{matrix[i][j] == null ? "—" : `${(matrix[i][j]! * 100).toFixed(2)}%`}</b></div>
                    <div className="tt-row">Class mean <b>{(mean[j].value * 100).toFixed(2)}%</b></div></>)} />
+        {excluded.length > 0 && (
+          <p className="xs muted" style={{ marginTop: 10 }}>
+            {excluded.join(", ")} {excluded.length === 1 ? "has" : "have"} fewer than {minSupport} hidden positives: shown here, but excluded from the macro average, where one patch could swing the score.
+          </p>
+        )}
       </div>
       <div className="card">
         <div className="card-title"><div><h3>Hardest classes</h3>

@@ -34,6 +34,8 @@ export default function Docs() {
           <CodeBlock code={"sample_id,predicted_label,prob_AnnualCrop,prob_Forest,…\nes-3f9a0c1d2e4b,Forest,0.0012,0.9931,…"} />
           <h3>Robustness (EuroSAT-C)</h3>
           <p>Same CSV without probabilities, covering each clean hidden id and its 21 corrupted variants <code>&lt;id&gt;@&lt;corruption&gt;-&lt;severity&gt;</code>.</p>
+          <h3>Multi-label classification (BigEarthNet-S2)</h3>
+          <p>CSV with one row per hidden patch: <code>sample_id,prob_00,…,prob_18</code>, one probability per class in canonical (alphabetical) order. Primary metric is macro mAP, so thresholds don't matter for ranking; F1 and subset accuracy use 0.5.</p>
           <h3>Semantic segmentation (LandCover.ai)</h3>
           <p>ZIP of single-channel PNGs named <code>&lt;tile_id&gt;.png</code>, pixel values = class index (0 background, 1 building, 2 woodland, 3 water, 4 road), 512×512.</p>
 
