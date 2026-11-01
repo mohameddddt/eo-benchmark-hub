@@ -1,0 +1,190 @@
+{
+ "classes": {
+  "Agro-forestry areas": [
+   "classes/00_0.jpg",
+   "classes/00_1.jpg",
+   "classes/00_2.jpg",
+   "classes/00_3.jpg",
+   "classes/00_4.jpg",
+   "classes/00_5.jpg"
+  ],
+  "Arable land": [
+   "classes/01_0.jpg",
+   "classes/01_1.jpg",
+   "classes/01_2.jpg",
+   "classes/01_3.jpg",
+   "classes/01_4.jpg",
+   "classes/01_5.jpg"
+  ],
+  "Beaches, dunes, sands": [
+   "classes/02_0.jpg",
+   "classes/02_1.jpg",
+   "classes/02_2.jpg",
+   "classes/02_3.jpg",
+   "classes/02_4.jpg",
+   "classes/02_5.jpg"
+  ],
+  "Broad-leaved forest": [
+   "classes/03_0.jpg",
+   "classes/03_1.jpg",
+   "classes/03_2.jpg",
+   "classes/03_3.jpg",
+   "classes/03_4.jpg",
+   "classes/03_5.jpg"
+  ],
+  "Coastal wetlands": [
+   "classes/04_0.jpg",
+   "classes/04_1.jpg",
+   "classes/04_2.jpg",
+   "classes/04_3.jpg",
+   "classes/04_4.jpg",
+   "classes/04_5.jpg"
+  ],
+  "Complex cultivation patterns": [
+   "classes/05_0.jpg",
+   "classes/05_1.jpg",
+   "classes/05_2.jpg",
+   "classes/05_3.jpg",
+   "classes/05_4.jpg",
+   "classes/05_5.jpg"
+  ],
+  "Coniferous forest": [
+   "classes/06_0.jpg",
+   "classes/06_1.jpg",
+   "classes/06_2.jpg",
+   "classes/06_3.jpg",
+   "classes/06_4.jpg",
+   "classes/06_5.jpg"
+  ],
+  "Industrial or commercial units": [
+   "classes/07_0.jpg",
+   "classes/07_1.jpg",
+   "classes/07_2.jpg",
+   "classes/07_3.jpg",
+   "classes/07_4.jpg",
+   "classes/07_5.jpg"
+  ],
+  "Inland waters": [
+   "classes/08_0.jpg",
+   "classes/08_1.jpg",
+   "classes/08_2.jpg",
+   "classes/08_3.jpg",
+   "classes/08_4.jpg",
+   "classes/08_5.jpg"
+  ],
+  "Inland wetlands": [
+   "classes/09_0.jpg",
+   "classes/09_1.jpg",
+   "classes/09_2.jpg",
+   "classes/09_3.jpg",
+   "classes/09_4.jpg",
+   "classes/09_5.jpg"
+  ],
+  "Land principally occupied by agriculture, with significant areas of natural vegetation": [
+   "classes/10_0.jpg",
+   "classes/10_1.jpg",
+   "classes/10_2.jpg",
+   "classes/10_3.jpg",
+   "classes/10_4.jpg",
+   "classes/10_5.jpg"
+  ],
+  "Marine waters": [
+   "classes/11_0.jpg",
+   "classes/11_1.jpg",
+   "classes/11_2.jpg",
+   "classes/11_3.jpg",
+   "classes/11_4.jpg",
+   "classes/11_5.jpg"
+  ],
+  "Mixed forest": [
+   "classes/12_0.jpg",
+   "classes/12_1.jpg",
+   "classes/12_2.jpg",
+   "classes/12_3.jpg",
+   "classes/12_4.jpg",
+   "classes/12_5.jpg"
+  ],
+  "Moors, heathland and sclerophyllous vegetation": [
+   "classes/13_0.jpg",
+   "classes/13_1.jpg",
+   "classes/13_2.jpg",
+   "classes/13_3.jpg",
+   "classes/13_4.jpg",
+   "classes/13_5.jpg"
+  ],
+  "Natural grassland and sparsely vegetated areas": [
+   "classes/14_0.jpg",
+   "classes/14_1.jpg",
+   "classes/14_2.jpg",
+   "classes/14_3.jpg",
+   "classes/14_4.jpg",
+   "classes/14_5.jpg"
+  ],
+  "Pastures": [
+   "classes/15_0.jpg",
+   "classes/15_1.jpg",
+   "classes/15_2.jpg",
+   "classes/15_3.jpg",
+   "classes/15_4.jpg",
+   "classes/15_5.jpg"
+  ],
+  "Permanent crops": [
+   "classes/16_0.jpg",
+   "classes/16_1.jpg",
+   "classes/16_2.jpg",
+   "classes/16_3.jpg",
+   "classes/16_4.jpg",
+   "classes/16_5.jpg"
+  ],
+  "Transitional woodland, shrub": [
+   "classes/17_0.jpg",
+   "classes/17_1.jpg",
+   "classes/17_2.jpg",
+   "classes/17_3.jpg",
+   "classes/17_4.jpg",
+   "classes/17_5.jpg"
+  ],
+  "Urban fabric": [
+   "classes/18_0.jpg",
+   "classes/18_1.jpg",
+   "classes/18_2.jpg",
+   "classes/18_3.jpg",
+   "classes/18_4.jpg",
+   "classes/18_5.jpg"
+  ]
+ },
+ "gallery": [],
+ "corruption_examples": [],
+ "thumb_px": 128,
+ "label_frequency": {
+  "Agro-forestry areas": 0.06335393339395523,
+  "Arable land": 0.37003403902053833,
+  "Beaches, dunes, sands": 0.002942783758044243,
+  "Broad-leaved forest": 0.27447766065597534,
+  "Coastal wetlands": 0.0028587044216692448,
+  "Complex cultivation patterns": 0.2192794382572174,
+  "Coniferous forest": 0.32307562232017517,
+  "Industrial or commercial units": 0.027662169188261032,
+  "Inland waters": 0.12738050520420074,
+  "Inland wetlands": 0.047084540128707886,
+  "Land principally occupied by agriculture, with significant areas of natural vegetation": 0.2541724443435669,
+  "Marine waters": 0.148484468460083,
+  "Mixed forest": 0.33110523223876953,
+  "Moors, heathland and sclerophyllous vegetation": 0.02686341293156147,
+  "Natural grassland and sparsely vegetated areas": 0.03186614438891411,
+  "Pastures": 0.18135955929756165,
+  "Permanent crops": 0.0658763200044632,
+  "Transitional woodland, shrub": 0.27498212456703186,
+  "Urban fabric": 0.14205238223075867
+ },
+ "mean_labels_per_patch": 2.9149115085601807,
+ "model_names": {
+  "mobilenetv3-large": "MobileNetV3-Large",
+  "efficientnet-b0": "EfficientNet-B0",
+  "resnet18-in1k": "ResNet-18",
+  "resnet50-in1k": "ResNet-50",
+  "resnet50-ssl4eo": "ResNet-50 (SSL4EO-S12 MoCo)",
+  "vit-small": "ViT-S/16",
+  "convnext-tiny": "ConvNeXt-T"
+ }
+}
