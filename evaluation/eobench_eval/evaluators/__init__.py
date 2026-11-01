@@ -1,1 +1,1 @@
-from eobench_eval.evaluators import scene_classification  # noqa: F401
+from eobench_eval.evaluators import multilabel, robustness, scene_classification, segmentation  # noqa: F401

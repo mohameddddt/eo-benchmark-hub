@@ -1,9 +1,12 @@
 [project]
 name = "eobench-eval"
-version = "0.1.0"
+version = "0.2.0"
 description = "EO-Benchmark Hub evaluation package — shared by workers and the eobench CLI"
 requires-python = ">=3.11"
-dependencies = ["scikit-learn>=1.4", "numpy>=1.26"]
+dependencies = ["scikit-learn>=1.4", "numpy>=1.26", "pillow>=10"]
 
 [tool.setuptools.packages.find]
 include = ["eobench_eval*"]
+
+[project.scripts]
+eobench = "eobench_eval.cli:main"
