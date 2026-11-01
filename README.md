@@ -29,6 +29,7 @@ every model.
 | **EuroSAT** | Scene classification, 10 classes | Sentinel-2 RGB, 10 m, 64 px | Accuracy |
 | **EuroSAT-C** | Robustness: 7 EO corruptions × 3 severities | EuroSAT hidden split | Mean corruption accuracy |
 | **NWPU-RESISC45** | Scene classification, 45 classes | Aerial RGB, 0.2–30 m, 256 px | Accuracy |
+| **BigEarthNet-S2** | Multi-label classification, 19 classes | Sentinel-2 RGB, 10 m, 120 px (10% of reBEN) | Macro mAP |
 | **LandCover.ai** | Semantic segmentation, 5 classes | Aerial orthophotos, 25–50 cm | mIoU |
 
 ## Results from the reference models
@@ -40,19 +41,22 @@ Every number below comes from the hub's evaluators on the hidden split. Brackets
 | EuroSAT (accuracy) | ConvNeXt-T | **99.22** [98.85, 99.52] | EfficientNet-B0 99.22 (T1) | 8 of 10 models tied in T1 |
 | EuroSAT-C (mCA) | ViT-S/16 | **69.56** [68.86, 70.19] | ConvNeXt-T 66.48 | 44.9 – 69.6 |
 | NWPU-RESISC45 (accuracy) | ConvNeXt-T | **96.70** [96.06, 97.30] | ViT-S/16 96.63 (T1) | 93.9 – 96.7 |
+| BigEarthNet-S2 (macro mAP) | ConvNeXt-T | **75.62** [74.50, 76.81] | ViT-S/16 75.23 (T1) | 72.6 – 75.6 |
 | LandCover.ai (mIoU) | SegFormer · MiT-B2 | **85.79** [84.93, 86.52] | U-Net · ResNet-34 83.45 | 83.3 – 85.8 |
 
 What the baselines show:
 
 - **Clean accuracy hides robustness.** The eight ImageNet- and SSL4EO-pretrained EuroSAT models are statistically tied within about half a point. Under EuroSAT-C they spread over 25 points: ViT-S/16 keeps 70% of its accuracy, ResNet-50 keeps 45%. A single pixel of band misregistration drops MobileNetV3 and ResNet-50 to about a third, while ViT and ConvNeXt hold above 80%.
-- **Domain pretraining is not free.** SSL4EO-S12 (Sentinel-2 self-supervised) weights are tied with ImageNet on EuroSAT but lose 2.7 points on 0.2–30 m aerial RESISC45. On EuroSAT their input normalization matters a lot: with ImageNet statistics a frozen-feature kNN reaches 69.6%, with reflectance scaling 92.3%. The kernels choose this with a train/val probe.
+- **Domain pretraining is not free.** SSL4EO-S12 (Sentinel-2 self-supervised) weights are tied with ImageNet on EuroSAT, lose 2.7 points on 0.2–30 m aerial RESISC45, and even on in-domain Sentinel-2 BigEarthNet trail ImageNet ResNet-50 by 2 mAP points after fine-tuning. On EuroSAT their input normalization matters a lot: with ImageNet statistics a frozen-feature kNN reaches 69.6%, with reflectance scaling 92.3%. The kernels choose this with a train/val probe.
 - **Label smoothing shows up as miscalibration.** Every classifier trained with smoothing 0.1 has an ECE of about 9%, all under-confident. The reliability diagrams make this visible; accuracy alone hides it.
+- **Geographic splits are harder.** On BigEarthNet every model scores about 6 mAP points lower on the official test regions than on validation, a gap a random split would hide. Labels with only a handful of hidden positives are excluded from the macro average (their AP swings from 7 to 42 across near-identical models).
 - **Thin structures are the hard part of segmentation.** Roads (64–69 IoU) and buildings (76–81 IoU) separate the models; woodland and water are near-solved.
 
 
 Training notebooks (public, one per benchmark):
 [EuroSAT + EuroSAT-C](https://www.kaggle.com/code/mohameddddt/eobench-eurosat) ·
 [RESISC45](https://www.kaggle.com/code/mohameddddt/eobench-resisc45) ·
+[BigEarthNet](https://www.kaggle.com/code/mohameddddt/eobench-bigearthnet) ·
 [LandCover.ai](https://www.kaggle.com/code/mohameddddt/eobench-landcoverai)
 
 Each benchmark ships with a **model zoo trained on Kaggle T4 GPUs** using one
@@ -94,7 +98,7 @@ python scripts/import_kaggle.py eurosat     # installs ground truth, baselines, 
 python scripts/seed.py                      # scores the baselines
 ```
 
-Repeat for `resisc45` and `landcoverai`. Each kernel embeds the repo's own
+Repeat for `resisc45`, `bigearthnet` and `landcoverai`. Each kernel embeds the repo's own
 `eobench_eval` + `eobench_train` packages, so it always runs the code of the
 commit it was pushed from.
 
@@ -147,7 +151,7 @@ data/         ground truth, uploads, baselines — gitignored
 ## Development
 
 ```bash
-make test     # 44 tests: evaluators, splits, corruptions, bootstrap maths, full API flow
+make test     # 47 tests: evaluators, splits, corruptions, bootstrap maths, full API flow
 make lint     # ruff
 cd frontend && npm run typecheck
 ```
@@ -158,7 +162,6 @@ The v1 EuroSAT golden file must keep scoring exactly 0.975926 accuracy and
 
 ## Roadmap
 
-- BigEarthNet multi-label: the evaluator is done and tested; a subset that fits on Kaggle is still needed.
 - Seed-variance runs for baselines, so CIs can cover training noise as well as test-set noise.
 
 ## License and data
@@ -166,6 +169,7 @@ The v1 EuroSAT golden file must keep scoring exactly 0.975926 accuracy and
 Code is released under the [MIT License](LICENSE). The datasets keep their own
 licences and are never redistributed — only small thumbnails, public split
 manifests (ids and splits, no labels) and aggregate scores are included:
-EuroSAT (MIT), NWPU-RESISC45 (research use), LandCover.ai (CC BY-NC-SA 4.0).
+EuroSAT (MIT), NWPU-RESISC45 (research use), BigEarthNet (CDLA-Permissive-1.0),
+LandCover.ai (CC BY-NC-SA 4.0).
 Please cite the original dataset papers listed on each benchmark page.
 

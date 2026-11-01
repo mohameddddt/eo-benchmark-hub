@@ -14,7 +14,7 @@ cd frontend && npm install
 
 ```bash
 make lint                         # ruff
-make test                         # 44+ tests, no services needed
+make test                         # 47+ tests, no services needed
 cd frontend && npm run typecheck && npm run build
 ```
 

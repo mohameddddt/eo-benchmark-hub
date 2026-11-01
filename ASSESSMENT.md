@@ -44,7 +44,7 @@ v1 had one benchmark with data (EuroSAT), one model (ResNet-18), and an empty
 leaderboard until someone uploaded a file. BigEarthNet was registered but
 inactive: no ground truth, and its notebook needed a 59 GB download.
 
-**v2:** four benchmarks across three task types, each with a model zoo trained on
+**v2:** five benchmarks across four task types, each with a model zoo trained on
 Kaggle T4 GPUs using one documented recipe per benchmark (`training/`):
 
 | Benchmark | Task | Models |
@@ -52,6 +52,7 @@ Kaggle T4 GPUs using one documented recipe per benchmark (`training/`):
 | EuroSAT | scene classification, 10 classes | 10 (scratch CNN → ConvNeXt-T, ImageNet vs SSL4EO-S12 pretraining) |
 | EuroSAT-C *(new)* | robustness, 7 corruptions × 3 severities | same 10 |
 | NWPU-RESISC45 *(new)* | scene classification, 45 classes | 7 |
+| BigEarthNet-S2 *(now live)* | multi-label classification, 19 classes | 7 (10% RGB subset streamed from the 63 GB archive on Kaggle) |
 | LandCover.ai *(new)* | semantic segmentation, 5 classes | 3 (U-Net, DeepLabV3+, SegFormer) |
 
 Every baseline goes through the same upload → validate → evaluate path as a
@@ -76,11 +77,11 @@ user's file. No number on the site is hand-entered.
 - Inline mode re-queues unfinished jobs after a restart.
 - Evaluator crashes are no longer retried three times; they are deterministic.
 - Tracebacks are only shown to the submission's owner and maintainers.
-- The test suite grew from 8 to 44 tests: evaluators, splits, corruptions, bootstrap maths, and the full API flow on SQLite. The frozen v1 golden score (0.975926 / 0.974783) still reproduces exactly under evaluator v0.2.0.
+- The test suite grew from 8 to 47 tests: evaluators, splits, corruptions, bootstrap maths, and the full API flow on SQLite. The frozen v1 golden score (0.975926 / 0.974783) still reproduces exactly under evaluator v0.2.0.
 
 ## Known limitations
 
 - Labels for public datasets can't be truly hidden (see 1). Integrity comes from protocol, transparency and verification.
 - Baselines use one shared recipe and a single seed each. The CIs cover test-set sampling noise, not training-seed variance.
 - RESISC45's licence is research-only. The hub never redistributes its images beyond small thumbnails, and it links to the source.
-- BigEarthNet's multi-label evaluator is implemented and tested, but the benchmark isn't seeded: its 59 GB archive doesn't fit the Kaggle workflow.
+- BigEarthNet uses a 10% RGB subset of reBEN, so its scores are not comparable to published full-dataset, multispectral results.
