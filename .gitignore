@@ -9,3 +9,9 @@ data/
 .ruff_cache/
 evaluation/tests/golden/*
 !evaluation/tests/golden/README.md
+.venv/
+training/build/
+*.db
+*.db-wal
+*.db-shm
+*.egg-info/

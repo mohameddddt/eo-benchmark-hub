@@ -1,22 +1,44 @@
-.PHONY: dev down logs seed test psql lint
+# EO-Bench Hub — common tasks. Python commands use .venv if present.
+PY ?= $(shell [ -x .venv/Scripts/python ] && echo .venv/Scripts/python || ([ -x .venv/bin/python ] && echo .venv/bin/python || echo python))
+export PYTHONPATH := backend:evaluation:.
 
-dev:            ## build & start everything (API :8000, frontend :5173)
-	docker compose up --build
+.PHONY: setup dev api web serve seed test lint kaggle-push kaggle-pull import static compose
 
-down:
-	docker compose down
+setup:                ## install backend + frontend dependencies
+	$(PY) -m pip install -r backend/requirements-dev.txt -e evaluation
+	cd frontend && npm install
 
-logs:
-	docker compose logs -f api worker
+api:                  ## API with auto-reload on :8000
+	$(PY) -m uvicorn app.main:app --app-dir backend --reload --port 8000
 
-seed:           ## register the EuroSAT benchmark (+ ground truth check)
-	docker compose exec api python /srv/scripts/seed.py
+web:                  ## Vite dev server on :5173 (proxies /api to :8000)
+	cd frontend && npm run dev
+
+serve:                ## production-like: build the SPA, serve everything from :8000
+	cd frontend && npm run build
+	$(PY) -m uvicorn app.main:app --app-dir backend --port 8000
+
+seed:                 ## register benchmarks, score Kaggle baselines
+	$(PY) scripts/seed.py
 
 test:
-	docker compose exec api pytest /srv/backend/tests /srv/evaluation/tests -q
-
-psql:
-	docker compose exec postgres psql -U $${POSTGRES_USER:-eobench} $${POSTGRES_DB:-eobench}
+	$(PY) -m pytest backend/tests evaluation/tests -q
 
 lint:
-	docker compose exec api ruff check /srv/backend /srv/evaluation /srv/worker
+	$(PY) -m ruff check backend evaluation worker scripts training
+
+kaggle-push:          ## make kaggle-push B=eurosat
+	$(PY) training/kaggle.py push $(B)
+
+kaggle-pull:          ## make kaggle-pull B=eurosat && make import B=eurosat
+	$(PY) training/kaggle.py pull $(B)
+
+import:
+	$(PY) scripts/import_kaggle.py $(B)
+
+static:               ## snapshot the API and build the read-only showcase
+	$(PY) scripts/export_static.py
+	cd frontend && npm run build:static
+
+compose:              ## Postgres + Redis + Celery stack
+	docker compose up --build

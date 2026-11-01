@@ -1,74 +1,54 @@
+# Multi-user deployment shape: Postgres + Redis + Celery workers.
+# (For a single machine, `make serve` needs none of this.)
 services:
   postgres:
     image: postgres:16-alpine
     environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: ${POSTGRES_DB}
-    volumes:
-      - pgdata:/var/lib/postgresql/data
+      POSTGRES_USER: ${POSTGRES_USER:-eobench}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-eobench-dev-password}
+      POSTGRES_DB: ${POSTGRES_DB:-eobench}
+    volumes: [pgdata:/var/lib/postgresql/data]
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-eobench}"]
       interval: 3s
       retries: 15
 
   redis:
     image: redis:7-alpine
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 3s
-      retries: 15
+    healthcheck: { test: ["CMD", "redis-cli", "ping"], interval: 3s, retries: 15 }
 
   api:
-    build:
-      context: .
-      dockerfile: docker/backend.Dockerfile
-    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    build: { context: ., dockerfile: docker/backend.Dockerfile }
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
     env_file: .env
-    ports:
-      - "8000:8000"
+    environment:
+      EVAL_BACKEND: celery
+      STORAGE_DIR: /data/storage
+      GROUND_TRUTH_DIR: /data/ground_truth
+      FRONTEND_DIST: /srv/frontend/dist
+    ports: ["8000:8000"]
     volumes:
-      - ./backend:/srv/backend
-      - ./evaluation:/srv/evaluation
-      - ./worker:/srv/worker
-      - ./scripts:/srv/scripts
-      - ./data:/data
+      - ./data/storage:/data/storage
+      - ./frontend/dist:/srv/frontend/dist:ro
+      - ./data/ground_truth:/data/ground_truth:ro   # evaluate() runs in the worker, but readiness checks need it
     depends_on:
-      postgres:
-        condition: service_healthy
-      redis:
-        condition: service_healthy
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
 
   worker:
-    build:
-      context: .
-      dockerfile: docker/backend.Dockerfile
-    command: celery -A worker.celery_app worker --loglevel=info -Q evaluation,validation
+    build: { context: ., dockerfile: docker/backend.Dockerfile }
+    command: celery -A worker.celery_app worker --loglevel=info -Q evaluation --concurrency=2
     env_file: .env
+    environment:
+      EVAL_BACKEND: celery
+      STORAGE_DIR: /data/storage
+      GROUND_TRUTH_DIR: /data/ground_truth
     volumes:
-      - ./backend:/srv/backend
-      - ./evaluation:/srv/evaluation
-      - ./worker:/srv/worker
-      - ./data:/data
+      - ./data/storage:/data/storage
+      - ./data/ground_truth:/data/ground_truth:ro
     depends_on:
-      postgres:
-        condition: service_healthy
-      redis:
-        condition: service_healthy
-
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: ../docker/frontend.Dockerfile
-    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
-    ports:
-      - "5173:5173"
-    volumes:
-      - ./frontend:/srv/frontend
-      - frontend_node_modules:/srv/frontend/node_modules
-    depends_on:
-      - api
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
 
 volumes:
   pgdata:
-  frontend_node_modules:
