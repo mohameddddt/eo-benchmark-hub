@@ -26,7 +26,8 @@ class MultilabelEvaluator(Evaluator):
     version = "multilabel/0.2.0"
     metrics = {
         "map_macro": {"label": "mAP (macro)", "higher_is_better": True, "unit": "ratio",
-                      "description": "Mean per-class average precision over classes present in the hidden split."},
+                      "description": "Mean per-class average precision over classes with enough hidden-split "
+                                     "positives to measure it (the benchmark's min_support)."},
         "map_micro": {"label": "mAP (micro)", "higher_is_better": True, "unit": "ratio",
                       "description": "Average precision over all (sample, class) pairs."},
         "f1_macro": {"label": "Macro F1 @0.5", "higher_is_better": True, "unit": "ratio",
@@ -133,24 +134,25 @@ class MultilabelEvaluator(Evaluator):
         y_score = np.array([preds[s] for s in order])
         y_pred = (y_score >= THRESHOLD).astype(int)
 
-        # AP is undefined for classes with zero positives in the hidden split —
-        # macro-average over defined classes only (documented on the benchmark page).
+        # AP is undefined for classes with no positives in the hidden split, and
+        # AP from a handful of positives is mostly noise (one patch can move it by
+        # tens of points). Macro averages therefore cover classes with at least
+        # `min_support` hidden positives (config, default 1); rarer classes are
+        # still reported per class. Documented on the benchmark page.
         positives = y_true.sum(axis=0)
         defined = positives > 0
+        in_macro = positives >= max(1, int(config.get("min_support", 1)))
         ap_per_class = {
             classes[j]: float(average_precision_score(y_true[:, j], y_score[:, j]))
             for j in range(len(classes))
             if defined[j]
         }
-        map_macro = float(np.mean(list(ap_per_class.values())))
+        map_macro = float(np.mean([ap_per_class[classes[j]] for j in np.flatnonzero(in_macro)]))
         map_micro = float(average_precision_score(y_true[:, defined].ravel(), y_score[:, defined].ravel()))
-
-        # Macro averages cover only classes with >=1 positive in the hidden split;
-        # zero-support classes would otherwise contribute a meaningless F1/AP of 0.
         f1_per_class = f1_score(y_true, y_pred, average=None, zero_division=0)
-        f1_macro = float(np.mean(f1_per_class[defined]))
+        f1_macro = float(np.mean(f1_per_class[in_macro]))
         return {
-            "ci": {"map_macro": macro_ap_ci(y_true, y_score)},
+            "ci": {"map_macro": macro_ap_ci(y_true[:, in_macro], y_score[:, in_macro])},
             "metrics": {
                 "map_macro": map_macro,
                 "map_micro": map_micro,
@@ -161,11 +163,14 @@ class MultilabelEvaluator(Evaluator):
             "extra": {
                 "num_samples": len(order),
                 "threshold": THRESHOLD,
+                "min_support": int(config.get("min_support", 1)),
+                "macro_classes": int(in_macro.sum()),
                 "per_class": {
                     classes[j]: {
                         "ap": ap_per_class.get(classes[j]),
                         "f1": float(f1_per_class[j]),
                         "support": int(positives[j]),
+                        "in_macro": bool(in_macro[j]),
                     }
                     for j in range(len(classes))
                 },

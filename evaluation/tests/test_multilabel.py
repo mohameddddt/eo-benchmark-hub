@@ -105,3 +105,15 @@ def test_validation_catches_structure(evaluator, gt_dir, tmp_path):
     write_csv(incomplete, [["p1", 0.5, 0.5, 0.5, 0.5, 0.5], ["ghost", 0, 0, 0, 0, 0]])
     errs = " | ".join(evaluator.validate(incomplete, gt, CONFIG))
     assert "missing" in errs and "unknown" in errs
+
+def test_min_support_excludes_rare_classes_from_macro(evaluator, gt_dir, tmp_path):
+    """Classes below min_support stay in per_class but leave the macro average."""
+    gt = evaluator.load_ground_truth(gt_dir, CONFIG)
+    rows = [["p1", 0.9, 0.1, 0.1, 0.9, 0.1], ["p2", 0.1, 0.9, 0.1, 0.1, 0.1], ["p3", 0.1, 0.9, 0.9, 0.1, 0.1]]
+    write_csv(tmp_path / "p.csv", rows)
+    base = evaluator.evaluate(tmp_path / "p.csv", gt, CONFIG)
+    strict = evaluator.evaluate(tmp_path / "p.csv", gt, {**CONFIG, "min_support": 2})
+    pc = strict["extra"]["per_class"]
+    assert pc["Coniferous forest"]["in_macro"] and not pc["Arable land"]["in_macro"]
+    assert strict["extra"]["macro_classes"] == 1 < base["extra"]["macro_classes"]
+    assert strict["metrics"]["map_macro"] == pc["Coniferous forest"]["ap"]

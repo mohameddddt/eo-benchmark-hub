@@ -107,13 +107,15 @@ BENCHMARKS = [
             "2,750 → 8-bit). The official split is geographic — train and test patches come from "
             "different regions — and the official test sample is halved into public and hidden halves. "
             "Primary metric is macro mAP: rare labels such as beaches or coastal wetlands weigh as "
-            "much as arable land. Scores are not comparable to full-dataset multispectral results."),
+            "much as arable land. Two labels (coastal wetlands, beaches) have fewer than 20 hidden "
+            "positives; their AP is reported per class but excluded from the macro average, where a "
+            "single patch could swing the score. Not comparable to full-dataset multispectral results."),
         dataset_url="https://bigearth.net",
         paper_url="https://arxiv.org/abs/2407.03653",
         citation="Clasen, Hackel, Burgert, Sumbul, Demir, Markl. reBEN: Refined BigEarthNet Dataset for "
                  "Remote Sensing Image Analysis. arXiv:2407.03653, 2024; Sumbul et al. BigEarthNet, IGARSS 2019.",
         license="CDLA-Permissive-1.0", primary_metric="map_macro", classes=splits.BIGEARTHNET_CLASSES,
-        config={"rgb_clip": 2750, "subset_fraction": 0.10},
+        config={"rgb_clip": 2750, "subset_fraction": 0.10, "min_support": 20},
     ),
     dict(
         slug="landcoverai", name="LandCover.ai", position=4, task_type="semantic_segmentation",
@@ -241,6 +243,7 @@ def seed_baselines(db, org: User, bm: Benchmark, rescore: bool) -> None:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--rescore", action="store_true")
+    ap.add_argument("--only", nargs="*", help="limit baseline scoring to these benchmark slugs")
     a = ap.parse_args()
     settings.eval_backend = "sync"
     init_db()
@@ -265,7 +268,7 @@ def main() -> None:
             bm.stats = manifest_stats(bm)
             db.commit()
             print(f"[{bm.slug}] {'ready' if is_ready(bm) else 'NO GROUND TRUTH — listed, not accepting'}")
-            if is_ready(bm):
+            if is_ready(bm) and (not a.only or bm.slug in a.only):
                 seed_baselines(db, org, bm, a.rescore)
     finally:
         db.close()
