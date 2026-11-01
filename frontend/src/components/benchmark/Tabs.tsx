@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { STATIC, api, media, useAsset } from "../../lib/api";
 import { useAuth } from "../../lib/auth";
-import { fmtInt, pretty } from "../../lib/format";
+import { fmtInt, pretty, sampleUnit } from "../../lib/format";
 import type { BenchmarkDetail, ClassificationAssets, LeaderboardEntry, SegmentationAssets } from "../../lib/types";
 import { BarList } from "../charts/Charts";
 import { CodeBlock, Icon } from "../ui/ui";
@@ -21,7 +21,7 @@ export function DatasetTab({ bm, entries }: { bm: BenchmarkDetail; entries: Lead
   const st = bm.stats ?? {};
   const splits = st.splits ?? {};
   const total = Object.values(splits).reduce((a, b) => a + b, 0) || 1;
-  const unit = isSeg ? "tiles" : "images";
+  const unit = sampleUnit(bm.task_type);
 
   return (
     <div className="stack" style={{ ["--gap" as any]: "16px" }}>
@@ -92,6 +92,16 @@ export function DatasetTab({ bm, entries }: { bm: BenchmarkDetail; entries: Lead
       )}
 
       {cls.data && cls.data.gallery.length > 0 && !isRobust && <Mistakes bm={bm} assets={cls.data} entries={entries} />}
+
+      {cls.data?.label_frequency && (
+        <div className="card">
+          <div className="card-title"><h3>Label frequency</h3>
+            <span className="sub">Share of training patches carrying each label · {cls.data.mean_labels_per_patch?.toFixed(2)} labels per patch on average — why macro mAP, not accuracy, is primary</span></div>
+          <BarList items={Object.entries(cls.data.label_frequency).sort((a, b) => b[1] - a[1]).map(([c, v]) => ({ label: c, value: v }))}
+                   format={(v) => `${(v * 100).toFixed(1)}%`} max={Math.max(...Object.values(cls.data.label_frequency))}
+                   label="Label frequency" />
+        </div>
+      )}
 
       {isSeg && st.hidden_pixel_share && (
         <div className="card">
@@ -188,7 +198,15 @@ export function SubmitTab({ bm }: { bm: BenchmarkDetail }) {
     onSuccess: (s) => { qc.invalidateQueries({ queryKey: ["mine"] }); navigate(`/submissions/${s.id}`); },
   });
   const isSeg = bm.task_type === "semantic_segmentation";
-  const py = isSeg
+  const py = bm.task_type === "multilabel_classification"
+    ? `import csv
+# probs: (n_patches, ${bm.n_classes}) sigmoid outputs, columns in canonical class order
+with open("predictions.csv", "w", newline="") as f:
+    w = csv.writer(f)
+    w.writerow(["sample_id"] + [f"prob_{j:02d}" for j in range(${bm.n_classes})])
+    for sid, p in zip(ids, probs):
+        w.writerow([sid] + [f"{v:.6f}" for v in p])`
+    : isSeg
     ? `import io, zipfile\nfrom PIL import Image\n\n# preds: {tile_id: HxW uint8 array of class indices 0..${bm.n_classes - 1}}\nwith zipfile.ZipFile("predictions.zip", "w") as z:\n    for tile_id, mask in preds.items():\n        buf = io.BytesIO()\n        Image.fromarray(mask, mode="L").save(buf, format="PNG")\n        z.writestr(f"{tile_id}.png", buf.getvalue())`
     : bm.task_type === "scene_classification_robustness"
       ? `from eobench_eval.corruptions import all_variants, corrupt, variant_id\n\nrows = []\nfor sid, img in hidden_images.items():          # uint8 HxWx3\n    rows.append((sid, predict(img)))\n    for c, s in all_variants():\n        rows.append((variant_id(sid, c, s), predict(corrupt(img, sid, c, s))))\n\nimport csv\nwith open("predictions.csv", "w", newline="") as f:\n    w = csv.writer(f); w.writerow(["sample_id", "predicted_label"]); w.writerows(rows)`

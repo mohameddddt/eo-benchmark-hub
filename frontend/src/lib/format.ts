@@ -56,3 +56,7 @@ export const pretty = (s: string) => s.replace(/_/g, " ").replace(/^\w/, (c) => 
 
 export const shortPretraining = (p: string) =>
   !p || p === "none" ? "From scratch" : p.startsWith("SSL4EO") ? "SSL4EO-S12" : p.replace(" → 1k", "");
+
+/** What one evaluated sample is called on each task. */
+export const sampleUnit = (t: TaskType) =>
+  t === "semantic_segmentation" ? "tiles" : t === "multilabel_classification" ? "patches" : "images";

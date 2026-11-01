@@ -91,6 +91,7 @@ export interface ClassificationAssets {
              predictions: Record<string, { label: string; confidence: number }> }[];
   corruption_examples: { index: number; label: string }[];
   thumb_px: number;
+  label_frequency?: Record<string, number>; mean_labels_per_patch?: number;
   model_names?: Record<string, string>;
 }
 export interface SegmentationAssets {

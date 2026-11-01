@@ -4,7 +4,7 @@ import LeaderboardTable from "../components/benchmark/LeaderboardTable";
 import { DatasetTab, ProtocolTab, SubmitTab } from "../components/benchmark/Tabs";
 import { ErrorState, Icon, PageSkeleton, Skeleton } from "../components/ui/ui";
 import { useBenchmark, useBenchmarks, useLeaderboard } from "../lib/api";
-import { TASK_LABEL, fmtInt } from "../lib/format";
+import { TASK_LABEL, fmtInt, sampleUnit } from "../lib/format";
 import { BenchmarkCard } from "./Home";
 
 export function BenchmarkList() {
@@ -55,7 +55,7 @@ export function BenchmarkPage() {
         <div className="meta-row">
           <span className="chip">{b.modality}</span>
           <span className="chip">{b.n_classes} classes</span>
-          <span className="chip">{fmtInt(b.stats?.splits?.test_hidden)} hidden {b.task_type === "semantic_segmentation" ? "tiles" : "images"}</span>
+          <span className="chip">{fmtInt(b.stats?.splits?.test_hidden)} hidden {sampleUnit(b.task_type)}</span>
           <span className="chip">primary: {b.primary_metric_label}</span>
           <span className="chip mono">{b.evaluator_version}</span>
         </div>

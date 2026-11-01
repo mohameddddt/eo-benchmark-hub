@@ -365,3 +365,5 @@ tr.tier-alt td { background: var(--tier-a); }
 @media (max-width: 860px) { .grid[style*="grid-template-columns"] { grid-template-columns: minmax(0, 1fr) !important; } }
 
 @media (max-width: 640px) { .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .stats-grid .stat-value { font-size: 24px; } }
+
+.bm-grid { grid-template-columns: repeat(auto-fill, minmax(205px, 1fr)); }

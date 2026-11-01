@@ -82,7 +82,7 @@ def install(bench: str, out: Path) -> None:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("benchmarks", nargs="*", default=["eurosat", "resisc45", "landcoverai"])
+    ap.add_argument("benchmarks", nargs="*", default=["eurosat", "resisc45", "bigearthnet", "landcoverai"])
     ap.add_argument("--src", type=Path, help="folder containing <bench>/summary.json")
     a = ap.parse_args()
     for b in a.benchmarks:

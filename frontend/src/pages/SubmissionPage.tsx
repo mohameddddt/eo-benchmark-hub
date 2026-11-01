@@ -5,7 +5,7 @@ import { BarList, Heatmap, LineChart, RampLegend, Reliability } from "../compone
 import { ErrorState, Icon, PageSkeleton, StatusBadge, Verified } from "../components/ui/ui";
 import { STATIC, api, useBenchmark } from "../lib/api";
 import { useAuth } from "../lib/auth";
-import { compact, fileSize, fmtDate, fmtMetric, pretty } from "../lib/format";
+import { compact, fileSize, fmtDate, fmtMetric, pretty, sampleUnit } from "../lib/format";
 import type { BenchmarkDetail, ModelCard, Submission } from "../lib/types";
 
 const RUNNING = ["UPLOADED", "QUEUED", "VALIDATING", "EVALUATING"];
@@ -119,13 +119,18 @@ function Diagnostics({ sub, bm }: { sub: Submission; bm: BenchmarkDetail }) {
     );
   }
   const isSeg = bm.task_type === "semantic_segmentation";
+  const isML = bm.task_type === "multilabel_classification";
   const pc = Object.entries<any>(d.per_class ?? {});
   return (
     <div className="stack" style={{ ["--gap" as any]: "16px" }}>
       <div className="grid g2">
         <div className="card">
-          <div className="card-title"><div><h3>{isSeg ? "Per-class IoU" : "Per-class error (100 − F1)"}</h3><div className="sub">Weakest first{isSeg ? "" : " · zero-based so small gaps stay visible"}</div></div></div>
-          {isSeg ? (
+          <div className="card-title"><div><h3>{isSeg ? "Per-class IoU" : isML ? "Per-class average precision" : "Per-class error (100 − F1)"}</h3><div className="sub">Weakest first{isSeg || isML ? "" : " · zero-based so small gaps stay visible"}</div></div></div>
+          {isML ? (
+            <BarList label="Per-class AP" format={(v) => (v * 100).toFixed(1)}
+                     items={[...pc].filter(([, v]) => v.ap != null).sort((a, b) => a[1].ap - b[1].ap).map(([c, v]) => ({
+                       label: c, value: v.ap, sub: `F1@0.5 ${(v.f1 * 100).toFixed(1)} · ${v.support} positives` }))} />
+          ) : isSeg ? (
             <BarList label="Per-class IoU" format={(v) => (v * 100).toFixed(1)}
                      items={[...pc].sort((a, b) => (a[1].iou ?? 0) - (b[1].iou ?? 0)).map(([c, v]) => ({
                        label: pretty(c), value: v.iou, sub: `${(v.pixel_share * 100).toFixed(1)}% of pixels` }))} />
@@ -137,34 +142,38 @@ function Diagnostics({ sub, bm }: { sub: Submission; bm: BenchmarkDetail }) {
                        sub: `F1 ${(v.f1 * 100).toFixed(2)} · precision ${(v.precision * 100).toFixed(1)} · recall ${(v.recall * 100).toFixed(1)} · n=${v.support}`,
                      }))} />
           )}
-          {pc.length > 15 && <p className="xs muted" style={{ marginTop: 8 }}>Showing the 15 weakest of {pc.length} classes.</p>}
+          {pc.length > 15 && !isML && <p className="xs muted" style={{ marginTop: 8 }}>Showing the 15 weakest of {pc.length} classes.</p>}
         </div>
         {d.reliability ? (
           <div className="card">
             <div className="card-title"><div><h3>Calibration</h3><div className="sub">Does a 90% confidence mean 90% correct?</div></div></div>
             <Reliability bins={d.reliability} ece={ece ?? 0} />
           </div>
-        ) : !isSeg ? (
+        ) : !isSeg && !isML ? (
           <div className="card"><h3>Calibration</h3><p className="soft small" style={{ marginTop: 8 }}>This submission has labels only. Add <code>prob_&lt;class&gt;</code> columns to get ECE, NLL, Brier score and a reliability diagram.</p></div>
-        ) : <TrainingCurves card={sub.model_card} isSeg />}
+        ) : <TrainingCurves card={sub.model_card} />}
       </div>
       {d.confusion_matrix && <Confusion cm={d.confusion_matrix} unitLabel={isSeg ? "Pixels" : "Count"} />}
     </div>
   );
 }
 
-function TrainingCurves({ card, isSeg = false }: { card: ModelCard | null; isSeg?: boolean }) {
+function TrainingCurves({ card }: { card: ModelCard | null }) {
   const log = card?.training_log;
   if (!log?.length) return null;
-  const valKey = isSeg ? "val_miou" : "val_acc";
+  // the validation metric the run selected on: mIoU (segmentation), mAP (multi-label) or accuracy
+  const valKey = ["val_miou", "val_map", "val_acc"].find((k) => log[0][k] != null) ?? "val_acc";
+  const valLabel = { val_miou: "Validation mIoU %", val_map: "Validation mAP %", val_acc: "Accuracy %" }[valKey];
+  const hasTrainAcc = log[0].train_acc != null;
+  const hasValLoss = log[0].val_loss != null;
   return (
     <div className="card">
       <div className="card-title"><div><h3>Training curves</h3><div className="sub">From the training run · best epoch {card?.extra?.best_epoch ?? "—"} kept (by validation)</div></div></div>
       <div className="grid g2" style={{ gap: 12 }}>
-        <div><div className="xs muted" style={{ marginBottom: 4 }}>{isSeg ? "Validation mIoU %" : "Accuracy %"}</div>
-          <LineChart label="Validation metric by epoch" height={200} xLabel="epoch" yFormat={(v) => (v * 100).toFixed(isSeg ? 0 : 1)}
+        <div><div className="xs muted" style={{ marginBottom: 4 }}>{valLabel}</div>
+          <LineChart label="Validation metric by epoch" height={200} xLabel="epoch" yFormat={(v) => (v * 100).toFixed(1)}
                      series={[
-                       ...(isSeg ? [] : [{ name: "train", color: "var(--s2)", points: log.map((r) => [r.epoch, r.train_acc] as [number, number]) }]),
+                       ...(hasTrainAcc ? [{ name: "train", color: "var(--s2)", points: log.map((r) => [r.epoch, r.train_acc] as [number, number]) }] : []),
                        { name: "validation", color: "var(--s1)", points: log.map((r) => [r.epoch, r[valKey]] as [number, number]) },
                      ]} />
         </div>
@@ -172,14 +181,13 @@ function TrainingCurves({ card, isSeg = false }: { card: ModelCard | null; isSeg
           <LineChart label="Loss by epoch" height={200} xLabel="epoch" yFormat={(v) => v.toFixed(2)}
                      series={[
                        { name: "train", color: "var(--s2)", points: log.map((r) => [r.epoch, r.train_loss] as [number, number]) },
-                       ...(isSeg ? [] : [{ name: "validation", color: "var(--s1)", points: log.map((r) => [r.epoch, r.val_loss] as [number, number]) }]),
+                       ...(hasValLoss ? [{ name: "validation", color: "var(--s1)", points: log.map((r) => [r.epoch, r.val_loss] as [number, number]) }] : []),
                      ]} />
         </div>
       </div>
       <div className="legend">
-        {!isSeg && <span><i style={{ width: 12, height: 2, background: "var(--s2)", display: "inline-block" }} />train</span>}
+        <span><i style={{ width: 12, height: 2, background: "var(--s2)", display: "inline-block" }} />train</span>
         <span><i style={{ width: 12, height: 2, background: "var(--s1)", display: "inline-block" }} />validation</span>
-        {isSeg && <span><i style={{ width: 12, height: 2, background: "var(--s2)", display: "inline-block" }} />train loss</span>}
       </div>
     </div>
   );
@@ -316,7 +324,7 @@ export default function SubmissionPage() {
             <Kpis sub={sub} bm={bm.data} />
             {owner && (editing || !sub.model_card) && <CardEditor sub={sub} onSaved={() => { refresh(); setEditing(false); }} />}
             <Diagnostics sub={sub} bm={bm.data} />
-            {bm.data.task_type !== "semantic_segmentation" && <TrainingCurves card={sub.model_card} />}
+            {!["semantic_segmentation", "multilabel_classification"].includes(bm.data.task_type) && <TrainingCurves card={sub.model_card} />}
             <div className="grid g2" style={{ alignItems: "start" }}>
               {sub.model_card ? <CardView card={sub.model_card} /> : <div className="card"><h3>Model card</h3><p className="soft small" style={{ marginTop: 8 }}>No model card yet.</p></div>}
               <div className="stack" style={{ ["--gap" as any]: "16px" }}>
@@ -343,7 +351,7 @@ export default function SubmissionPage() {
                     <dt>File</dt><dd className="mono">{sub.original_filename} · {fileSize(sub.file_size)}</dd>
                     <dt>SHA-256</dt><dd className="mono">{sub.checksum.slice(0, 32)}…</dd>
                     <dt>Evaluator</dt><dd className="mono">{sub.evaluator_version}</dd>
-                    <dt>Scored on</dt><dd>{sub.details?.num_samples?.toLocaleString()} hidden {bm.data.task_type === "semantic_segmentation" ? "tiles" : "images"}{sub.details?.num_variants ? ` × ${sub.details.num_variants + 1} variants` : ""}</dd>
+                    <dt>Scored on</dt><dd>{sub.details?.num_samples?.toLocaleString()} hidden {sampleUnit(bm.data.task_type)}{sub.details?.num_variants ? ` × ${sub.details.num_variants + 1} variants` : ""}</dd>
                     <dt>Evaluated</dt><dd>{fmtDate(sub.evaluated_at)}</dd>
                   </dl>
                 </div>

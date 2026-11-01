@@ -157,10 +157,10 @@ export default function Home() {
 
       <section className="section">
         <div className="section-head">
-          <div><h2>Benchmarks</h2><p>Four tracks across three task types, from 10 m Sentinel-2 to 25 cm aerial orthophotos.</p></div>
+          <div><h2>Benchmarks</h2><p>{bms.data ? `${bms.data.length} tracks across ${new Set(bms.data.map((b) => b.task_type)).size} task types` : "Tracks"}, from 10 m Sentinel-2 to 25 cm aerial orthophotos.</p></div>
           <Link to="/benchmarks" className="btn ghost">All benchmarks <Icon name="arrow" size={15} /></Link>
         </div>
-        <div className="grid g4">
+        <div className="grid bm-grid">
           {bms.data ? bms.data.map((b) => <BenchmarkCard key={b.slug} b={b} />)
             : Array.from({ length: 4 }).map((_, i) => <Skeleton key={i} h={330} />)}
         </div>

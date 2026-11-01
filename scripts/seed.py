@@ -96,7 +96,27 @@ BENCHMARKS = [
         classes=splits.RESISC45_CLASSES, config={"id_prefix": "rs"},
     ),
     dict(
-        slug="landcoverai", name="LandCover.ai", position=3, task_type="semantic_segmentation",
+        slug="bigearthnet", name="BigEarthNet-S2", position=3, task_type="multilabel_classification",
+        tagline="Multi-label land cover from Sentinel-2, 19 classes",
+        modality="Sentinel-2 L2A · RGB · 10 m · 120×120 px · 10% subset",
+        description=(
+            "Multi-label land-cover classification on reBEN, the 2024 BigEarthNet v2.0 release: "
+            "Sentinel-2 patches from ten European countries labelled from CORINE Land Cover with the "
+            "19-class nomenclature, about three labels per patch. The hub uses a seeded 10% subset of "
+            "each official split, streamed from the 63 GB archive (RGB bands, reflectance clipped at "
+            "2,750 → 8-bit). The official split is geographic — train and test patches come from "
+            "different regions — and the official test sample is halved into public and hidden halves. "
+            "Primary metric is macro mAP: rare labels such as beaches or coastal wetlands weigh as "
+            "much as arable land. Scores are not comparable to full-dataset multispectral results."),
+        dataset_url="https://bigearth.net",
+        paper_url="https://arxiv.org/abs/2407.03653",
+        citation="Clasen, Hackel, Burgert, Sumbul, Demir, Markl. reBEN: Refined BigEarthNet Dataset for "
+                 "Remote Sensing Image Analysis. arXiv:2407.03653, 2024; Sumbul et al. BigEarthNet, IGARSS 2019.",
+        license="CDLA-Permissive-1.0", primary_metric="map_macro", classes=splits.BIGEARTHNET_CLASSES,
+        config={"rgb_clip": 2750, "subset_fraction": 0.10},
+    ),
+    dict(
+        slug="landcoverai", name="LandCover.ai", position=4, task_type="semantic_segmentation",
         tagline="Mapping buildings, woodland, water and roads from orthophotos",
         modality="Polish aerial orthophotos · RGB · 25–50 cm · 512×512 tiles",
         description=(
@@ -124,6 +144,8 @@ def manifest_stats(bm: Benchmark) -> dict | None:
           "n_samples": len(rows)}
     if "label" in (rows[0] if rows else {}):
         st["class_counts"] = dict(Counter(r["label"] for r in rows))
+    elif "labels" in (rows[0] if rows else {}):  # multi-label: count every label occurrence
+        st["class_counts"] = dict(Counter(lab for r in rows for lab in r["labels"].split("|") if lab))
     if bm.task_type == "scene_classification_robustness":
         n = st["splits"].get("test_hidden", 0)
         v = len(bm.config["corruptions"]) * len(bm.config["severities"])
@@ -148,7 +170,8 @@ def card_from_json(c: dict, bench: str) -> dict:
     hist = c.get("history") or []
     minutes = c.get("train_time_s", 0) / 60
     extra = {k: c.get(k) for k in ("lr", "batch_size", "weight_decay", "label_smoothing", "best_epoch",
-                                   "val_acc", "val_miou", "test_public_acc", "test_public_miou", "norm",
+                                   "val_acc", "val_miou", "val_map", "test_public_acc", "test_public_miou",
+                                   "test_public_map", "norm",
                                    "loss", "arch", "encoder") if c.get(k) is not None}
     extra.update(c.get("extra") or {})
     env = c.get("environment", {})

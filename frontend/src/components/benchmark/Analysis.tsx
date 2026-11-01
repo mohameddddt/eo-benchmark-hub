@@ -80,7 +80,8 @@ function PerClass({ bm, entries }: { bm: BenchmarkDetail; entries: LeaderboardEn
     queries: entries.map((e) => ({ queryKey: ["submission", e.submission_id], queryFn: () => api.submission(e.submission_id), staleTime: 60_000 })),
   });
   const ready = details.every((d) => d.data);
-  const key = bm.task_type === "semantic_segmentation" ? "iou" : "f1";
+  // per-class score shown: IoU (segmentation), AP (multi-label), F1 (single-label)
+  const key = bm.task_type === "semantic_segmentation" ? "iou" : bm.task_type === "multilabel_classification" ? "ap" : "f1";
   const classes = bm.classes ?? [];
   const matrix = useMemo(() => (ready ? details.map((d) => classes.map((c) => d.data!.details?.per_class?.[c]?.[key] ?? null)) : []),
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -88,10 +89,13 @@ function PerClass({ bm, entries }: { bm: BenchmarkDetail; entries: LeaderboardEn
   if (!ready) return <div className="card"><div className="skeleton" style={{ height: 260 }} /></div>;
   const flat = matrix.flat().filter((v): v is number => v != null);
   const lo = Math.floor(Math.min(...flat) * 20) / 20;
-  const mean = classes.map((c, j) => ({ label: c, value: matrix.reduce((a, r) => a + (r[j] ?? 0), 0) / matrix.length }));
-  const hardest = [...mean].sort((a, b) => a.value - b.value).slice(0, 8);
-  const metricName = key === "iou" ? "IoU" : "F1";
-  const many = classes.length > 20;
+  const mean = classes.map((c, j) => {
+    const vals = matrix.map((r) => r[j]).filter((v): v is number => v != null);
+    return { label: c, value: vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : NaN };
+  });
+  const hardest = mean.filter((m) => !Number.isNaN(m.value)).sort((a, b) => a.value - b.value).slice(0, 8);
+  const metricName = { iou: "IoU", ap: "AP", f1: "F1" }[key];
+  const many = classes.length > 15;
   return (
     <div className={many ? "stack" : "grid g2"} style={many ? undefined : { gridTemplateColumns: "minmax(0,2fr) minmax(0,1fr)" }}>
       <div className="card">
@@ -108,10 +112,10 @@ function PerClass({ bm, entries }: { bm: BenchmarkDetail; entries: LeaderboardEn
       </div>
       <div className="card">
         <div className="card-title"><div><h3>Hardest classes</h3>
-          <div className="sub">{key === "iou" ? "Mean IoU across all entries" : "Mean error (100 − F1) across all entries — zero-based so small gaps stay visible"}</div></div></div>
-        {key === "iou"
+          <div className="sub">{key !== "f1" ? `Mean ${metricName} across all entries` : "Mean error (100 − F1) across all entries — zero-based so small gaps stay visible"}</div></div></div>
+        {key !== "f1"
           ? <BarList items={hardest.map((h) => ({ label: pretty(h.label), value: h.value }))} format={(v) => (v * 100).toFixed(1)}
-                     max={1} label="Hardest classes by mean IoU" />
+                     max={1} label={`Hardest classes by mean ${metricName}`} />
           : <BarList items={hardest.map((h) => ({ label: pretty(h.label), value: 1 - h.value, sub: `mean F1 ${(h.value * 100).toFixed(2)}%` }))}
                      format={(v) => (v * 100).toFixed(2)} max={Math.max(...hardest.map((h) => 1 - h.value))} color="var(--s8)"
                      label="Hardest classes by mean error" />}
