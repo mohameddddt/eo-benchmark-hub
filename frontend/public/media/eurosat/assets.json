@@ -1,0 +1,1741 @@
+{
+ "classes": {
+  "AnnualCrop": [
+   "classes/AnnualCrop_0.jpg",
+   "classes/AnnualCrop_1.jpg",
+   "classes/AnnualCrop_2.jpg",
+   "classes/AnnualCrop_3.jpg",
+   "classes/AnnualCrop_4.jpg",
+   "classes/AnnualCrop_5.jpg"
+  ],
+  "Forest": [
+   "classes/Forest_0.jpg",
+   "classes/Forest_1.jpg",
+   "classes/Forest_2.jpg",
+   "classes/Forest_3.jpg",
+   "classes/Forest_4.jpg",
+   "classes/Forest_5.jpg"
+  ],
+  "HerbaceousVegetation": [
+   "classes/HerbaceousVegetation_0.jpg",
+   "classes/HerbaceousVegetation_1.jpg",
+   "classes/HerbaceousVegetation_2.jpg",
+   "classes/HerbaceousVegetation_3.jpg",
+   "classes/HerbaceousVegetation_4.jpg",
+   "classes/HerbaceousVegetation_5.jpg"
+  ],
+  "Highway": [
+   "classes/Highway_0.jpg",
+   "classes/Highway_1.jpg",
+   "classes/Highway_2.jpg",
+   "classes/Highway_3.jpg",
+   "classes/Highway_4.jpg",
+   "classes/Highway_5.jpg"
+  ],
+  "Industrial": [
+   "classes/Industrial_0.jpg",
+   "classes/Industrial_1.jpg",
+   "classes/Industrial_2.jpg",
+   "classes/Industrial_3.jpg",
+   "classes/Industrial_4.jpg",
+   "classes/Industrial_5.jpg"
+  ],
+  "Pasture": [
+   "classes/Pasture_0.jpg",
+   "classes/Pasture_1.jpg",
+   "classes/Pasture_2.jpg",
+   "classes/Pasture_3.jpg",
+   "classes/Pasture_4.jpg",
+   "classes/Pasture_5.jpg"
+  ],
+  "PermanentCrop": [
+   "classes/PermanentCrop_0.jpg",
+   "classes/PermanentCrop_1.jpg",
+   "classes/PermanentCrop_2.jpg",
+   "classes/PermanentCrop_3.jpg",
+   "classes/PermanentCrop_4.jpg",
+   "classes/PermanentCrop_5.jpg"
+  ],
+  "Residential": [
+   "classes/Residential_0.jpg",
+   "classes/Residential_1.jpg",
+   "classes/Residential_2.jpg",
+   "classes/Residential_3.jpg",
+   "classes/Residential_4.jpg",
+   "classes/Residential_5.jpg"
+  ],
+  "River": [
+   "classes/River_0.jpg",
+   "classes/River_1.jpg",
+   "classes/River_2.jpg",
+   "classes/River_3.jpg",
+   "classes/River_4.jpg",
+   "classes/River_5.jpg"
+  ],
+  "SeaLake": [
+   "classes/SeaLake_0.jpg",
+   "classes/SeaLake_1.jpg",
+   "classes/SeaLake_2.jpg",
+   "classes/SeaLake_3.jpg",
+   "classes/SeaLake_4.jpg",
+   "classes/SeaLake_5.jpg"
+  ]
+ },
+ "gallery": [
+  {
+   "sample_id": "es-75b4219146d7",
+   "image": "gallery/es-75b4219146d7.jpg",
+   "label": "PermanentCrop",
+   "kind": "mistake",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "PermanentCrop",
+     "confidence": 0.5285133123397827
+    },
+    "resnet18-in1k-64px": {
+     "label": "AnnualCrop",
+     "confidence": 0.6550326347351074
+    },
+    "mobilenetv3-large": {
+     "label": "AnnualCrop",
+     "confidence": 0.5917468070983887
+    },
+    "efficientnet-b0": {
+     "label": "AnnualCrop",
+     "confidence": 0.7197726964950562
+    },
+    "resnet18-in1k": {
+     "label": "AnnualCrop",
+     "confidence": 0.7415319681167603
+    },
+    "resnet18-ssl4eo": {
+     "label": "AnnualCrop",
+     "confidence": 0.80580073595047
+    },
+    "resnet50-in1k": {
+     "label": "PermanentCrop",
+     "confidence": 0.5165957808494568
+    },
+    "resnet50-ssl4eo": {
+     "label": "AnnualCrop",
+     "confidence": 0.7550700902938843
+    },
+    "vit-small": {
+     "label": "AnnualCrop",
+     "confidence": 0.932256281375885
+    },
+    "convnext-tiny": {
+     "label": "AnnualCrop",
+     "confidence": 0.7245714664459229
+    }
+   }
+  },
+  {
+   "sample_id": "es-81e262e28269",
+   "image": "gallery/es-81e262e28269.jpg",
+   "label": "AnnualCrop",
+   "kind": "mistake",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "Pasture",
+     "confidence": 0.38418349623680115
+    },
+    "resnet18-in1k-64px": {
+     "label": "AnnualCrop",
+     "confidence": 0.8088505268096924
+    },
+    "mobilenetv3-large": {
+     "label": "AnnualCrop",
+     "confidence": 0.6429701447486877
+    },
+    "efficientnet-b0": {
+     "label": "AnnualCrop",
+     "confidence": 0.734331488609314
+    },
+    "resnet18-in1k": {
+     "label": "AnnualCrop",
+     "confidence": 0.7707585692405701
+    },
+    "resnet18-ssl4eo": {
+     "label": "AnnualCrop",
+     "confidence": 0.8265966773033142
+    },
+    "resnet50-in1k": {
+     "label": "AnnualCrop",
+     "confidence": 0.8117690086364746
+    },
+    "resnet50-ssl4eo": {
+     "label": "AnnualCrop",
+     "confidence": 0.45600590109825134
+    },
+    "vit-small": {
+     "label": "Pasture",
+     "confidence": 0.9103094339370728
+    },
+    "convnext-tiny": {
+     "label": "AnnualCrop",
+     "confidence": 0.7003152370452881
+    }
+   }
+  },
+  {
+   "sample_id": "es-24cdc8eb6cd6",
+   "image": "gallery/es-24cdc8eb6cd6.jpg",
+   "label": "River",
+   "kind": "mistake",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "Highway",
+     "confidence": 0.9541498422622681
+    },
+    "resnet18-in1k-64px": {
+     "label": "Highway",
+     "confidence": 0.9071957468986511
+    },
+    "mobilenetv3-large": {
+     "label": "Highway",
+     "confidence": 0.91454017162323
+    },
+    "efficientnet-b0": {
+     "label": "Highway",
+     "confidence": 0.9097632765769958
+    },
+    "resnet18-in1k": {
+     "label": "Highway",
+     "confidence": 0.8932691812515259
+    },
+    "resnet18-ssl4eo": {
+     "label": "Highway",
+     "confidence": 0.8873945474624634
+    },
+    "resnet50-in1k": {
+     "label": "Highway",
+     "confidence": 0.9149841666221619
+    },
+    "resnet50-ssl4eo": {
+     "label": "Highway",
+     "confidence": 0.8530596494674683
+    },
+    "vit-small": {
+     "label": "Highway",
+     "confidence": 0.9085696339607239
+    },
+    "convnext-tiny": {
+     "label": "Highway",
+     "confidence": 0.9015527963638306
+    }
+   }
+  },
+  {
+   "sample_id": "es-827bd5d045ce",
+   "image": "gallery/es-827bd5d045ce.jpg",
+   "label": "Industrial",
+   "kind": "mistake",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "Industrial",
+     "confidence": 0.389766126871109
+    },
+    "resnet18-in1k-64px": {
+     "label": "Highway",
+     "confidence": 0.7702475786209106
+    },
+    "mobilenetv3-large": {
+     "label": "Residential",
+     "confidence": 0.370599627494812
+    },
+    "efficientnet-b0": {
+     "label": "Highway",
+     "confidence": 0.5464726090431213
+    },
+    "resnet18-in1k": {
+     "label": "Highway",
+     "confidence": 0.7290008664131165
+    },
+    "resnet18-ssl4eo": {
+     "label": "Highway",
+     "confidence": 0.6236093044281006
+    },
+    "resnet50-in1k": {
+     "label": "Residential",
+     "confidence": 0.5972172617912292
+    },
+    "resnet50-ssl4eo": {
+     "label": "Industrial",
+     "confidence": 0.4880320429801941
+    },
+    "vit-small": {
+     "label": "Highway",
+     "confidence": 0.8886473774909973
+    },
+    "convnext-tiny": {
+     "label": "Industrial",
+     "confidence": 0.854410707950592
+    }
+   }
+  },
+  {
+   "sample_id": "es-67be3bd640b1",
+   "image": "gallery/es-67be3bd640b1.jpg",
+   "label": "AnnualCrop",
+   "kind": "mistake",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "AnnualCrop",
+     "confidence": 0.6261774897575378
+    },
+    "resnet18-in1k-64px": {
+     "label": "AnnualCrop",
+     "confidence": 0.8959013223648071
+    },
+    "mobilenetv3-large": {
+     "label": "AnnualCrop",
+     "confidence": 0.7928145527839661
+    },
+    "efficientnet-b0": {
+     "label": "AnnualCrop",
+     "confidence": 0.8876280784606934
+    },
+    "resnet18-in1k": {
+     "label": "AnnualCrop",
+     "confidence": 0.7483277916908264
+    },
+    "resnet18-ssl4eo": {
+     "label": "AnnualCrop",
+     "confidence": 0.6994834542274475
+    },
+    "resnet50-in1k": {
+     "label": "AnnualCrop",
+     "confidence": 0.8408365249633789
+    },
+    "resnet50-ssl4eo": {
+     "label": "AnnualCrop",
+     "confidence": 0.828178882598877
+    },
+    "vit-small": {
+     "label": "Pasture",
+     "confidence": 0.8877514004707336
+    },
+    "convnext-tiny": {
+     "label": "AnnualCrop",
+     "confidence": 0.8496127128601074
+    }
+   }
+  },
+  {
+   "sample_id": "es-64f4c453287f",
+   "image": "gallery/es-64f4c453287f.jpg",
+   "label": "Forest",
+   "kind": "mistake",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.4064205586910248
+    },
+    "resnet18-in1k-64px": {
+     "label": "Forest",
+     "confidence": 0.616150438785553
+    },
+    "mobilenetv3-large": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.9142513275146484
+    },
+    "efficientnet-b0": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.5260810256004333
+    },
+    "resnet18-in1k": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.8767372369766235
+    },
+    "resnet18-ssl4eo": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.9066728353500366
+    },
+    "resnet50-in1k": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.6915927529335022
+    },
+    "resnet50-ssl4eo": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.6960150599479675
+    },
+    "vit-small": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.8814038634300232
+    },
+    "convnext-tiny": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.840747594833374
+    }
+   }
+  },
+  {
+   "sample_id": "es-37504e3be227",
+   "image": "gallery/es-37504e3be227.jpg",
+   "label": "AnnualCrop",
+   "kind": "mistake",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "AnnualCrop",
+     "confidence": 0.6546769142150879
+    },
+    "resnet18-in1k-64px": {
+     "label": "AnnualCrop",
+     "confidence": 0.8962466716766357
+    },
+    "mobilenetv3-large": {
+     "label": "AnnualCrop",
+     "confidence": 0.5611039996147156
+    },
+    "efficientnet-b0": {
+     "label": "AnnualCrop",
+     "confidence": 0.820866048336029
+    },
+    "resnet18-in1k": {
+     "label": "AnnualCrop",
+     "confidence": 0.8800557851791382
+    },
+    "resnet18-ssl4eo": {
+     "label": "AnnualCrop",
+     "confidence": 0.5125895142555237
+    },
+    "resnet50-in1k": {
+     "label": "AnnualCrop",
+     "confidence": 0.9433489441871643
+    },
+    "resnet50-ssl4eo": {
+     "label": "AnnualCrop",
+     "confidence": 0.5348715782165527
+    },
+    "vit-small": {
+     "label": "Pasture",
+     "confidence": 0.875726044178009
+    },
+    "convnext-tiny": {
+     "label": "AnnualCrop",
+     "confidence": 0.6465836763381958
+    }
+   }
+  },
+  {
+   "sample_id": "es-b0cf8e611dd0",
+   "image": "gallery/es-b0cf8e611dd0.jpg",
+   "label": "PermanentCrop",
+   "kind": "mistake",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "PermanentCrop",
+     "confidence": 0.7842179536819458
+    },
+    "resnet18-in1k-64px": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.8095464706420898
+    },
+    "mobilenetv3-large": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.8235379457473755
+    },
+    "efficientnet-b0": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.7417282462120056
+    },
+    "resnet18-in1k": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.47822141647338867
+    },
+    "resnet18-ssl4eo": {
+     "label": "PermanentCrop",
+     "confidence": 0.4777868092060089
+    },
+    "resnet50-in1k": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.6074893474578857
+    },
+    "resnet50-ssl4eo": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.6556117534637451
+    },
+    "vit-small": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.8607122898101807
+    },
+    "convnext-tiny": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.8436406254768372
+    }
+   }
+  },
+  {
+   "sample_id": "es-4ab5fcb253b8",
+   "image": "gallery/es-4ab5fcb253b8.jpg",
+   "label": "Highway",
+   "kind": "mistake",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "River",
+     "confidence": 0.4337846040725708
+    },
+    "resnet18-in1k-64px": {
+     "label": "River",
+     "confidence": 0.7148073315620422
+    },
+    "mobilenetv3-large": {
+     "label": "Highway",
+     "confidence": 0.6626757979393005
+    },
+    "efficientnet-b0": {
+     "label": "SeaLake",
+     "confidence": 0.3604242503643036
+    },
+    "resnet18-in1k": {
+     "label": "River",
+     "confidence": 0.48067939281463623
+    },
+    "resnet18-ssl4eo": {
+     "label": "River",
+     "confidence": 0.559937596321106
+    },
+    "resnet50-in1k": {
+     "label": "SeaLake",
+     "confidence": 0.5327690243721008
+    },
+    "resnet50-ssl4eo": {
+     "label": "River",
+     "confidence": 0.7746464014053345
+    },
+    "vit-small": {
+     "label": "River",
+     "confidence": 0.8450976014137268
+    },
+    "convnext-tiny": {
+     "label": "Highway",
+     "confidence": 0.7125350832939148
+    }
+   }
+  },
+  {
+   "sample_id": "es-5696aed12e8a",
+   "image": "gallery/es-5696aed12e8a.jpg",
+   "label": "Pasture",
+   "kind": "mistake",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.46075931191444397
+    },
+    "resnet18-in1k-64px": {
+     "label": "Forest",
+     "confidence": 0.5328579545021057
+    },
+    "mobilenetv3-large": {
+     "label": "AnnualCrop",
+     "confidence": 0.41503018140792847
+    },
+    "efficientnet-b0": {
+     "label": "River",
+     "confidence": 0.6311829090118408
+    },
+    "resnet18-in1k": {
+     "label": "Pasture",
+     "confidence": 0.5292468667030334
+    },
+    "resnet18-ssl4eo": {
+     "label": "Pasture",
+     "confidence": 0.28097137808799744
+    },
+    "resnet50-in1k": {
+     "label": "Pasture",
+     "confidence": 0.38716763257980347
+    },
+    "resnet50-ssl4eo": {
+     "label": "Pasture",
+     "confidence": 0.37475547194480896
+    },
+    "vit-small": {
+     "label": "River",
+     "confidence": 0.8329477310180664
+    },
+    "convnext-tiny": {
+     "label": "River",
+     "confidence": 0.5931785106658936
+    }
+   }
+  },
+  {
+   "sample_id": "es-d0456b9ae637",
+   "image": "gallery/es-d0456b9ae637.jpg",
+   "label": "Pasture",
+   "kind": "mistake",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "Pasture",
+     "confidence": 0.5311943888664246
+    },
+    "resnet18-in1k-64px": {
+     "label": "Pasture",
+     "confidence": 0.8383969068527222
+    },
+    "mobilenetv3-large": {
+     "label": "Pasture",
+     "confidence": 0.7580939531326294
+    },
+    "efficientnet-b0": {
+     "label": "Pasture",
+     "confidence": 0.4776952862739563
+    },
+    "resnet18-in1k": {
+     "label": "Pasture",
+     "confidence": 0.6585775017738342
+    },
+    "resnet18-ssl4eo": {
+     "label": "Pasture",
+     "confidence": 0.5599970817565918
+    },
+    "resnet50-in1k": {
+     "label": "Pasture",
+     "confidence": 0.6810106039047241
+    },
+    "resnet50-ssl4eo": {
+     "label": "Pasture",
+     "confidence": 0.6930987238883972
+    },
+    "vit-small": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.8258115649223328
+    },
+    "convnext-tiny": {
+     "label": "Pasture",
+     "confidence": 0.8943141102790833
+    }
+   }
+  },
+  {
+   "sample_id": "es-d832790c9eba",
+   "image": "gallery/es-d832790c9eba.jpg",
+   "label": "PermanentCrop",
+   "kind": "mistake",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "AnnualCrop",
+     "confidence": 0.8903504610061646
+    },
+    "resnet18-in1k-64px": {
+     "label": "PermanentCrop",
+     "confidence": 0.4184279441833496
+    },
+    "mobilenetv3-large": {
+     "label": "AnnualCrop",
+     "confidence": 0.8174019455909729
+    },
+    "efficientnet-b0": {
+     "label": "AnnualCrop",
+     "confidence": 0.8793104887008667
+    },
+    "resnet18-in1k": {
+     "label": "AnnualCrop",
+     "confidence": 0.7452180981636047
+    },
+    "resnet18-ssl4eo": {
+     "label": "AnnualCrop",
+     "confidence": 0.9052520990371704
+    },
+    "resnet50-in1k": {
+     "label": "AnnualCrop",
+     "confidence": 0.736883819103241
+    },
+    "resnet50-ssl4eo": {
+     "label": "AnnualCrop",
+     "confidence": 0.906890869140625
+    },
+    "vit-small": {
+     "label": "AnnualCrop",
+     "confidence": 0.8241757750511169
+    },
+    "convnext-tiny": {
+     "label": "AnnualCrop",
+     "confidence": 0.8379743099212646
+    }
+   }
+  },
+  {
+   "sample_id": "es-e990e7965072",
+   "image": "gallery/es-e990e7965072.jpg",
+   "label": "AnnualCrop",
+   "kind": "mistake",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "AnnualCrop",
+     "confidence": 0.419504851102829
+    },
+    "resnet18-in1k-64px": {
+     "label": "River",
+     "confidence": 0.5801559090614319
+    },
+    "mobilenetv3-large": {
+     "label": "River",
+     "confidence": 0.5244067907333374
+    },
+    "efficientnet-b0": {
+     "label": "River",
+     "confidence": 0.29051685333251953
+    },
+    "resnet18-in1k": {
+     "label": "AnnualCrop",
+     "confidence": 0.5079123973846436
+    },
+    "resnet18-ssl4eo": {
+     "label": "River",
+     "confidence": 0.4800146818161011
+    },
+    "resnet50-in1k": {
+     "label": "AnnualCrop",
+     "confidence": 0.5808776617050171
+    },
+    "resnet50-ssl4eo": {
+     "label": "AnnualCrop",
+     "confidence": 0.5249441266059875
+    },
+    "vit-small": {
+     "label": "Highway",
+     "confidence": 0.815341591835022
+    },
+    "convnext-tiny": {
+     "label": "AnnualCrop",
+     "confidence": 0.7180144190788269
+    }
+   }
+  },
+  {
+   "sample_id": "es-740eacad3476",
+   "image": "gallery/es-740eacad3476.jpg",
+   "label": "HerbaceousVegetation",
+   "kind": "mistake",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "Forest",
+     "confidence": 0.8474211096763611
+    },
+    "resnet18-in1k-64px": {
+     "label": "Forest",
+     "confidence": 0.7118717432022095
+    },
+    "mobilenetv3-large": {
+     "label": "Forest",
+     "confidence": 0.5023102760314941
+    },
+    "efficientnet-b0": {
+     "label": "Forest",
+     "confidence": 0.6157158613204956
+    },
+    "resnet18-in1k": {
+     "label": "Forest",
+     "confidence": 0.5972483158111572
+    },
+    "resnet18-ssl4eo": {
+     "label": "Forest",
+     "confidence": 0.5267086625099182
+    },
+    "resnet50-in1k": {
+     "label": "Forest",
+     "confidence": 0.801261842250824
+    },
+    "resnet50-ssl4eo": {
+     "label": "Forest",
+     "confidence": 0.8962005972862244
+    },
+    "vit-small": {
+     "label": "Forest",
+     "confidence": 0.7987350821495056
+    },
+    "convnext-tiny": {
+     "label": "Forest",
+     "confidence": 0.8956909775733948
+    }
+   }
+  },
+  {
+   "sample_id": "es-537db50fb22b",
+   "image": "gallery/es-537db50fb22b.jpg",
+   "label": "HerbaceousVegetation",
+   "kind": "mistake",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "PermanentCrop",
+     "confidence": 0.5474772453308105
+    },
+    "resnet18-in1k-64px": {
+     "label": "PermanentCrop",
+     "confidence": 0.7995051741600037
+    },
+    "mobilenetv3-large": {
+     "label": "PermanentCrop",
+     "confidence": 0.6220315098762512
+    },
+    "efficientnet-b0": {
+     "label": "PermanentCrop",
+     "confidence": 0.9295031428337097
+    },
+    "resnet18-in1k": {
+     "label": "PermanentCrop",
+     "confidence": 0.91917884349823
+    },
+    "resnet18-ssl4eo": {
+     "label": "PermanentCrop",
+     "confidence": 0.6062591075897217
+    },
+    "resnet50-in1k": {
+     "label": "PermanentCrop",
+     "confidence": 0.7166894674301147
+    },
+    "resnet50-ssl4eo": {
+     "label": "PermanentCrop",
+     "confidence": 0.8432865142822266
+    },
+    "vit-small": {
+     "label": "PermanentCrop",
+     "confidence": 0.7762607932090759
+    },
+    "convnext-tiny": {
+     "label": "PermanentCrop",
+     "confidence": 0.8735531568527222
+    }
+   }
+  },
+  {
+   "sample_id": "es-ce9666b32c89",
+   "image": "gallery/es-ce9666b32c89.jpg",
+   "label": "PermanentCrop",
+   "kind": "mistake",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "Industrial",
+     "confidence": 0.46762213110923767
+    },
+    "resnet18-in1k-64px": {
+     "label": "Industrial",
+     "confidence": 0.7466647028923035
+    },
+    "mobilenetv3-large": {
+     "label": "Industrial",
+     "confidence": 0.5176030993461609
+    },
+    "efficientnet-b0": {
+     "label": "PermanentCrop",
+     "confidence": 0.3687860369682312
+    },
+    "resnet18-in1k": {
+     "label": "PermanentCrop",
+     "confidence": 0.5586402416229248
+    },
+    "resnet18-ssl4eo": {
+     "label": "Industrial",
+     "confidence": 0.3851696848869324
+    },
+    "resnet50-in1k": {
+     "label": "AnnualCrop",
+     "confidence": 0.4595978856086731
+    },
+    "resnet50-ssl4eo": {
+     "label": "AnnualCrop",
+     "confidence": 0.3777998685836792
+    },
+    "vit-small": {
+     "label": "Industrial",
+     "confidence": 0.7739964723587036
+    },
+    "convnext-tiny": {
+     "label": "Industrial",
+     "confidence": 0.7326831221580505
+    }
+   }
+  },
+  {
+   "sample_id": "es-879c244214fc",
+   "image": "gallery/es-879c244214fc.jpg",
+   "label": "HerbaceousVegetation",
+   "kind": "mistake",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "Pasture",
+     "confidence": 0.4461466372013092
+    },
+    "resnet18-in1k-64px": {
+     "label": "Pasture",
+     "confidence": 0.8205934762954712
+    },
+    "mobilenetv3-large": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.6443541049957275
+    },
+    "efficientnet-b0": {
+     "label": "Pasture",
+     "confidence": 0.7107765078544617
+    },
+    "resnet18-in1k": {
+     "label": "Pasture",
+     "confidence": 0.5913911461830139
+    },
+    "resnet18-ssl4eo": {
+     "label": "Pasture",
+     "confidence": 0.6809656023979187
+    },
+    "resnet50-in1k": {
+     "label": "Pasture",
+     "confidence": 0.6759711503982544
+    },
+    "resnet50-ssl4eo": {
+     "label": "Pasture",
+     "confidence": 0.8126366138458252
+    },
+    "vit-small": {
+     "label": "Pasture",
+     "confidence": 0.7551199793815613
+    },
+    "convnext-tiny": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.4601577818393707
+    }
+   }
+  },
+  {
+   "sample_id": "es-ec7c219addbc",
+   "image": "gallery/es-ec7c219addbc.jpg",
+   "label": "PermanentCrop",
+   "kind": "mistake",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "PermanentCrop",
+     "confidence": 0.7098909020423889
+    },
+    "resnet18-in1k-64px": {
+     "label": "PermanentCrop",
+     "confidence": 0.7510440945625305
+    },
+    "mobilenetv3-large": {
+     "label": "PermanentCrop",
+     "confidence": 0.8565996289253235
+    },
+    "efficientnet-b0": {
+     "label": "PermanentCrop",
+     "confidence": 0.8128758668899536
+    },
+    "resnet18-in1k": {
+     "label": "PermanentCrop",
+     "confidence": 0.6940313577651978
+    },
+    "resnet18-ssl4eo": {
+     "label": "PermanentCrop",
+     "confidence": 0.77325040102005
+    },
+    "resnet50-in1k": {
+     "label": "PermanentCrop",
+     "confidence": 0.6884242296218872
+    },
+    "resnet50-ssl4eo": {
+     "label": "AnnualCrop",
+     "confidence": 0.6390814185142517
+    },
+    "vit-small": {
+     "label": "AnnualCrop",
+     "confidence": 0.7514286041259766
+    },
+    "convnext-tiny": {
+     "label": "PermanentCrop",
+     "confidence": 0.7698555588722229
+    }
+   }
+  },
+  {
+   "sample_id": "es-0d5682226791",
+   "image": "gallery/es-0d5682226791.jpg",
+   "label": "PermanentCrop",
+   "kind": "mistake",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "PermanentCrop",
+     "confidence": 0.8634947538375854
+    },
+    "resnet18-in1k-64px": {
+     "label": "PermanentCrop",
+     "confidence": 0.9134542942047119
+    },
+    "mobilenetv3-large": {
+     "label": "PermanentCrop",
+     "confidence": 0.8236396908760071
+    },
+    "efficientnet-b0": {
+     "label": "PermanentCrop",
+     "confidence": 0.655640184879303
+    },
+    "resnet18-in1k": {
+     "label": "PermanentCrop",
+     "confidence": 0.5775551199913025
+    },
+    "resnet18-ssl4eo": {
+     "label": "PermanentCrop",
+     "confidence": 0.842602014541626
+    },
+    "resnet50-in1k": {
+     "label": "PermanentCrop",
+     "confidence": 0.8924360275268555
+    },
+    "resnet50-ssl4eo": {
+     "label": "PermanentCrop",
+     "confidence": 0.7172356843948364
+    },
+    "vit-small": {
+     "label": "AnnualCrop",
+     "confidence": 0.7499120831489563
+    },
+    "convnext-tiny": {
+     "label": "PermanentCrop",
+     "confidence": 0.8638500571250916
+    }
+   }
+  },
+  {
+   "sample_id": "es-fa3d22fe89e9",
+   "image": "gallery/es-fa3d22fe89e9.jpg",
+   "label": "Residential",
+   "kind": "mistake",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "Residential",
+     "confidence": 0.8826817870140076
+    },
+    "resnet18-in1k-64px": {
+     "label": "Residential",
+     "confidence": 0.6016059517860413
+    },
+    "mobilenetv3-large": {
+     "label": "Residential",
+     "confidence": 0.9022849202156067
+    },
+    "efficientnet-b0": {
+     "label": "Residential",
+     "confidence": 0.7909929156303406
+    },
+    "resnet18-in1k": {
+     "label": "Industrial",
+     "confidence": 0.650206983089447
+    },
+    "resnet18-ssl4eo": {
+     "label": "Residential",
+     "confidence": 0.544687032699585
+    },
+    "resnet50-in1k": {
+     "label": "Residential",
+     "confidence": 0.5824161767959595
+    },
+    "resnet50-ssl4eo": {
+     "label": "Residential",
+     "confidence": 0.531623363494873
+    },
+    "vit-small": {
+     "label": "Industrial",
+     "confidence": 0.7433378100395203
+    },
+    "convnext-tiny": {
+     "label": "Residential",
+     "confidence": 0.8596217632293701
+    }
+   }
+  },
+  {
+   "sample_id": "es-1a3c17f55e25",
+   "image": "gallery/es-1a3c17f55e25.jpg",
+   "label": "Pasture",
+   "kind": "mistake",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "Pasture",
+     "confidence": 0.5242685079574585
+    },
+    "resnet18-in1k-64px": {
+     "label": "Pasture",
+     "confidence": 0.680073082447052
+    },
+    "mobilenetv3-large": {
+     "label": "Pasture",
+     "confidence": 0.8715681433677673
+    },
+    "efficientnet-b0": {
+     "label": "Pasture",
+     "confidence": 0.8725171089172363
+    },
+    "resnet18-in1k": {
+     "label": "Pasture",
+     "confidence": 0.5784134864807129
+    },
+    "resnet18-ssl4eo": {
+     "label": "Pasture",
+     "confidence": 0.48639875650405884
+    },
+    "resnet50-in1k": {
+     "label": "PermanentCrop",
+     "confidence": 0.48444437980651855
+    },
+    "resnet50-ssl4eo": {
+     "label": "Pasture",
+     "confidence": 0.8379227519035339
+    },
+    "vit-small": {
+     "label": "PermanentCrop",
+     "confidence": 0.7049218416213989
+    },
+    "convnext-tiny": {
+     "label": "Pasture",
+     "confidence": 0.42919299006462097
+    }
+   }
+  },
+  {
+   "sample_id": "es-cce7566388d9",
+   "image": "gallery/es-cce7566388d9.jpg",
+   "label": "Pasture",
+   "kind": "mistake",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "PermanentCrop",
+     "confidence": 0.5234801173210144
+    },
+    "resnet18-in1k-64px": {
+     "label": "Pasture",
+     "confidence": 0.41926294565200806
+    },
+    "mobilenetv3-large": {
+     "label": "Pasture",
+     "confidence": 0.7409504055976868
+    },
+    "efficientnet-b0": {
+     "label": "Pasture",
+     "confidence": 0.6748233437538147
+    },
+    "resnet18-in1k": {
+     "label": "Pasture",
+     "confidence": 0.4099435806274414
+    },
+    "resnet18-ssl4eo": {
+     "label": "PermanentCrop",
+     "confidence": 0.48935383558273315
+    },
+    "resnet50-in1k": {
+     "label": "Pasture",
+     "confidence": 0.5826647281646729
+    },
+    "resnet50-ssl4eo": {
+     "label": "Pasture",
+     "confidence": 0.7357829213142395
+    },
+    "vit-small": {
+     "label": "PermanentCrop",
+     "confidence": 0.6914274096488953
+    },
+    "convnext-tiny": {
+     "label": "PermanentCrop",
+     "confidence": 0.6123818755149841
+    }
+   }
+  },
+  {
+   "sample_id": "es-0e95034008b5",
+   "image": "gallery/es-0e95034008b5.jpg",
+   "label": "Residential",
+   "kind": "mistake",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "Residential",
+     "confidence": 0.41684281826019287
+    },
+    "resnet18-in1k-64px": {
+     "label": "Residential",
+     "confidence": 0.6184452772140503
+    },
+    "mobilenetv3-large": {
+     "label": "Residential",
+     "confidence": 0.7877566814422607
+    },
+    "efficientnet-b0": {
+     "label": "Highway",
+     "confidence": 0.5604805946350098
+    },
+    "resnet18-in1k": {
+     "label": "Residential",
+     "confidence": 0.7301890254020691
+    },
+    "resnet18-ssl4eo": {
+     "label": "Residential",
+     "confidence": 0.8029520511627197
+    },
+    "resnet50-in1k": {
+     "label": "Residential",
+     "confidence": 0.4975681006908417
+    },
+    "resnet50-ssl4eo": {
+     "label": "Residential",
+     "confidence": 0.8188483119010925
+    },
+    "vit-small": {
+     "label": "Highway",
+     "confidence": 0.6589625477790833
+    },
+    "convnext-tiny": {
+     "label": "Residential",
+     "confidence": 0.8885616064071655
+    }
+   }
+  },
+  {
+   "sample_id": "es-d7e28228d296",
+   "image": "gallery/es-d7e28228d296.jpg",
+   "label": "PermanentCrop",
+   "kind": "mistake",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "PermanentCrop",
+     "confidence": 0.5059286952018738
+    },
+    "resnet18-in1k-64px": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.8376624584197998
+    },
+    "mobilenetv3-large": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.8376542329788208
+    },
+    "efficientnet-b0": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.8738875985145569
+    },
+    "resnet18-in1k": {
+     "label": "PermanentCrop",
+     "confidence": 0.557532012462616
+    },
+    "resnet18-ssl4eo": {
+     "label": "PermanentCrop",
+     "confidence": 0.4625391960144043
+    },
+    "resnet50-in1k": {
+     "label": "PermanentCrop",
+     "confidence": 0.451170414686203
+    },
+    "resnet50-ssl4eo": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.6026633381843567
+    },
+    "vit-small": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.6562204957008362
+    },
+    "convnext-tiny": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.5300385355949402
+    }
+   }
+  },
+  {
+   "sample_id": "es-89455c899642",
+   "image": "gallery/es-89455c899642.jpg",
+   "label": "AnnualCrop",
+   "kind": "correct",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "AnnualCrop",
+     "confidence": 0.8419094085693359
+    },
+    "resnet18-in1k-64px": {
+     "label": "AnnualCrop",
+     "confidence": 0.9214270114898682
+    },
+    "mobilenetv3-large": {
+     "label": "AnnualCrop",
+     "confidence": 0.9212390184402466
+    },
+    "efficientnet-b0": {
+     "label": "AnnualCrop",
+     "confidence": 0.9149021506309509
+    },
+    "resnet18-in1k": {
+     "label": "AnnualCrop",
+     "confidence": 0.9198201298713684
+    },
+    "resnet18-ssl4eo": {
+     "label": "AnnualCrop",
+     "confidence": 0.9107836484909058
+    },
+    "resnet50-in1k": {
+     "label": "AnnualCrop",
+     "confidence": 0.9309154748916626
+    },
+    "resnet50-ssl4eo": {
+     "label": "AnnualCrop",
+     "confidence": 0.9327254295349121
+    },
+    "vit-small": {
+     "label": "AnnualCrop",
+     "confidence": 0.9383256435394287
+    },
+    "convnext-tiny": {
+     "label": "AnnualCrop",
+     "confidence": 0.9093220829963684
+    }
+   }
+  },
+  {
+   "sample_id": "es-4f035fe47a72",
+   "image": "gallery/es-4f035fe47a72.jpg",
+   "label": "Forest",
+   "kind": "correct",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "Forest",
+     "confidence": 0.8141396045684814
+    },
+    "resnet18-in1k-64px": {
+     "label": "Forest",
+     "confidence": 0.9004606604576111
+    },
+    "mobilenetv3-large": {
+     "label": "Forest",
+     "confidence": 0.8249660730361938
+    },
+    "efficientnet-b0": {
+     "label": "Forest",
+     "confidence": 0.9404970407485962
+    },
+    "resnet18-in1k": {
+     "label": "Forest",
+     "confidence": 0.6849550008773804
+    },
+    "resnet18-ssl4eo": {
+     "label": "Forest",
+     "confidence": 0.3764604926109314
+    },
+    "resnet50-in1k": {
+     "label": "Forest",
+     "confidence": 0.8200316429138184
+    },
+    "resnet50-ssl4eo": {
+     "label": "Forest",
+     "confidence": 0.5220826864242554
+    },
+    "vit-small": {
+     "label": "Forest",
+     "confidence": 0.9261956810951233
+    },
+    "convnext-tiny": {
+     "label": "Forest",
+     "confidence": 0.9089757204055786
+    }
+   }
+  },
+  {
+   "sample_id": "es-1f3ee21111c6",
+   "image": "gallery/es-1f3ee21111c6.jpg",
+   "label": "HerbaceousVegetation",
+   "kind": "correct",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.8896249532699585
+    },
+    "resnet18-in1k-64px": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.8965063095092773
+    },
+    "mobilenetv3-large": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.8839088678359985
+    },
+    "efficientnet-b0": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.9145282506942749
+    },
+    "resnet18-in1k": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.9200612902641296
+    },
+    "resnet18-ssl4eo": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.9385169148445129
+    },
+    "resnet50-in1k": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.9350916147232056
+    },
+    "resnet50-ssl4eo": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.8829981684684753
+    },
+    "vit-small": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.944446861743927
+    },
+    "convnext-tiny": {
+     "label": "HerbaceousVegetation",
+     "confidence": 0.9269686341285706
+    }
+   }
+  },
+  {
+   "sample_id": "es-2be398862aa1",
+   "image": "gallery/es-2be398862aa1.jpg",
+   "label": "Highway",
+   "kind": "correct",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "Highway",
+     "confidence": 0.9140040874481201
+    },
+    "resnet18-in1k-64px": {
+     "label": "Highway",
+     "confidence": 0.9143499732017517
+    },
+    "mobilenetv3-large": {
+     "label": "Highway",
+     "confidence": 0.9329307079315186
+    },
+    "efficientnet-b0": {
+     "label": "Highway",
+     "confidence": 0.9204561114311218
+    },
+    "resnet18-in1k": {
+     "label": "Highway",
+     "confidence": 0.8849685192108154
+    },
+    "resnet18-ssl4eo": {
+     "label": "Highway",
+     "confidence": 0.8833509683609009
+    },
+    "resnet50-in1k": {
+     "label": "Highway",
+     "confidence": 0.9037889838218689
+    },
+    "resnet50-ssl4eo": {
+     "label": "Highway",
+     "confidence": 0.8956365585327148
+    },
+    "vit-small": {
+     "label": "Highway",
+     "confidence": 0.924677848815918
+    },
+    "convnext-tiny": {
+     "label": "Highway",
+     "confidence": 0.9246412515640259
+    }
+   }
+  },
+  {
+   "sample_id": "es-49f2b6ab6ffc",
+   "image": "gallery/es-49f2b6ab6ffc.jpg",
+   "label": "Industrial",
+   "kind": "correct",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "Industrial",
+     "confidence": 0.9099008440971375
+    },
+    "resnet18-in1k-64px": {
+     "label": "Industrial",
+     "confidence": 0.9109397530555725
+    },
+    "mobilenetv3-large": {
+     "label": "Industrial",
+     "confidence": 0.9092398881912231
+    },
+    "efficientnet-b0": {
+     "label": "Industrial",
+     "confidence": 0.8965720534324646
+    },
+    "resnet18-in1k": {
+     "label": "Industrial",
+     "confidence": 0.9100661277770996
+    },
+    "resnet18-ssl4eo": {
+     "label": "Industrial",
+     "confidence": 0.9068311452865601
+    },
+    "resnet50-in1k": {
+     "label": "Industrial",
+     "confidence": 0.9067698121070862
+    },
+    "resnet50-ssl4eo": {
+     "label": "Industrial",
+     "confidence": 0.9199745655059814
+    },
+    "vit-small": {
+     "label": "Industrial",
+     "confidence": 0.9309242963790894
+    },
+    "convnext-tiny": {
+     "label": "Industrial",
+     "confidence": 0.9089617729187012
+    }
+   }
+  },
+  {
+   "sample_id": "es-6b09c9bf867e",
+   "image": "gallery/es-6b09c9bf867e.jpg",
+   "label": "Pasture",
+   "kind": "correct",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "Pasture",
+     "confidence": 0.903476357460022
+    },
+    "resnet18-in1k-64px": {
+     "label": "Pasture",
+     "confidence": 0.9097090363502502
+    },
+    "mobilenetv3-large": {
+     "label": "Pasture",
+     "confidence": 0.8493173122406006
+    },
+    "efficientnet-b0": {
+     "label": "Pasture",
+     "confidence": 0.9017378091812134
+    },
+    "resnet18-in1k": {
+     "label": "Pasture",
+     "confidence": 0.8599281907081604
+    },
+    "resnet18-ssl4eo": {
+     "label": "Pasture",
+     "confidence": 0.8403729796409607
+    },
+    "resnet50-in1k": {
+     "label": "Pasture",
+     "confidence": 0.8898473381996155
+    },
+    "resnet50-ssl4eo": {
+     "label": "Pasture",
+     "confidence": 0.9150273203849792
+    },
+    "vit-small": {
+     "label": "Pasture",
+     "confidence": 0.947089433670044
+    },
+    "convnext-tiny": {
+     "label": "Pasture",
+     "confidence": 0.9078340530395508
+    }
+   }
+  },
+  {
+   "sample_id": "es-f46992b4f7ae",
+   "image": "gallery/es-f46992b4f7ae.jpg",
+   "label": "PermanentCrop",
+   "kind": "correct",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "PermanentCrop",
+     "confidence": 0.908791184425354
+    },
+    "resnet18-in1k-64px": {
+     "label": "PermanentCrop",
+     "confidence": 0.9351045489311218
+    },
+    "mobilenetv3-large": {
+     "label": "PermanentCrop",
+     "confidence": 0.9107584357261658
+    },
+    "efficientnet-b0": {
+     "label": "PermanentCrop",
+     "confidence": 0.8439109325408936
+    },
+    "resnet18-in1k": {
+     "label": "PermanentCrop",
+     "confidence": 0.8478650450706482
+    },
+    "resnet18-ssl4eo": {
+     "label": "PermanentCrop",
+     "confidence": 0.8788801431655884
+    },
+    "resnet50-in1k": {
+     "label": "PermanentCrop",
+     "confidence": 0.9349759817123413
+    },
+    "resnet50-ssl4eo": {
+     "label": "PermanentCrop",
+     "confidence": 0.7616473436355591
+    },
+    "vit-small": {
+     "label": "PermanentCrop",
+     "confidence": 0.9385204911231995
+    },
+    "convnext-tiny": {
+     "label": "PermanentCrop",
+     "confidence": 0.9316492676734924
+    }
+   }
+  },
+  {
+   "sample_id": "es-b0b2f6c19c2a",
+   "image": "gallery/es-b0b2f6c19c2a.jpg",
+   "label": "Residential",
+   "kind": "correct",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "Residential",
+     "confidence": 0.8730654716491699
+    },
+    "resnet18-in1k-64px": {
+     "label": "Residential",
+     "confidence": 0.9070720672607422
+    },
+    "mobilenetv3-large": {
+     "label": "Residential",
+     "confidence": 0.9315276741981506
+    },
+    "efficientnet-b0": {
+     "label": "Residential",
+     "confidence": 0.9091181755065918
+    },
+    "resnet18-in1k": {
+     "label": "Residential",
+     "confidence": 0.9436770677566528
+    },
+    "resnet18-ssl4eo": {
+     "label": "Residential",
+     "confidence": 0.9290809631347656
+    },
+    "resnet50-in1k": {
+     "label": "Residential",
+     "confidence": 0.9367017149925232
+    },
+    "resnet50-ssl4eo": {
+     "label": "Residential",
+     "confidence": 0.9155727028846741
+    },
+    "vit-small": {
+     "label": "Residential",
+     "confidence": 0.9219352006912231
+    },
+    "convnext-tiny": {
+     "label": "Residential",
+     "confidence": 0.9123055934906006
+    }
+   }
+  },
+  {
+   "sample_id": "es-8472aa26ff86",
+   "image": "gallery/es-8472aa26ff86.jpg",
+   "label": "River",
+   "kind": "correct",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "River",
+     "confidence": 0.9389054775238037
+    },
+    "resnet18-in1k-64px": {
+     "label": "River",
+     "confidence": 0.9131640195846558
+    },
+    "mobilenetv3-large": {
+     "label": "River",
+     "confidence": 0.9195947647094727
+    },
+    "efficientnet-b0": {
+     "label": "River",
+     "confidence": 0.9478253722190857
+    },
+    "resnet18-in1k": {
+     "label": "River",
+     "confidence": 0.941110372543335
+    },
+    "resnet18-ssl4eo": {
+     "label": "River",
+     "confidence": 0.9387696385383606
+    },
+    "resnet50-in1k": {
+     "label": "River",
+     "confidence": 0.8853538036346436
+    },
+    "resnet50-ssl4eo": {
+     "label": "River",
+     "confidence": 0.9086259007453918
+    },
+    "vit-small": {
+     "label": "River",
+     "confidence": 0.9340271353721619
+    },
+    "convnext-tiny": {
+     "label": "River",
+     "confidence": 0.9076924920082092
+    }
+   }
+  },
+  {
+   "sample_id": "es-650091ad598e",
+   "image": "gallery/es-650091ad598e.jpg",
+   "label": "SeaLake",
+   "kind": "correct",
+   "predictions": {
+    "simplecnn-scratch": {
+     "label": "SeaLake",
+     "confidence": 0.9088437557220459
+    },
+    "resnet18-in1k-64px": {
+     "label": "SeaLake",
+     "confidence": 0.9048162698745728
+    },
+    "mobilenetv3-large": {
+     "label": "SeaLake",
+     "confidence": 0.9228633046150208
+    },
+    "efficientnet-b0": {
+     "label": "SeaLake",
+     "confidence": 0.9212091565132141
+    },
+    "resnet18-in1k": {
+     "label": "SeaLake",
+     "confidence": 0.9418386220932007
+    },
+    "resnet18-ssl4eo": {
+     "label": "SeaLake",
+     "confidence": 0.9045134782791138
+    },
+    "resnet50-in1k": {
+     "label": "SeaLake",
+     "confidence": 0.9083789587020874
+    },
+    "resnet50-ssl4eo": {
+     "label": "SeaLake",
+     "confidence": 0.8684231638908386
+    },
+    "vit-small": {
+     "label": "SeaLake",
+     "confidence": 0.9502463936805725
+    },
+    "convnext-tiny": {
+     "label": "SeaLake",
+     "confidence": 0.9116761088371277
+    }
+   }
+  }
+ ],
+ "corruption_examples": [
+  {
+   "index": 0,
+   "label": "HerbaceousVegetation"
+  },
+  {
+   "index": 1,
+   "label": "PermanentCrop"
+  }
+ ],
+ "thumb_px": 128,
+ "model_names": {
+  "simplecnn-scratch": "SimpleCNN (from scratch)",
+  "resnet18-in1k-64px": "ResNet-18 @64px (v1 baseline recipe)",
+  "mobilenetv3-large": "MobileNetV3-Large",
+  "efficientnet-b0": "EfficientNet-B0",
+  "resnet18-in1k": "ResNet-18",
+  "resnet18-ssl4eo": "ResNet-18 (SSL4EO-S12 MoCo)",
+  "resnet50-in1k": "ResNet-50",
+  "resnet50-ssl4eo": "ResNet-50 (SSL4EO-S12 MoCo)",
+  "vit-small": "ViT-S/16",
+  "convnext-tiny": "ConvNeXt-T"
+ }
+}

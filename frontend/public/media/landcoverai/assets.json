@@ -1,0 +1,251 @@
+{
+ "samples": [
+  {
+   "sample_id": "M-33-7-A-d-3-2_203",
+   "image": "samples/M-33-7-A-d-3-2_203.jpg",
+   "gt": "samples/M-33-7-A-d-3-2_203_gt.png",
+   "class_fractions": [
+    0.2609138488769531,
+    0.0,
+    0.41240692138671875,
+    0.21345901489257812,
+    0.11322021484375
+   ],
+   "predictions": {
+    "unet-resnet34": {
+     "mask": "samples/M-33-7-A-d-3-2_203_unet-resnet34.png",
+     "miou": 0.7981971376127683
+    },
+    "deeplabv3plus-resnet50": {
+     "mask": "samples/M-33-7-A-d-3-2_203_deeplabv3plus-resnet50.png",
+     "miou": 0.7391378339793954
+    },
+    "segformer-mitb2": {
+     "mask": "samples/M-33-7-A-d-3-2_203_segformer-mitb2.png",
+     "miou": 0.8312066848256262
+    }
+   }
+  },
+  {
+   "sample_id": "N-33-130-A-d-4-4_139",
+   "image": "samples/N-33-130-A-d-4-4_139.jpg",
+   "gt": "samples/N-33-130-A-d-4-4_139_gt.png",
+   "class_fractions": [
+    0.44964599609375,
+    0.20401763916015625,
+    0.18927001953125,
+    0.0,
+    0.15706634521484375
+   ],
+   "predictions": {
+    "unet-resnet34": {
+     "mask": "samples/N-33-130-A-d-4-4_139_unet-resnet34.png",
+     "miou": 0.703338302037024
+    },
+    "deeplabv3plus-resnet50": {
+     "mask": "samples/N-33-130-A-d-4-4_139_deeplabv3plus-resnet50.png",
+     "miou": 0.714754827509717
+    },
+    "segformer-mitb2": {
+     "mask": "samples/N-33-130-A-d-4-4_139_segformer-mitb2.png",
+     "miou": 0.753822755026654
+    }
+   }
+  },
+  {
+   "sample_id": "M-34-51-C-d-4-1_246",
+   "image": "samples/M-34-51-C-d-4-1_246.jpg",
+   "gt": "samples/M-34-51-C-d-4-1_246_gt.png",
+   "class_fractions": [
+    0.3504447937011719,
+    0.028163909912109375,
+    0.12358474731445312,
+    0.4404411315917969,
+    0.05736541748046875
+   ],
+   "predictions": {
+    "unet-resnet34": {
+     "mask": "samples/M-34-51-C-d-4-1_246_unet-resnet34.png",
+     "miou": 0.7409247390324714
+    },
+    "deeplabv3plus-resnet50": {
+     "mask": "samples/M-34-51-C-d-4-1_246_deeplabv3plus-resnet50.png",
+     "miou": 0.7233919214465736
+    },
+    "segformer-mitb2": {
+     "mask": "samples/M-34-51-C-d-4-1_246_segformer-mitb2.png",
+     "miou": 0.7503472762152017
+    }
+   }
+  },
+  {
+   "sample_id": "N-34-97-C-b-1-2_61",
+   "image": "samples/N-34-97-C-b-1-2_61.jpg",
+   "gt": "samples/N-34-97-C-b-1-2_61_gt.png",
+   "class_fractions": [
+    0.23899078369140625,
+    0.010211944580078125,
+    0.3811073303222656,
+    0.3424034118652344,
+    0.027286529541015625
+   ],
+   "predictions": {
+    "unet-resnet34": {
+     "mask": "samples/N-34-97-C-b-1-2_61_unet-resnet34.png",
+     "miou": 0.7912491605618619
+    },
+    "deeplabv3plus-resnet50": {
+     "mask": "samples/N-34-97-C-b-1-2_61_deeplabv3plus-resnet50.png",
+     "miou": 0.6747945960903307
+    },
+    "segformer-mitb2": {
+     "mask": "samples/N-34-97-C-b-1-2_61_segformer-mitb2.png",
+     "miou": 0.8014220401400565
+    }
+   }
+  },
+  {
+   "sample_id": "N-34-140-A-d-3-4_83",
+   "image": "samples/N-34-140-A-d-3-4_83.jpg",
+   "gt": "samples/N-34-140-A-d-3-4_83_gt.png",
+   "class_fractions": [
+    0.5174674987792969,
+    0.16391754150390625,
+    0.24724578857421875,
+    0.0,
+    0.07136917114257812
+   ],
+   "predictions": {
+    "unet-resnet34": {
+     "mask": "samples/N-34-140-A-d-3-4_83_unet-resnet34.png",
+     "miou": 0.6849561608276085
+    },
+    "deeplabv3plus-resnet50": {
+     "mask": "samples/N-34-140-A-d-3-4_83_deeplabv3plus-resnet50.png",
+     "miou": 0.6470880811098543
+    },
+    "segformer-mitb2": {
+     "mask": "samples/N-34-140-A-d-3-4_83_segformer-mitb2.png",
+     "miou": 0.7985581998568397
+    }
+   }
+  },
+  {
+   "sample_id": "N-34-77-A-b-1-4_28",
+   "image": "samples/N-34-77-A-b-1-4_28.jpg",
+   "gt": "samples/N-34-77-A-b-1-4_28_gt.png",
+   "class_fractions": [
+    0.4951591491699219,
+    0.040599822998046875,
+    0.3586578369140625,
+    0.036312103271484375,
+    0.06927108764648438
+   ],
+   "predictions": {
+    "unet-resnet34": {
+     "mask": "samples/N-34-77-A-b-1-4_28_unet-resnet34.png",
+     "miou": 0.7631816649123075
+    },
+    "deeplabv3plus-resnet50": {
+     "mask": "samples/N-34-77-A-b-1-4_28_deeplabv3plus-resnet50.png",
+     "miou": 0.7448504236367054
+    },
+    "segformer-mitb2": {
+     "mask": "samples/N-34-77-A-b-1-4_28_segformer-mitb2.png",
+     "miou": 0.7920416957257711
+    }
+   }
+  },
+  {
+   "sample_id": "M-34-68-B-a-1-3_304",
+   "image": "samples/M-34-68-B-a-1-3_304.jpg",
+   "gt": "samples/M-34-68-B-a-1-3_304_gt.png",
+   "class_fractions": [
+    0.5745468139648438,
+    0.12534713745117188,
+    0.16138458251953125,
+    0.0,
+    0.13872146606445312
+   ],
+   "predictions": {
+    "unet-resnet34": {
+     "mask": "samples/M-34-68-B-a-1-3_304_unet-resnet34.png",
+     "miou": 0.7431651355648994
+    },
+    "deeplabv3plus-resnet50": {
+     "mask": "samples/M-34-68-B-a-1-3_304_deeplabv3plus-resnet50.png",
+     "miou": 0.6992905763768092
+    },
+    "segformer-mitb2": {
+     "mask": "samples/M-34-68-B-a-1-3_304_segformer-mitb2.png",
+     "miou": 0.7467594812412142
+    }
+   }
+  },
+  {
+   "sample_id": "M-34-32-B-b-1-3_311",
+   "image": "samples/M-34-32-B-b-1-3_311.jpg",
+   "gt": "samples/M-34-32-B-b-1-3_311_gt.png",
+   "class_fractions": [
+    0.5553169250488281,
+    0.0,
+    0.21583175659179688,
+    0.14465713500976562,
+    0.08419418334960938
+   ],
+   "predictions": {
+    "unet-resnet34": {
+     "mask": "samples/M-34-32-B-b-1-3_311_unet-resnet34.png",
+     "miou": 0.8032598734327256
+    },
+    "deeplabv3plus-resnet50": {
+     "mask": "samples/M-34-32-B-b-1-3_311_deeplabv3plus-resnet50.png",
+     "miou": 0.7822087563297231
+    },
+    "segformer-mitb2": {
+     "mask": "samples/M-34-32-B-b-1-3_311_segformer-mitb2.png",
+     "miou": 0.8101420869361802
+    }
+   }
+  }
+ ],
+ "palette": [
+  [
+   222,
+   214,
+   190
+  ],
+  [
+   213,
+   62,
+   79
+  ],
+  [
+   46,
+   125,
+   79
+  ],
+  [
+   49,
+   116,
+   196
+  ],
+  [
+   245,
+   178,
+   40
+  ]
+ ],
+ "classes": [
+  "background",
+  "building",
+  "woodland",
+  "water",
+  "road"
+ ],
+ "model_names": {
+  "unet-resnet34": "U-Net \u00b7 ResNet-34",
+  "deeplabv3plus-resnet50": "DeepLabV3+ \u00b7 ResNet-50",
+  "segformer-mitb2": "SegFormer \u00b7 MiT-B2"
+ }
+}

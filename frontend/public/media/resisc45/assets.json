@@ -1,0 +1,2861 @@
+{
+ "classes": {
+  "airplane": [
+   "classes/airplane_0.jpg",
+   "classes/airplane_1.jpg",
+   "classes/airplane_2.jpg",
+   "classes/airplane_3.jpg",
+   "classes/airplane_4.jpg",
+   "classes/airplane_5.jpg"
+  ],
+  "airport": [
+   "classes/airport_0.jpg",
+   "classes/airport_1.jpg",
+   "classes/airport_2.jpg",
+   "classes/airport_3.jpg",
+   "classes/airport_4.jpg",
+   "classes/airport_5.jpg"
+  ],
+  "baseball_diamond": [
+   "classes/baseball_diamond_0.jpg",
+   "classes/baseball_diamond_1.jpg",
+   "classes/baseball_diamond_2.jpg",
+   "classes/baseball_diamond_3.jpg",
+   "classes/baseball_diamond_4.jpg",
+   "classes/baseball_diamond_5.jpg"
+  ],
+  "basketball_court": [
+   "classes/basketball_court_0.jpg",
+   "classes/basketball_court_1.jpg",
+   "classes/basketball_court_2.jpg",
+   "classes/basketball_court_3.jpg",
+   "classes/basketball_court_4.jpg",
+   "classes/basketball_court_5.jpg"
+  ],
+  "beach": [
+   "classes/beach_0.jpg",
+   "classes/beach_1.jpg",
+   "classes/beach_2.jpg",
+   "classes/beach_3.jpg",
+   "classes/beach_4.jpg",
+   "classes/beach_5.jpg"
+  ],
+  "bridge": [
+   "classes/bridge_0.jpg",
+   "classes/bridge_1.jpg",
+   "classes/bridge_2.jpg",
+   "classes/bridge_3.jpg",
+   "classes/bridge_4.jpg",
+   "classes/bridge_5.jpg"
+  ],
+  "chaparral": [
+   "classes/chaparral_0.jpg",
+   "classes/chaparral_1.jpg",
+   "classes/chaparral_2.jpg",
+   "classes/chaparral_3.jpg",
+   "classes/chaparral_4.jpg",
+   "classes/chaparral_5.jpg"
+  ],
+  "church": [
+   "classes/church_0.jpg",
+   "classes/church_1.jpg",
+   "classes/church_2.jpg",
+   "classes/church_3.jpg",
+   "classes/church_4.jpg",
+   "classes/church_5.jpg"
+  ],
+  "circular_farmland": [
+   "classes/circular_farmland_0.jpg",
+   "classes/circular_farmland_1.jpg",
+   "classes/circular_farmland_2.jpg",
+   "classes/circular_farmland_3.jpg",
+   "classes/circular_farmland_4.jpg",
+   "classes/circular_farmland_5.jpg"
+  ],
+  "cloud": [
+   "classes/cloud_0.jpg",
+   "classes/cloud_1.jpg",
+   "classes/cloud_2.jpg",
+   "classes/cloud_3.jpg",
+   "classes/cloud_4.jpg",
+   "classes/cloud_5.jpg"
+  ],
+  "commercial_area": [
+   "classes/commercial_area_0.jpg",
+   "classes/commercial_area_1.jpg",
+   "classes/commercial_area_2.jpg",
+   "classes/commercial_area_3.jpg",
+   "classes/commercial_area_4.jpg",
+   "classes/commercial_area_5.jpg"
+  ],
+  "dense_residential": [
+   "classes/dense_residential_0.jpg",
+   "classes/dense_residential_1.jpg",
+   "classes/dense_residential_2.jpg",
+   "classes/dense_residential_3.jpg",
+   "classes/dense_residential_4.jpg",
+   "classes/dense_residential_5.jpg"
+  ],
+  "desert": [
+   "classes/desert_0.jpg",
+   "classes/desert_1.jpg",
+   "classes/desert_2.jpg",
+   "classes/desert_3.jpg",
+   "classes/desert_4.jpg",
+   "classes/desert_5.jpg"
+  ],
+  "forest": [
+   "classes/forest_0.jpg",
+   "classes/forest_1.jpg",
+   "classes/forest_2.jpg",
+   "classes/forest_3.jpg",
+   "classes/forest_4.jpg",
+   "classes/forest_5.jpg"
+  ],
+  "freeway": [
+   "classes/freeway_0.jpg",
+   "classes/freeway_1.jpg",
+   "classes/freeway_2.jpg",
+   "classes/freeway_3.jpg",
+   "classes/freeway_4.jpg",
+   "classes/freeway_5.jpg"
+  ],
+  "golf_course": [
+   "classes/golf_course_0.jpg",
+   "classes/golf_course_1.jpg",
+   "classes/golf_course_2.jpg",
+   "classes/golf_course_3.jpg",
+   "classes/golf_course_4.jpg",
+   "classes/golf_course_5.jpg"
+  ],
+  "ground_track_field": [
+   "classes/ground_track_field_0.jpg",
+   "classes/ground_track_field_1.jpg",
+   "classes/ground_track_field_2.jpg",
+   "classes/ground_track_field_3.jpg",
+   "classes/ground_track_field_4.jpg",
+   "classes/ground_track_field_5.jpg"
+  ],
+  "harbor": [
+   "classes/harbor_0.jpg",
+   "classes/harbor_1.jpg",
+   "classes/harbor_2.jpg",
+   "classes/harbor_3.jpg",
+   "classes/harbor_4.jpg",
+   "classes/harbor_5.jpg"
+  ],
+  "industrial_area": [
+   "classes/industrial_area_0.jpg",
+   "classes/industrial_area_1.jpg",
+   "classes/industrial_area_2.jpg",
+   "classes/industrial_area_3.jpg",
+   "classes/industrial_area_4.jpg",
+   "classes/industrial_area_5.jpg"
+  ],
+  "intersection": [
+   "classes/intersection_0.jpg",
+   "classes/intersection_1.jpg",
+   "classes/intersection_2.jpg",
+   "classes/intersection_3.jpg",
+   "classes/intersection_4.jpg",
+   "classes/intersection_5.jpg"
+  ],
+  "island": [
+   "classes/island_0.jpg",
+   "classes/island_1.jpg",
+   "classes/island_2.jpg",
+   "classes/island_3.jpg",
+   "classes/island_4.jpg",
+   "classes/island_5.jpg"
+  ],
+  "lake": [
+   "classes/lake_0.jpg",
+   "classes/lake_1.jpg",
+   "classes/lake_2.jpg",
+   "classes/lake_3.jpg",
+   "classes/lake_4.jpg",
+   "classes/lake_5.jpg"
+  ],
+  "meadow": [
+   "classes/meadow_0.jpg",
+   "classes/meadow_1.jpg",
+   "classes/meadow_2.jpg",
+   "classes/meadow_3.jpg",
+   "classes/meadow_4.jpg",
+   "classes/meadow_5.jpg"
+  ],
+  "medium_residential": [
+   "classes/medium_residential_0.jpg",
+   "classes/medium_residential_1.jpg",
+   "classes/medium_residential_2.jpg",
+   "classes/medium_residential_3.jpg",
+   "classes/medium_residential_4.jpg",
+   "classes/medium_residential_5.jpg"
+  ],
+  "mobile_home_park": [
+   "classes/mobile_home_park_0.jpg",
+   "classes/mobile_home_park_1.jpg",
+   "classes/mobile_home_park_2.jpg",
+   "classes/mobile_home_park_3.jpg",
+   "classes/mobile_home_park_4.jpg",
+   "classes/mobile_home_park_5.jpg"
+  ],
+  "mountain": [
+   "classes/mountain_0.jpg",
+   "classes/mountain_1.jpg",
+   "classes/mountain_2.jpg",
+   "classes/mountain_3.jpg",
+   "classes/mountain_4.jpg",
+   "classes/mountain_5.jpg"
+  ],
+  "overpass": [
+   "classes/overpass_0.jpg",
+   "classes/overpass_1.jpg",
+   "classes/overpass_2.jpg",
+   "classes/overpass_3.jpg",
+   "classes/overpass_4.jpg",
+   "classes/overpass_5.jpg"
+  ],
+  "palace": [
+   "classes/palace_0.jpg",
+   "classes/palace_1.jpg",
+   "classes/palace_2.jpg",
+   "classes/palace_3.jpg",
+   "classes/palace_4.jpg",
+   "classes/palace_5.jpg"
+  ],
+  "parking_lot": [
+   "classes/parking_lot_0.jpg",
+   "classes/parking_lot_1.jpg",
+   "classes/parking_lot_2.jpg",
+   "classes/parking_lot_3.jpg",
+   "classes/parking_lot_4.jpg",
+   "classes/parking_lot_5.jpg"
+  ],
+  "railway": [
+   "classes/railway_0.jpg",
+   "classes/railway_1.jpg",
+   "classes/railway_2.jpg",
+   "classes/railway_3.jpg",
+   "classes/railway_4.jpg",
+   "classes/railway_5.jpg"
+  ],
+  "railway_station": [
+   "classes/railway_station_0.jpg",
+   "classes/railway_station_1.jpg",
+   "classes/railway_station_2.jpg",
+   "classes/railway_station_3.jpg",
+   "classes/railway_station_4.jpg",
+   "classes/railway_station_5.jpg"
+  ],
+  "rectangular_farmland": [
+   "classes/rectangular_farmland_0.jpg",
+   "classes/rectangular_farmland_1.jpg",
+   "classes/rectangular_farmland_2.jpg",
+   "classes/rectangular_farmland_3.jpg",
+   "classes/rectangular_farmland_4.jpg",
+   "classes/rectangular_farmland_5.jpg"
+  ],
+  "river": [
+   "classes/river_0.jpg",
+   "classes/river_1.jpg",
+   "classes/river_2.jpg",
+   "classes/river_3.jpg",
+   "classes/river_4.jpg",
+   "classes/river_5.jpg"
+  ],
+  "roundabout": [
+   "classes/roundabout_0.jpg",
+   "classes/roundabout_1.jpg",
+   "classes/roundabout_2.jpg",
+   "classes/roundabout_3.jpg",
+   "classes/roundabout_4.jpg",
+   "classes/roundabout_5.jpg"
+  ],
+  "runway": [
+   "classes/runway_0.jpg",
+   "classes/runway_1.jpg",
+   "classes/runway_2.jpg",
+   "classes/runway_3.jpg",
+   "classes/runway_4.jpg",
+   "classes/runway_5.jpg"
+  ],
+  "sea_ice": [
+   "classes/sea_ice_0.jpg",
+   "classes/sea_ice_1.jpg",
+   "classes/sea_ice_2.jpg",
+   "classes/sea_ice_3.jpg",
+   "classes/sea_ice_4.jpg",
+   "classes/sea_ice_5.jpg"
+  ],
+  "ship": [
+   "classes/ship_0.jpg",
+   "classes/ship_1.jpg",
+   "classes/ship_2.jpg",
+   "classes/ship_3.jpg",
+   "classes/ship_4.jpg",
+   "classes/ship_5.jpg"
+  ],
+  "snowberg": [
+   "classes/snowberg_0.jpg",
+   "classes/snowberg_1.jpg",
+   "classes/snowberg_2.jpg",
+   "classes/snowberg_3.jpg",
+   "classes/snowberg_4.jpg",
+   "classes/snowberg_5.jpg"
+  ],
+  "sparse_residential": [
+   "classes/sparse_residential_0.jpg",
+   "classes/sparse_residential_1.jpg",
+   "classes/sparse_residential_2.jpg",
+   "classes/sparse_residential_3.jpg",
+   "classes/sparse_residential_4.jpg",
+   "classes/sparse_residential_5.jpg"
+  ],
+  "stadium": [
+   "classes/stadium_0.jpg",
+   "classes/stadium_1.jpg",
+   "classes/stadium_2.jpg",
+   "classes/stadium_3.jpg",
+   "classes/stadium_4.jpg",
+   "classes/stadium_5.jpg"
+  ],
+  "storage_tank": [
+   "classes/storage_tank_0.jpg",
+   "classes/storage_tank_1.jpg",
+   "classes/storage_tank_2.jpg",
+   "classes/storage_tank_3.jpg",
+   "classes/storage_tank_4.jpg",
+   "classes/storage_tank_5.jpg"
+  ],
+  "tennis_court": [
+   "classes/tennis_court_0.jpg",
+   "classes/tennis_court_1.jpg",
+   "classes/tennis_court_2.jpg",
+   "classes/tennis_court_3.jpg",
+   "classes/tennis_court_4.jpg",
+   "classes/tennis_court_5.jpg"
+  ],
+  "terrace": [
+   "classes/terrace_0.jpg",
+   "classes/terrace_1.jpg",
+   "classes/terrace_2.jpg",
+   "classes/terrace_3.jpg",
+   "classes/terrace_4.jpg",
+   "classes/terrace_5.jpg"
+  ],
+  "thermal_power_station": [
+   "classes/thermal_power_station_0.jpg",
+   "classes/thermal_power_station_1.jpg",
+   "classes/thermal_power_station_2.jpg",
+   "classes/thermal_power_station_3.jpg",
+   "classes/thermal_power_station_4.jpg",
+   "classes/thermal_power_station_5.jpg"
+  ],
+  "wetland": [
+   "classes/wetland_0.jpg",
+   "classes/wetland_1.jpg",
+   "classes/wetland_2.jpg",
+   "classes/wetland_3.jpg",
+   "classes/wetland_4.jpg",
+   "classes/wetland_5.jpg"
+  ]
+ },
+ "gallery": [
+  {
+   "sample_id": "rs-cbb7a3fa93f3",
+   "image": "gallery/rs-cbb7a3fa93f3.jpg",
+   "label": "church",
+   "kind": "mistake",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "commercial_area",
+     "confidence": 0.9290425777435303
+    },
+    "efficientnet-b0": {
+     "label": "commercial_area",
+     "confidence": 0.8835110664367676
+    },
+    "resnet18-in1k": {
+     "label": "commercial_area",
+     "confidence": 0.9358646869659424
+    },
+    "resnet50-in1k": {
+     "label": "commercial_area",
+     "confidence": 0.9231010675430298
+    },
+    "resnet50-ssl4eo": {
+     "label": "commercial_area",
+     "confidence": 0.9434968829154968
+    },
+    "vit-small": {
+     "label": "commercial_area",
+     "confidence": 0.8877807259559631
+    },
+    "convnext-tiny": {
+     "label": "commercial_area",
+     "confidence": 0.8211579322814941
+    }
+   }
+  },
+  {
+   "sample_id": "rs-b63b0ccbe098",
+   "image": "gallery/rs-b63b0ccbe098.jpg",
+   "label": "runway",
+   "kind": "mistake",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "airport",
+     "confidence": 0.909878671169281
+    },
+    "efficientnet-b0": {
+     "label": "airport",
+     "confidence": 0.5870575904846191
+    },
+    "resnet18-in1k": {
+     "label": "airport",
+     "confidence": 0.6504616141319275
+    },
+    "resnet50-in1k": {
+     "label": "airport",
+     "confidence": 0.7722700834274292
+    },
+    "resnet50-ssl4eo": {
+     "label": "airport",
+     "confidence": 0.31329965591430664
+    },
+    "vit-small": {
+     "label": "airport",
+     "confidence": 0.6612223982810974
+    },
+    "convnext-tiny": {
+     "label": "runway",
+     "confidence": 0.6553218364715576
+    }
+   }
+  },
+  {
+   "sample_id": "rs-d184a112da29",
+   "image": "gallery/rs-d184a112da29.jpg",
+   "label": "railway",
+   "kind": "mistake",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "railway_station",
+     "confidence": 0.9020829200744629
+    },
+    "efficientnet-b0": {
+     "label": "railway_station",
+     "confidence": 0.8706011772155762
+    },
+    "resnet18-in1k": {
+     "label": "railway_station",
+     "confidence": 0.7803553938865662
+    },
+    "resnet50-in1k": {
+     "label": "railway_station",
+     "confidence": 0.8609485030174255
+    },
+    "resnet50-ssl4eo": {
+     "label": "railway_station",
+     "confidence": 0.6792700886726379
+    },
+    "vit-small": {
+     "label": "railway_station",
+     "confidence": 0.913875937461853
+    },
+    "convnext-tiny": {
+     "label": "railway_station",
+     "confidence": 0.9058818221092224
+    }
+   }
+  },
+  {
+   "sample_id": "rs-e7cba76e6fa0",
+   "image": "gallery/rs-e7cba76e6fa0.jpg",
+   "label": "runway",
+   "kind": "mistake",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "airport",
+     "confidence": 0.898059070110321
+    },
+    "efficientnet-b0": {
+     "label": "airport",
+     "confidence": 0.8884535431861877
+    },
+    "resnet18-in1k": {
+     "label": "airport",
+     "confidence": 0.9567688703536987
+    },
+    "resnet50-in1k": {
+     "label": "airport",
+     "confidence": 0.8724166750907898
+    },
+    "resnet50-ssl4eo": {
+     "label": "airport",
+     "confidence": 0.9227818846702576
+    },
+    "vit-small": {
+     "label": "airport",
+     "confidence": 0.8799719214439392
+    },
+    "convnext-tiny": {
+     "label": "airport",
+     "confidence": 0.874715268611908
+    }
+   }
+  },
+  {
+   "sample_id": "rs-445445c2db44",
+   "image": "gallery/rs-445445c2db44.jpg",
+   "label": "dense_residential",
+   "kind": "mistake",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "medium_residential",
+     "confidence": 0.8979253172874451
+    },
+    "efficientnet-b0": {
+     "label": "medium_residential",
+     "confidence": 0.8231486082077026
+    },
+    "resnet18-in1k": {
+     "label": "medium_residential",
+     "confidence": 0.7636275887489319
+    },
+    "resnet50-in1k": {
+     "label": "medium_residential",
+     "confidence": 0.9284887313842773
+    },
+    "resnet50-ssl4eo": {
+     "label": "medium_residential",
+     "confidence": 0.8566707968711853
+    },
+    "vit-small": {
+     "label": "medium_residential",
+     "confidence": 0.8314705491065979
+    },
+    "convnext-tiny": {
+     "label": "medium_residential",
+     "confidence": 0.9102816581726074
+    }
+   }
+  },
+  {
+   "sample_id": "rs-8a219e955049",
+   "image": "gallery/rs-8a219e955049.jpg",
+   "label": "palace",
+   "kind": "mistake",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "railway_station",
+     "confidence": 0.8826279640197754
+    },
+    "efficientnet-b0": {
+     "label": "railway_station",
+     "confidence": 0.8926755785942078
+    },
+    "resnet18-in1k": {
+     "label": "industrial_area",
+     "confidence": 0.22302764654159546
+    },
+    "resnet50-in1k": {
+     "label": "railway_station",
+     "confidence": 0.3129224181175232
+    },
+    "resnet50-ssl4eo": {
+     "label": "industrial_area",
+     "confidence": 0.5083951950073242
+    },
+    "vit-small": {
+     "label": "railway_station",
+     "confidence": 0.4800066649913788
+    },
+    "convnext-tiny": {
+     "label": "railway_station",
+     "confidence": 0.414739191532135
+    }
+   }
+  },
+  {
+   "sample_id": "rs-45cb9ae920f8",
+   "image": "gallery/rs-45cb9ae920f8.jpg",
+   "label": "medium_residential",
+   "kind": "mistake",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "dense_residential",
+     "confidence": 0.8818536400794983
+    },
+    "efficientnet-b0": {
+     "label": "dense_residential",
+     "confidence": 0.9248497486114502
+    },
+    "resnet18-in1k": {
+     "label": "dense_residential",
+     "confidence": 0.8251286149024963
+    },
+    "resnet50-in1k": {
+     "label": "dense_residential",
+     "confidence": 0.8183425664901733
+    },
+    "resnet50-ssl4eo": {
+     "label": "dense_residential",
+     "confidence": 0.6240657567977905
+    },
+    "vit-small": {
+     "label": "dense_residential",
+     "confidence": 0.784948468208313
+    },
+    "convnext-tiny": {
+     "label": "dense_residential",
+     "confidence": 0.9210020303726196
+    }
+   }
+  },
+  {
+   "sample_id": "rs-cba5b2940e30",
+   "image": "gallery/rs-cba5b2940e30.jpg",
+   "label": "runway",
+   "kind": "mistake",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "airport",
+     "confidence": 0.8815578818321228
+    },
+    "efficientnet-b0": {
+     "label": "airport",
+     "confidence": 0.8274462819099426
+    },
+    "resnet18-in1k": {
+     "label": "airport",
+     "confidence": 0.7265565991401672
+    },
+    "resnet50-in1k": {
+     "label": "airport",
+     "confidence": 0.8940392136573792
+    },
+    "resnet50-ssl4eo": {
+     "label": "airport",
+     "confidence": 0.5110734701156616
+    },
+    "vit-small": {
+     "label": "airport",
+     "confidence": 0.48400571942329407
+    },
+    "convnext-tiny": {
+     "label": "airport",
+     "confidence": 0.8558365702629089
+    }
+   }
+  },
+  {
+   "sample_id": "rs-9eb70362d4c8",
+   "image": "gallery/rs-9eb70362d4c8.jpg",
+   "label": "terrace",
+   "kind": "mistake",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "rectangular_farmland",
+     "confidence": 0.881462574005127
+    },
+    "efficientnet-b0": {
+     "label": "rectangular_farmland",
+     "confidence": 0.7416605353355408
+    },
+    "resnet18-in1k": {
+     "label": "rectangular_farmland",
+     "confidence": 0.5068881511688232
+    },
+    "resnet50-in1k": {
+     "label": "terrace",
+     "confidence": 0.5700659155845642
+    },
+    "resnet50-ssl4eo": {
+     "label": "rectangular_farmland",
+     "confidence": 0.741049587726593
+    },
+    "vit-small": {
+     "label": "rectangular_farmland",
+     "confidence": 0.7749495506286621
+    },
+    "convnext-tiny": {
+     "label": "rectangular_farmland",
+     "confidence": 0.7501134276390076
+    }
+   }
+  },
+  {
+   "sample_id": "rs-e3164027d4c4",
+   "image": "gallery/rs-e3164027d4c4.jpg",
+   "label": "wetland",
+   "kind": "mistake",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "lake",
+     "confidence": 0.875653862953186
+    },
+    "efficientnet-b0": {
+     "label": "lake",
+     "confidence": 0.6899252533912659
+    },
+    "resnet18-in1k": {
+     "label": "lake",
+     "confidence": 0.8205214142799377
+    },
+    "resnet50-in1k": {
+     "label": "lake",
+     "confidence": 0.6863350868225098
+    },
+    "resnet50-ssl4eo": {
+     "label": "lake",
+     "confidence": 0.8955365419387817
+    },
+    "vit-small": {
+     "label": "lake",
+     "confidence": 0.8512009978294373
+    },
+    "convnext-tiny": {
+     "label": "lake",
+     "confidence": 0.8542370796203613
+    }
+   }
+  },
+  {
+   "sample_id": "rs-7c1218dda86f",
+   "image": "gallery/rs-7c1218dda86f.jpg",
+   "label": "dense_residential",
+   "kind": "mistake",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "mobile_home_park",
+     "confidence": 0.8723635673522949
+    },
+    "efficientnet-b0": {
+     "label": "mobile_home_park",
+     "confidence": 0.9013115763664246
+    },
+    "resnet18-in1k": {
+     "label": "mobile_home_park",
+     "confidence": 0.9590777158737183
+    },
+    "resnet50-in1k": {
+     "label": "mobile_home_park",
+     "confidence": 0.8937121033668518
+    },
+    "resnet50-ssl4eo": {
+     "label": "mobile_home_park",
+     "confidence": 0.7790582180023193
+    },
+    "vit-small": {
+     "label": "mobile_home_park",
+     "confidence": 0.9026509523391724
+    },
+    "convnext-tiny": {
+     "label": "mobile_home_park",
+     "confidence": 0.8991866707801819
+    }
+   }
+  },
+  {
+   "sample_id": "rs-9748f53e08c2",
+   "image": "gallery/rs-9748f53e08c2.jpg",
+   "label": "sparse_residential",
+   "kind": "mistake",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "medium_residential",
+     "confidence": 0.8687592148780823
+    },
+    "efficientnet-b0": {
+     "label": "medium_residential",
+     "confidence": 0.8576422333717346
+    },
+    "resnet18-in1k": {
+     "label": "medium_residential",
+     "confidence": 0.8654199242591858
+    },
+    "resnet50-in1k": {
+     "label": "medium_residential",
+     "confidence": 0.9280824661254883
+    },
+    "resnet50-ssl4eo": {
+     "label": "medium_residential",
+     "confidence": 0.8245274424552917
+    },
+    "vit-small": {
+     "label": "medium_residential",
+     "confidence": 0.7597770690917969
+    },
+    "convnext-tiny": {
+     "label": "medium_residential",
+     "confidence": 0.7559810876846313
+    }
+   }
+  },
+  {
+   "sample_id": "rs-71f69a15cfb5",
+   "image": "gallery/rs-71f69a15cfb5.jpg",
+   "label": "mobile_home_park",
+   "kind": "mistake",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "ground_track_field",
+     "confidence": 0.867881178855896
+    },
+    "efficientnet-b0": {
+     "label": "ground_track_field",
+     "confidence": 0.6468216776847839
+    },
+    "resnet18-in1k": {
+     "label": "baseball_diamond",
+     "confidence": 0.3739708364009857
+    },
+    "resnet50-in1k": {
+     "label": "church",
+     "confidence": 0.3643588423728943
+    },
+    "resnet50-ssl4eo": {
+     "label": "ground_track_field",
+     "confidence": 0.37364551424980164
+    },
+    "vit-small": {
+     "label": "ground_track_field",
+     "confidence": 0.7694485187530518
+    },
+    "convnext-tiny": {
+     "label": "dense_residential",
+     "confidence": 0.23786376416683197
+    }
+   }
+  },
+  {
+   "sample_id": "rs-6ec22d3f2316",
+   "image": "gallery/rs-6ec22d3f2316.jpg",
+   "label": "church",
+   "kind": "mistake",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "palace",
+     "confidence": 0.8672245740890503
+    },
+    "efficientnet-b0": {
+     "label": "palace",
+     "confidence": 0.7389105558395386
+    },
+    "resnet18-in1k": {
+     "label": "palace",
+     "confidence": 0.9400933384895325
+    },
+    "resnet50-in1k": {
+     "label": "palace",
+     "confidence": 0.8044803738594055
+    },
+    "resnet50-ssl4eo": {
+     "label": "palace",
+     "confidence": 0.9426704049110413
+    },
+    "vit-small": {
+     "label": "palace",
+     "confidence": 0.8210639357566833
+    },
+    "convnext-tiny": {
+     "label": "palace",
+     "confidence": 0.8469107747077942
+    }
+   }
+  },
+  {
+   "sample_id": "rs-35157202d50f",
+   "image": "gallery/rs-35157202d50f.jpg",
+   "label": "mountain",
+   "kind": "mistake",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "snowberg",
+     "confidence": 0.8622748255729675
+    },
+    "efficientnet-b0": {
+     "label": "snowberg",
+     "confidence": 0.7202205061912537
+    },
+    "resnet18-in1k": {
+     "label": "snowberg",
+     "confidence": 0.8860613107681274
+    },
+    "resnet50-in1k": {
+     "label": "snowberg",
+     "confidence": 0.9096100926399231
+    },
+    "resnet50-ssl4eo": {
+     "label": "snowberg",
+     "confidence": 0.6146075129508972
+    },
+    "vit-small": {
+     "label": "snowberg",
+     "confidence": 0.8804358839988708
+    },
+    "convnext-tiny": {
+     "label": "snowberg",
+     "confidence": 0.906894862651825
+    }
+   }
+  },
+  {
+   "sample_id": "rs-14ccc72428b6",
+   "image": "gallery/rs-14ccc72428b6.jpg",
+   "label": "river",
+   "kind": "mistake",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "palace",
+     "confidence": 0.8550317883491516
+    },
+    "efficientnet-b0": {
+     "label": "palace",
+     "confidence": 0.792243242263794
+    },
+    "resnet18-in1k": {
+     "label": "river",
+     "confidence": 0.4142482876777649
+    },
+    "resnet50-in1k": {
+     "label": "palace",
+     "confidence": 0.6035763025283813
+    },
+    "resnet50-ssl4eo": {
+     "label": "river",
+     "confidence": 0.502630889415741
+    },
+    "vit-small": {
+     "label": "river",
+     "confidence": 0.36839890480041504
+    },
+    "convnext-tiny": {
+     "label": "palace",
+     "confidence": 0.7166664600372314
+    }
+   }
+  },
+  {
+   "sample_id": "rs-9ea50d7d1a58",
+   "image": "gallery/rs-9ea50d7d1a58.jpg",
+   "label": "palace",
+   "kind": "mistake",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "church",
+     "confidence": 0.8500967025756836
+    },
+    "efficientnet-b0": {
+     "label": "church",
+     "confidence": 0.5234850645065308
+    },
+    "resnet18-in1k": {
+     "label": "church",
+     "confidence": 0.7000412940979004
+    },
+    "resnet50-in1k": {
+     "label": "church",
+     "confidence": 0.8231337070465088
+    },
+    "resnet50-ssl4eo": {
+     "label": "church",
+     "confidence": 0.758699357509613
+    },
+    "vit-small": {
+     "label": "palace",
+     "confidence": 0.47798505425453186
+    },
+    "convnext-tiny": {
+     "label": "church",
+     "confidence": 0.6101256012916565
+    }
+   }
+  },
+  {
+   "sample_id": "rs-aed2ea494d91",
+   "image": "gallery/rs-aed2ea494d91.jpg",
+   "label": "airplane",
+   "kind": "mistake",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "runway",
+     "confidence": 0.8446741104125977
+    },
+    "efficientnet-b0": {
+     "label": "runway",
+     "confidence": 0.8857141733169556
+    },
+    "resnet18-in1k": {
+     "label": "runway",
+     "confidence": 0.9371027946472168
+    },
+    "resnet50-in1k": {
+     "label": "runway",
+     "confidence": 0.9364222288131714
+    },
+    "resnet50-ssl4eo": {
+     "label": "runway",
+     "confidence": 0.9261907935142517
+    },
+    "vit-small": {
+     "label": "runway",
+     "confidence": 0.8732945322990417
+    },
+    "convnext-tiny": {
+     "label": "runway",
+     "confidence": 0.8759974837303162
+    }
+   }
+  },
+  {
+   "sample_id": "rs-7fe2e16e97c4",
+   "image": "gallery/rs-7fe2e16e97c4.jpg",
+   "label": "thermal_power_station",
+   "kind": "mistake",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "palace",
+     "confidence": 0.824865460395813
+    },
+    "efficientnet-b0": {
+     "label": "thermal_power_station",
+     "confidence": 0.9446060657501221
+    },
+    "resnet18-in1k": {
+     "label": "palace",
+     "confidence": 0.825052797794342
+    },
+    "resnet50-in1k": {
+     "label": "palace",
+     "confidence": 0.7890992760658264
+    },
+    "resnet50-ssl4eo": {
+     "label": "palace",
+     "confidence": 0.8364161849021912
+    },
+    "vit-small": {
+     "label": "palace",
+     "confidence": 0.6428567171096802
+    },
+    "convnext-tiny": {
+     "label": "thermal_power_station",
+     "confidence": 0.6761044859886169
+    }
+   }
+  },
+  {
+   "sample_id": "rs-1cccf0516340",
+   "image": "gallery/rs-1cccf0516340.jpg",
+   "label": "island",
+   "kind": "mistake",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "ship",
+     "confidence": 0.8057952523231506
+    },
+    "efficientnet-b0": {
+     "label": "ship",
+     "confidence": 0.3249179720878601
+    },
+    "resnet18-in1k": {
+     "label": "ship",
+     "confidence": 0.36316683888435364
+    },
+    "resnet50-in1k": {
+     "label": "river",
+     "confidence": 0.7364587783813477
+    },
+    "resnet50-ssl4eo": {
+     "label": "river",
+     "confidence": 0.407199501991272
+    },
+    "vit-small": {
+     "label": "ship",
+     "confidence": 0.824655294418335
+    },
+    "convnext-tiny": {
+     "label": "ship",
+     "confidence": 0.8249635696411133
+    }
+   }
+  },
+  {
+   "sample_id": "rs-4c7283e39d32",
+   "image": "gallery/rs-4c7283e39d32.jpg",
+   "label": "palace",
+   "kind": "mistake",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "church",
+     "confidence": 0.8016347885131836
+    },
+    "efficientnet-b0": {
+     "label": "palace",
+     "confidence": 0.578873872756958
+    },
+    "resnet18-in1k": {
+     "label": "church",
+     "confidence": 0.8047332167625427
+    },
+    "resnet50-in1k": {
+     "label": "church",
+     "confidence": 0.7200887203216553
+    },
+    "resnet50-ssl4eo": {
+     "label": "church",
+     "confidence": 0.5701338648796082
+    },
+    "vit-small": {
+     "label": "palace",
+     "confidence": 0.7603798508644104
+    },
+    "convnext-tiny": {
+     "label": "church",
+     "confidence": 0.6905921697616577
+    }
+   }
+  },
+  {
+   "sample_id": "rs-44eb66a002c9",
+   "image": "gallery/rs-44eb66a002c9.jpg",
+   "label": "church",
+   "kind": "mistake",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "commercial_area",
+     "confidence": 0.7953428030014038
+    },
+    "efficientnet-b0": {
+     "label": "commercial_area",
+     "confidence": 0.7461622953414917
+    },
+    "resnet18-in1k": {
+     "label": "commercial_area",
+     "confidence": 0.4085811674594879
+    },
+    "resnet50-in1k": {
+     "label": "commercial_area",
+     "confidence": 0.745084285736084
+    },
+    "resnet50-ssl4eo": {
+     "label": "commercial_area",
+     "confidence": 0.5195819139480591
+    },
+    "vit-small": {
+     "label": "church",
+     "confidence": 0.8938120007514954
+    },
+    "convnext-tiny": {
+     "label": "commercial_area",
+     "confidence": 0.6282515525817871
+    }
+   }
+  },
+  {
+   "sample_id": "rs-5188f7b0420d",
+   "image": "gallery/rs-5188f7b0420d.jpg",
+   "label": "terrace",
+   "kind": "mistake",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "freeway",
+     "confidence": 0.783448338508606
+    },
+    "efficientnet-b0": {
+     "label": "freeway",
+     "confidence": 0.867636501789093
+    },
+    "resnet18-in1k": {
+     "label": "rectangular_farmland",
+     "confidence": 0.262886643409729
+    },
+    "resnet50-in1k": {
+     "label": "freeway",
+     "confidence": 0.7655426859855652
+    },
+    "resnet50-ssl4eo": {
+     "label": "terrace",
+     "confidence": 0.752714991569519
+    },
+    "vit-small": {
+     "label": "freeway",
+     "confidence": 0.9440242648124695
+    },
+    "convnext-tiny": {
+     "label": "freeway",
+     "confidence": 0.7795324325561523
+    }
+   }
+  },
+  {
+   "sample_id": "rs-4f70680434d1",
+   "image": "gallery/rs-4f70680434d1.jpg",
+   "label": "runway",
+   "kind": "mistake",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "cloud",
+     "confidence": 0.7761686444282532
+    },
+    "efficientnet-b0": {
+     "label": "cloud",
+     "confidence": 0.5481151342391968
+    },
+    "resnet18-in1k": {
+     "label": "cloud",
+     "confidence": 0.7408050298690796
+    },
+    "resnet50-in1k": {
+     "label": "runway",
+     "confidence": 0.4245811104774475
+    },
+    "resnet50-ssl4eo": {
+     "label": "cloud",
+     "confidence": 0.9351441860198975
+    },
+    "vit-small": {
+     "label": "cloud",
+     "confidence": 0.4766928553581238
+    },
+    "convnext-tiny": {
+     "label": "cloud",
+     "confidence": 0.8964775800704956
+    }
+   }
+  },
+  {
+   "sample_id": "rs-c239af427feb",
+   "image": "gallery/rs-c239af427feb.jpg",
+   "label": "airplane",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "airplane",
+     "confidence": 0.9487053155899048
+    },
+    "efficientnet-b0": {
+     "label": "airplane",
+     "confidence": 0.8760044574737549
+    },
+    "resnet18-in1k": {
+     "label": "airplane",
+     "confidence": 0.9551424980163574
+    },
+    "resnet50-in1k": {
+     "label": "airplane",
+     "confidence": 0.9151053428649902
+    },
+    "resnet50-ssl4eo": {
+     "label": "airplane",
+     "confidence": 0.8640711307525635
+    },
+    "vit-small": {
+     "label": "airplane",
+     "confidence": 0.9215869903564453
+    },
+    "convnext-tiny": {
+     "label": "airplane",
+     "confidence": 0.8848609924316406
+    }
+   }
+  },
+  {
+   "sample_id": "rs-7d49aa1d9e7f",
+   "image": "gallery/rs-7d49aa1d9e7f.jpg",
+   "label": "airport",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "airport",
+     "confidence": 0.9549063444137573
+    },
+    "efficientnet-b0": {
+     "label": "airport",
+     "confidence": 0.914541482925415
+    },
+    "resnet18-in1k": {
+     "label": "airport",
+     "confidence": 0.9456501603126526
+    },
+    "resnet50-in1k": {
+     "label": "airport",
+     "confidence": 0.9159979224205017
+    },
+    "resnet50-ssl4eo": {
+     "label": "airport",
+     "confidence": 0.9336398839950562
+    },
+    "vit-small": {
+     "label": "airport",
+     "confidence": 0.8605822324752808
+    },
+    "convnext-tiny": {
+     "label": "airport",
+     "confidence": 0.8969640731811523
+    }
+   }
+  },
+  {
+   "sample_id": "rs-da6cc751e739",
+   "image": "gallery/rs-da6cc751e739.jpg",
+   "label": "baseball_diamond",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "baseball_diamond",
+     "confidence": 0.9393479228019714
+    },
+    "efficientnet-b0": {
+     "label": "baseball_diamond",
+     "confidence": 0.931790292263031
+    },
+    "resnet18-in1k": {
+     "label": "baseball_diamond",
+     "confidence": 0.9229016304016113
+    },
+    "resnet50-in1k": {
+     "label": "baseball_diamond",
+     "confidence": 0.9257985353469849
+    },
+    "resnet50-ssl4eo": {
+     "label": "baseball_diamond",
+     "confidence": 0.8856307864189148
+    },
+    "vit-small": {
+     "label": "baseball_diamond",
+     "confidence": 0.9198878407478333
+    },
+    "convnext-tiny": {
+     "label": "baseball_diamond",
+     "confidence": 0.900358259677887
+    }
+   }
+  },
+  {
+   "sample_id": "rs-3b74f6e631e3",
+   "image": "gallery/rs-3b74f6e631e3.jpg",
+   "label": "basketball_court",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "basketball_court",
+     "confidence": 0.9703840613365173
+    },
+    "efficientnet-b0": {
+     "label": "basketball_court",
+     "confidence": 0.807833194732666
+    },
+    "resnet18-in1k": {
+     "label": "basketball_court",
+     "confidence": 0.43791332840919495
+    },
+    "resnet50-in1k": {
+     "label": "basketball_court",
+     "confidence": 0.9338595271110535
+    },
+    "resnet50-ssl4eo": {
+     "label": "basketball_court",
+     "confidence": 0.9453266263008118
+    },
+    "vit-small": {
+     "label": "basketball_court",
+     "confidence": 0.9207494258880615
+    },
+    "convnext-tiny": {
+     "label": "basketball_court",
+     "confidence": 0.9092614650726318
+    }
+   }
+  },
+  {
+   "sample_id": "rs-9a5a30a94b8d",
+   "image": "gallery/rs-9a5a30a94b8d.jpg",
+   "label": "beach",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "beach",
+     "confidence": 0.924665629863739
+    },
+    "efficientnet-b0": {
+     "label": "beach",
+     "confidence": 0.9633470177650452
+    },
+    "resnet18-in1k": {
+     "label": "beach",
+     "confidence": 0.9298717379570007
+    },
+    "resnet50-in1k": {
+     "label": "beach",
+     "confidence": 0.9007549285888672
+    },
+    "resnet50-ssl4eo": {
+     "label": "beach",
+     "confidence": 0.8506900072097778
+    },
+    "vit-small": {
+     "label": "beach",
+     "confidence": 0.8878180980682373
+    },
+    "convnext-tiny": {
+     "label": "beach",
+     "confidence": 0.9013662934303284
+    }
+   }
+  },
+  {
+   "sample_id": "rs-f73e31a210fc",
+   "image": "gallery/rs-f73e31a210fc.jpg",
+   "label": "bridge",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "bridge",
+     "confidence": 0.9531276226043701
+    },
+    "efficientnet-b0": {
+     "label": "bridge",
+     "confidence": 0.9508196115493774
+    },
+    "resnet18-in1k": {
+     "label": "bridge",
+     "confidence": 0.8198481798171997
+    },
+    "resnet50-in1k": {
+     "label": "bridge",
+     "confidence": 0.8522009253501892
+    },
+    "resnet50-ssl4eo": {
+     "label": "bridge",
+     "confidence": 0.6407562494277954
+    },
+    "vit-small": {
+     "label": "bridge",
+     "confidence": 0.8808813095092773
+    },
+    "convnext-tiny": {
+     "label": "bridge",
+     "confidence": 0.9306163191795349
+    }
+   }
+  },
+  {
+   "sample_id": "rs-0ecf6ee6435b",
+   "image": "gallery/rs-0ecf6ee6435b.jpg",
+   "label": "chaparral",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "chaparral",
+     "confidence": 0.9305546879768372
+    },
+    "efficientnet-b0": {
+     "label": "chaparral",
+     "confidence": 0.8709625601768494
+    },
+    "resnet18-in1k": {
+     "label": "chaparral",
+     "confidence": 0.8939452767372131
+    },
+    "resnet50-in1k": {
+     "label": "chaparral",
+     "confidence": 0.8967479467391968
+    },
+    "resnet50-ssl4eo": {
+     "label": "chaparral",
+     "confidence": 0.8804720640182495
+    },
+    "vit-small": {
+     "label": "chaparral",
+     "confidence": 0.8995994925498962
+    },
+    "convnext-tiny": {
+     "label": "chaparral",
+     "confidence": 0.8909730911254883
+    }
+   }
+  },
+  {
+   "sample_id": "rs-7d3d4b4b37f3",
+   "image": "gallery/rs-7d3d4b4b37f3.jpg",
+   "label": "church",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "church",
+     "confidence": 0.9723129868507385
+    },
+    "efficientnet-b0": {
+     "label": "church",
+     "confidence": 0.7612965106964111
+    },
+    "resnet18-in1k": {
+     "label": "church",
+     "confidence": 0.4198668897151947
+    },
+    "resnet50-in1k": {
+     "label": "church",
+     "confidence": 0.8631888031959534
+    },
+    "resnet50-ssl4eo": {
+     "label": "church",
+     "confidence": 0.663295567035675
+    },
+    "vit-small": {
+     "label": "church",
+     "confidence": 0.8209130167961121
+    },
+    "convnext-tiny": {
+     "label": "church",
+     "confidence": 0.6048470735549927
+    }
+   }
+  },
+  {
+   "sample_id": "rs-d0ff0bebf5a9",
+   "image": "gallery/rs-d0ff0bebf5a9.jpg",
+   "label": "circular_farmland",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "circular_farmland",
+     "confidence": 0.9425369501113892
+    },
+    "efficientnet-b0": {
+     "label": "circular_farmland",
+     "confidence": 0.9381430745124817
+    },
+    "resnet18-in1k": {
+     "label": "circular_farmland",
+     "confidence": 0.9299948811531067
+    },
+    "resnet50-in1k": {
+     "label": "circular_farmland",
+     "confidence": 0.888809323310852
+    },
+    "resnet50-ssl4eo": {
+     "label": "circular_farmland",
+     "confidence": 0.9098846912384033
+    },
+    "vit-small": {
+     "label": "circular_farmland",
+     "confidence": 0.9074851870536804
+    },
+    "convnext-tiny": {
+     "label": "circular_farmland",
+     "confidence": 0.9248501062393188
+    }
+   }
+  },
+  {
+   "sample_id": "rs-8a3e462fd816",
+   "image": "gallery/rs-8a3e462fd816.jpg",
+   "label": "cloud",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "cloud",
+     "confidence": 0.9383683800697327
+    },
+    "efficientnet-b0": {
+     "label": "cloud",
+     "confidence": 0.9034676551818848
+    },
+    "resnet18-in1k": {
+     "label": "cloud",
+     "confidence": 0.9246962070465088
+    },
+    "resnet50-in1k": {
+     "label": "cloud",
+     "confidence": 0.8943716883659363
+    },
+    "resnet50-ssl4eo": {
+     "label": "cloud",
+     "confidence": 0.7856891751289368
+    },
+    "vit-small": {
+     "label": "cloud",
+     "confidence": 0.9130012392997742
+    },
+    "convnext-tiny": {
+     "label": "cloud",
+     "confidence": 0.9304832816123962
+    }
+   }
+  },
+  {
+   "sample_id": "rs-edaa5d6092a3",
+   "image": "gallery/rs-edaa5d6092a3.jpg",
+   "label": "commercial_area",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "commercial_area",
+     "confidence": 0.9695386290550232
+    },
+    "efficientnet-b0": {
+     "label": "commercial_area",
+     "confidence": 0.9261555671691895
+    },
+    "resnet18-in1k": {
+     "label": "commercial_area",
+     "confidence": 0.9898273944854736
+    },
+    "resnet50-in1k": {
+     "label": "commercial_area",
+     "confidence": 0.9163451194763184
+    },
+    "resnet50-ssl4eo": {
+     "label": "commercial_area",
+     "confidence": 0.8462096452713013
+    },
+    "vit-small": {
+     "label": "commercial_area",
+     "confidence": 0.9090982675552368
+    },
+    "convnext-tiny": {
+     "label": "commercial_area",
+     "confidence": 0.8153348565101624
+    }
+   }
+  },
+  {
+   "sample_id": "rs-22b3e9e02d58",
+   "image": "gallery/rs-22b3e9e02d58.jpg",
+   "label": "dense_residential",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "dense_residential",
+     "confidence": 0.95060133934021
+    },
+    "efficientnet-b0": {
+     "label": "dense_residential",
+     "confidence": 0.8549524545669556
+    },
+    "resnet18-in1k": {
+     "label": "dense_residential",
+     "confidence": 0.959020733833313
+    },
+    "resnet50-in1k": {
+     "label": "dense_residential",
+     "confidence": 0.9389926195144653
+    },
+    "resnet50-ssl4eo": {
+     "label": "dense_residential",
+     "confidence": 0.8232411742210388
+    },
+    "vit-small": {
+     "label": "dense_residential",
+     "confidence": 0.9240216612815857
+    },
+    "convnext-tiny": {
+     "label": "dense_residential",
+     "confidence": 0.8680305480957031
+    }
+   }
+  },
+  {
+   "sample_id": "rs-d3b16b75136d",
+   "image": "gallery/rs-d3b16b75136d.jpg",
+   "label": "desert",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "desert",
+     "confidence": 0.9385567307472229
+    },
+    "efficientnet-b0": {
+     "label": "desert",
+     "confidence": 0.8917292952537537
+    },
+    "resnet18-in1k": {
+     "label": "desert",
+     "confidence": 0.9602895975112915
+    },
+    "resnet50-in1k": {
+     "label": "desert",
+     "confidence": 0.9191049933433533
+    },
+    "resnet50-ssl4eo": {
+     "label": "desert",
+     "confidence": 0.902827262878418
+    },
+    "vit-small": {
+     "label": "desert",
+     "confidence": 0.9534268379211426
+    },
+    "convnext-tiny": {
+     "label": "desert",
+     "confidence": 0.9064232110977173
+    }
+   }
+  },
+  {
+   "sample_id": "rs-95329abd2cd5",
+   "image": "gallery/rs-95329abd2cd5.jpg",
+   "label": "forest",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "forest",
+     "confidence": 0.9457027912139893
+    },
+    "efficientnet-b0": {
+     "label": "forest",
+     "confidence": 0.9050037264823914
+    },
+    "resnet18-in1k": {
+     "label": "forest",
+     "confidence": 0.9498480558395386
+    },
+    "resnet50-in1k": {
+     "label": "forest",
+     "confidence": 0.9125174880027771
+    },
+    "resnet50-ssl4eo": {
+     "label": "forest",
+     "confidence": 0.9163311719894409
+    },
+    "vit-small": {
+     "label": "forest",
+     "confidence": 0.8881500959396362
+    },
+    "convnext-tiny": {
+     "label": "forest",
+     "confidence": 0.8367332220077515
+    }
+   }
+  },
+  {
+   "sample_id": "rs-70636f14cd57",
+   "image": "gallery/rs-70636f14cd57.jpg",
+   "label": "freeway",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "freeway",
+     "confidence": 0.9242745637893677
+    },
+    "efficientnet-b0": {
+     "label": "freeway",
+     "confidence": 0.9278217554092407
+    },
+    "resnet18-in1k": {
+     "label": "freeway",
+     "confidence": 0.9407488107681274
+    },
+    "resnet50-in1k": {
+     "label": "freeway",
+     "confidence": 0.8886784911155701
+    },
+    "resnet50-ssl4eo": {
+     "label": "freeway",
+     "confidence": 0.9693124294281006
+    },
+    "vit-small": {
+     "label": "freeway",
+     "confidence": 0.9135061502456665
+    },
+    "convnext-tiny": {
+     "label": "freeway",
+     "confidence": 0.8865659236907959
+    }
+   }
+  },
+  {
+   "sample_id": "rs-aa54a81bc9cb",
+   "image": "gallery/rs-aa54a81bc9cb.jpg",
+   "label": "golf_course",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "golf_course",
+     "confidence": 0.9285048842430115
+    },
+    "efficientnet-b0": {
+     "label": "golf_course",
+     "confidence": 0.817844033241272
+    },
+    "resnet18-in1k": {
+     "label": "golf_course",
+     "confidence": 0.9281898736953735
+    },
+    "resnet50-in1k": {
+     "label": "golf_course",
+     "confidence": 0.9438537955284119
+    },
+    "resnet50-ssl4eo": {
+     "label": "golf_course",
+     "confidence": 0.9343540072441101
+    },
+    "vit-small": {
+     "label": "golf_course",
+     "confidence": 0.9034082293510437
+    },
+    "convnext-tiny": {
+     "label": "golf_course",
+     "confidence": 0.8997355699539185
+    }
+   }
+  },
+  {
+   "sample_id": "rs-3d6cabef6a71",
+   "image": "gallery/rs-3d6cabef6a71.jpg",
+   "label": "ground_track_field",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "ground_track_field",
+     "confidence": 0.9198119640350342
+    },
+    "efficientnet-b0": {
+     "label": "ground_track_field",
+     "confidence": 0.905079185962677
+    },
+    "resnet18-in1k": {
+     "label": "ground_track_field",
+     "confidence": 0.9387867450714111
+    },
+    "resnet50-in1k": {
+     "label": "ground_track_field",
+     "confidence": 0.9073463082313538
+    },
+    "resnet50-ssl4eo": {
+     "label": "ground_track_field",
+     "confidence": 0.8636455535888672
+    },
+    "vit-small": {
+     "label": "ground_track_field",
+     "confidence": 0.9246901869773865
+    },
+    "convnext-tiny": {
+     "label": "ground_track_field",
+     "confidence": 0.8960432410240173
+    }
+   }
+  },
+  {
+   "sample_id": "rs-511de632d067",
+   "image": "gallery/rs-511de632d067.jpg",
+   "label": "harbor",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "harbor",
+     "confidence": 0.9284576177597046
+    },
+    "efficientnet-b0": {
+     "label": "harbor",
+     "confidence": 0.8588382601737976
+    },
+    "resnet18-in1k": {
+     "label": "harbor",
+     "confidence": 0.9287369251251221
+    },
+    "resnet50-in1k": {
+     "label": "harbor",
+     "confidence": 0.9276926517486572
+    },
+    "resnet50-ssl4eo": {
+     "label": "harbor",
+     "confidence": 0.9644413590431213
+    },
+    "vit-small": {
+     "label": "harbor",
+     "confidence": 0.9040026068687439
+    },
+    "convnext-tiny": {
+     "label": "harbor",
+     "confidence": 0.9164069890975952
+    }
+   }
+  },
+  {
+   "sample_id": "rs-f79d25e481b2",
+   "image": "gallery/rs-f79d25e481b2.jpg",
+   "label": "industrial_area",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "industrial_area",
+     "confidence": 0.9497426748275757
+    },
+    "efficientnet-b0": {
+     "label": "industrial_area",
+     "confidence": 0.9207035303115845
+    },
+    "resnet18-in1k": {
+     "label": "industrial_area",
+     "confidence": 0.8153388500213623
+    },
+    "resnet50-in1k": {
+     "label": "industrial_area",
+     "confidence": 0.9471678137779236
+    },
+    "resnet50-ssl4eo": {
+     "label": "industrial_area",
+     "confidence": 0.7958602905273438
+    },
+    "vit-small": {
+     "label": "industrial_area",
+     "confidence": 0.8941759467124939
+    },
+    "convnext-tiny": {
+     "label": "industrial_area",
+     "confidence": 0.9245581030845642
+    }
+   }
+  },
+  {
+   "sample_id": "rs-7a1926f56f2b",
+   "image": "gallery/rs-7a1926f56f2b.jpg",
+   "label": "intersection",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "intersection",
+     "confidence": 0.9399815797805786
+    },
+    "efficientnet-b0": {
+     "label": "intersection",
+     "confidence": 0.9171434640884399
+    },
+    "resnet18-in1k": {
+     "label": "intersection",
+     "confidence": 0.9625415205955505
+    },
+    "resnet50-in1k": {
+     "label": "intersection",
+     "confidence": 0.918546736240387
+    },
+    "resnet50-ssl4eo": {
+     "label": "intersection",
+     "confidence": 0.9288149476051331
+    },
+    "vit-small": {
+     "label": "intersection",
+     "confidence": 0.9032929539680481
+    },
+    "convnext-tiny": {
+     "label": "intersection",
+     "confidence": 0.8879903554916382
+    }
+   }
+  },
+  {
+   "sample_id": "rs-c449343abafd",
+   "image": "gallery/rs-c449343abafd.jpg",
+   "label": "island",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "island",
+     "confidence": 0.9589909911155701
+    },
+    "efficientnet-b0": {
+     "label": "island",
+     "confidence": 0.9243085980415344
+    },
+    "resnet18-in1k": {
+     "label": "island",
+     "confidence": 0.8941521048545837
+    },
+    "resnet50-in1k": {
+     "label": "island",
+     "confidence": 0.8901970386505127
+    },
+    "resnet50-ssl4eo": {
+     "label": "island",
+     "confidence": 0.9188830256462097
+    },
+    "vit-small": {
+     "label": "island",
+     "confidence": 0.9071725010871887
+    },
+    "convnext-tiny": {
+     "label": "island",
+     "confidence": 0.9573512077331543
+    }
+   }
+  },
+  {
+   "sample_id": "rs-48c0130258ab",
+   "image": "gallery/rs-48c0130258ab.jpg",
+   "label": "lake",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "lake",
+     "confidence": 0.9488229155540466
+    },
+    "efficientnet-b0": {
+     "label": "lake",
+     "confidence": 0.8451305031776428
+    },
+    "resnet18-in1k": {
+     "label": "lake",
+     "confidence": 0.7372035384178162
+    },
+    "resnet50-in1k": {
+     "label": "lake",
+     "confidence": 0.46194174885749817
+    },
+    "resnet50-ssl4eo": {
+     "label": "lake",
+     "confidence": 0.6093365550041199
+    },
+    "vit-small": {
+     "label": "lake",
+     "confidence": 0.884222686290741
+    },
+    "convnext-tiny": {
+     "label": "lake",
+     "confidence": 0.7763170003890991
+    }
+   }
+  },
+  {
+   "sample_id": "rs-b7070a306268",
+   "image": "gallery/rs-b7070a306268.jpg",
+   "label": "meadow",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "meadow",
+     "confidence": 0.9262442588806152
+    },
+    "efficientnet-b0": {
+     "label": "meadow",
+     "confidence": 0.908602774143219
+    },
+    "resnet18-in1k": {
+     "label": "meadow",
+     "confidence": 0.9387521743774414
+    },
+    "resnet50-in1k": {
+     "label": "meadow",
+     "confidence": 0.9271204471588135
+    },
+    "resnet50-ssl4eo": {
+     "label": "meadow",
+     "confidence": 0.8861109614372253
+    },
+    "vit-small": {
+     "label": "meadow",
+     "confidence": 0.8977487087249756
+    },
+    "convnext-tiny": {
+     "label": "meadow",
+     "confidence": 0.9157916903495789
+    }
+   }
+  },
+  {
+   "sample_id": "rs-d280dd7045d3",
+   "image": "gallery/rs-d280dd7045d3.jpg",
+   "label": "medium_residential",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "medium_residential",
+     "confidence": 0.9486247301101685
+    },
+    "efficientnet-b0": {
+     "label": "medium_residential",
+     "confidence": 0.9111559987068176
+    },
+    "resnet18-in1k": {
+     "label": "medium_residential",
+     "confidence": 0.9220866560935974
+    },
+    "resnet50-in1k": {
+     "label": "medium_residential",
+     "confidence": 0.9458380937576294
+    },
+    "resnet50-ssl4eo": {
+     "label": "medium_residential",
+     "confidence": 0.8073097467422485
+    },
+    "vit-small": {
+     "label": "medium_residential",
+     "confidence": 0.8435183763504028
+    },
+    "convnext-tiny": {
+     "label": "medium_residential",
+     "confidence": 0.8908620476722717
+    }
+   }
+  },
+  {
+   "sample_id": "rs-fc529f6008a1",
+   "image": "gallery/rs-fc529f6008a1.jpg",
+   "label": "mobile_home_park",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "mobile_home_park",
+     "confidence": 0.9382520914077759
+    },
+    "efficientnet-b0": {
+     "label": "mobile_home_park",
+     "confidence": 0.8841387629508972
+    },
+    "resnet18-in1k": {
+     "label": "mobile_home_park",
+     "confidence": 0.9137958288192749
+    },
+    "resnet50-in1k": {
+     "label": "mobile_home_park",
+     "confidence": 0.8890188932418823
+    },
+    "resnet50-ssl4eo": {
+     "label": "mobile_home_park",
+     "confidence": 0.8934142589569092
+    },
+    "vit-small": {
+     "label": "mobile_home_park",
+     "confidence": 0.8884137868881226
+    },
+    "convnext-tiny": {
+     "label": "mobile_home_park",
+     "confidence": 0.9095230102539062
+    }
+   }
+  },
+  {
+   "sample_id": "rs-9a33c7bb938a",
+   "image": "gallery/rs-9a33c7bb938a.jpg",
+   "label": "mountain",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "mountain",
+     "confidence": 0.94451904296875
+    },
+    "efficientnet-b0": {
+     "label": "mountain",
+     "confidence": 0.9164385199546814
+    },
+    "resnet18-in1k": {
+     "label": "mountain",
+     "confidence": 0.8924030065536499
+    },
+    "resnet50-in1k": {
+     "label": "mountain",
+     "confidence": 0.8840834498405457
+    },
+    "resnet50-ssl4eo": {
+     "label": "mountain",
+     "confidence": 0.9001814126968384
+    },
+    "vit-small": {
+     "label": "mountain",
+     "confidence": 0.8949663043022156
+    },
+    "convnext-tiny": {
+     "label": "mountain",
+     "confidence": 0.8880720734596252
+    }
+   }
+  },
+  {
+   "sample_id": "rs-e6e57b7e78bf",
+   "image": "gallery/rs-e6e57b7e78bf.jpg",
+   "label": "overpass",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "overpass",
+     "confidence": 0.9502665400505066
+    },
+    "efficientnet-b0": {
+     "label": "overpass",
+     "confidence": 0.4526401460170746
+    },
+    "resnet18-in1k": {
+     "label": "overpass",
+     "confidence": 0.7486079335212708
+    },
+    "resnet50-in1k": {
+     "label": "overpass",
+     "confidence": 0.8712440729141235
+    },
+    "resnet50-ssl4eo": {
+     "label": "overpass",
+     "confidence": 0.7661230564117432
+    },
+    "vit-small": {
+     "label": "overpass",
+     "confidence": 0.7422927021980286
+    },
+    "convnext-tiny": {
+     "label": "overpass",
+     "confidence": 0.7334730625152588
+    }
+   }
+  },
+  {
+   "sample_id": "rs-6099cc004c6a",
+   "image": "gallery/rs-6099cc004c6a.jpg",
+   "label": "palace",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "palace",
+     "confidence": 0.9552708864212036
+    },
+    "efficientnet-b0": {
+     "label": "palace",
+     "confidence": 0.6616798043251038
+    },
+    "resnet18-in1k": {
+     "label": "palace",
+     "confidence": 0.9158596992492676
+    },
+    "resnet50-in1k": {
+     "label": "palace",
+     "confidence": 0.8933091759681702
+    },
+    "resnet50-ssl4eo": {
+     "label": "palace",
+     "confidence": 0.6996856927871704
+    },
+    "vit-small": {
+     "label": "palace",
+     "confidence": 0.8829225897789001
+    },
+    "convnext-tiny": {
+     "label": "palace",
+     "confidence": 0.8904698491096497
+    }
+   }
+  },
+  {
+   "sample_id": "rs-3da15ad5652f",
+   "image": "gallery/rs-3da15ad5652f.jpg",
+   "label": "parking_lot",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "parking_lot",
+     "confidence": 0.951165497303009
+    },
+    "efficientnet-b0": {
+     "label": "parking_lot",
+     "confidence": 0.8940368294715881
+    },
+    "resnet18-in1k": {
+     "label": "parking_lot",
+     "confidence": 0.7902534008026123
+    },
+    "resnet50-in1k": {
+     "label": "parking_lot",
+     "confidence": 0.8841388821601868
+    },
+    "resnet50-ssl4eo": {
+     "label": "parking_lot",
+     "confidence": 0.6249381899833679
+    },
+    "vit-small": {
+     "label": "parking_lot",
+     "confidence": 0.9072011709213257
+    },
+    "convnext-tiny": {
+     "label": "parking_lot",
+     "confidence": 0.8945601582527161
+    }
+   }
+  },
+  {
+   "sample_id": "rs-f914dd807763",
+   "image": "gallery/rs-f914dd807763.jpg",
+   "label": "railway",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "railway",
+     "confidence": 0.9811236262321472
+    },
+    "efficientnet-b0": {
+     "label": "railway",
+     "confidence": 0.8886844515800476
+    },
+    "resnet18-in1k": {
+     "label": "railway",
+     "confidence": 0.8746667504310608
+    },
+    "resnet50-in1k": {
+     "label": "railway",
+     "confidence": 0.7978383302688599
+    },
+    "resnet50-ssl4eo": {
+     "label": "railway",
+     "confidence": 0.9448946118354797
+    },
+    "vit-small": {
+     "label": "railway",
+     "confidence": 0.8672048449516296
+    },
+    "convnext-tiny": {
+     "label": "railway",
+     "confidence": 0.5917487740516663
+    }
+   }
+  },
+  {
+   "sample_id": "rs-5ca3279c3766",
+   "image": "gallery/rs-5ca3279c3766.jpg",
+   "label": "railway_station",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "railway_station",
+     "confidence": 0.970097541809082
+    },
+    "efficientnet-b0": {
+     "label": "railway",
+     "confidence": 0.6124606132507324
+    },
+    "resnet18-in1k": {
+     "label": "railway_station",
+     "confidence": 0.8823222517967224
+    },
+    "resnet50-in1k": {
+     "label": "railway_station",
+     "confidence": 0.8403699994087219
+    },
+    "resnet50-ssl4eo": {
+     "label": "railway_station",
+     "confidence": 0.8293381929397583
+    },
+    "vit-small": {
+     "label": "railway_station",
+     "confidence": 0.925466001033783
+    },
+    "convnext-tiny": {
+     "label": "railway_station",
+     "confidence": 0.9329619407653809
+    }
+   }
+  },
+  {
+   "sample_id": "rs-be62c7bc9bc4",
+   "image": "gallery/rs-be62c7bc9bc4.jpg",
+   "label": "rectangular_farmland",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "rectangular_farmland",
+     "confidence": 0.9303737878799438
+    },
+    "efficientnet-b0": {
+     "label": "rectangular_farmland",
+     "confidence": 0.8549149632453918
+    },
+    "resnet18-in1k": {
+     "label": "rectangular_farmland",
+     "confidence": 0.8376438021659851
+    },
+    "resnet50-in1k": {
+     "label": "rectangular_farmland",
+     "confidence": 0.9152387380599976
+    },
+    "resnet50-ssl4eo": {
+     "label": "rectangular_farmland",
+     "confidence": 0.9008957743644714
+    },
+    "vit-small": {
+     "label": "rectangular_farmland",
+     "confidence": 0.9034901857376099
+    },
+    "convnext-tiny": {
+     "label": "rectangular_farmland",
+     "confidence": 0.8796958327293396
+    }
+   }
+  },
+  {
+   "sample_id": "rs-cbb61989ae9f",
+   "image": "gallery/rs-cbb61989ae9f.jpg",
+   "label": "river",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "river",
+     "confidence": 0.9557810425758362
+    },
+    "efficientnet-b0": {
+     "label": "river",
+     "confidence": 0.8986576795578003
+    },
+    "resnet18-in1k": {
+     "label": "river",
+     "confidence": 0.9288837313652039
+    },
+    "resnet50-in1k": {
+     "label": "river",
+     "confidence": 0.8919878602027893
+    },
+    "resnet50-ssl4eo": {
+     "label": "river",
+     "confidence": 0.8628370761871338
+    },
+    "vit-small": {
+     "label": "river",
+     "confidence": 0.9266036748886108
+    },
+    "convnext-tiny": {
+     "label": "river",
+     "confidence": 0.9062383770942688
+    }
+   }
+  },
+  {
+   "sample_id": "rs-ff38bfdb1341",
+   "image": "gallery/rs-ff38bfdb1341.jpg",
+   "label": "roundabout",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "roundabout",
+     "confidence": 0.9686630964279175
+    },
+    "efficientnet-b0": {
+     "label": "commercial_area",
+     "confidence": 0.3469095230102539
+    },
+    "resnet18-in1k": {
+     "label": "roundabout",
+     "confidence": 0.7183952927589417
+    },
+    "resnet50-in1k": {
+     "label": "roundabout",
+     "confidence": 0.48956477642059326
+    },
+    "resnet50-ssl4eo": {
+     "label": "roundabout",
+     "confidence": 0.928013801574707
+    },
+    "vit-small": {
+     "label": "roundabout",
+     "confidence": 0.8957622051239014
+    },
+    "convnext-tiny": {
+     "label": "roundabout",
+     "confidence": 0.8180996179580688
+    }
+   }
+  },
+  {
+   "sample_id": "rs-8117760a1f65",
+   "image": "gallery/rs-8117760a1f65.jpg",
+   "label": "runway",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "runway",
+     "confidence": 0.9716768860816956
+    },
+    "efficientnet-b0": {
+     "label": "runway",
+     "confidence": 0.9479984641075134
+    },
+    "resnet18-in1k": {
+     "label": "runway",
+     "confidence": 0.8896734118461609
+    },
+    "resnet50-in1k": {
+     "label": "runway",
+     "confidence": 0.9093040227890015
+    },
+    "resnet50-ssl4eo": {
+     "label": "runway",
+     "confidence": 0.5764331221580505
+    },
+    "vit-small": {
+     "label": "runway",
+     "confidence": 0.8472907543182373
+    },
+    "convnext-tiny": {
+     "label": "runway",
+     "confidence": 0.924353837966919
+    }
+   }
+  },
+  {
+   "sample_id": "rs-3c9b9574c6db",
+   "image": "gallery/rs-3c9b9574c6db.jpg",
+   "label": "sea_ice",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "sea_ice",
+     "confidence": 0.9270580410957336
+    },
+    "efficientnet-b0": {
+     "label": "sea_ice",
+     "confidence": 0.9106104373931885
+    },
+    "resnet18-in1k": {
+     "label": "sea_ice",
+     "confidence": 0.885720431804657
+    },
+    "resnet50-in1k": {
+     "label": "sea_ice",
+     "confidence": 0.9028517007827759
+    },
+    "resnet50-ssl4eo": {
+     "label": "sea_ice",
+     "confidence": 0.8811529874801636
+    },
+    "vit-small": {
+     "label": "sea_ice",
+     "confidence": 0.8991894125938416
+    },
+    "convnext-tiny": {
+     "label": "sea_ice",
+     "confidence": 0.900019645690918
+    }
+   }
+  },
+  {
+   "sample_id": "rs-04fb3dcec58a",
+   "image": "gallery/rs-04fb3dcec58a.jpg",
+   "label": "ship",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "ship",
+     "confidence": 0.9594546556472778
+    },
+    "efficientnet-b0": {
+     "label": "ship",
+     "confidence": 0.6008445024490356
+    },
+    "resnet18-in1k": {
+     "label": "ship",
+     "confidence": 0.6013162136077881
+    },
+    "resnet50-in1k": {
+     "label": "ship",
+     "confidence": 0.9092901349067688
+    },
+    "resnet50-ssl4eo": {
+     "label": "ship",
+     "confidence": 0.48557740449905396
+    },
+    "vit-small": {
+     "label": "ship",
+     "confidence": 0.893912136554718
+    },
+    "convnext-tiny": {
+     "label": "ship",
+     "confidence": 0.9261865019798279
+    }
+   }
+  },
+  {
+   "sample_id": "rs-3bc9fc47a2a3",
+   "image": "gallery/rs-3bc9fc47a2a3.jpg",
+   "label": "snowberg",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "snowberg",
+     "confidence": 0.9404553771018982
+    },
+    "efficientnet-b0": {
+     "label": "snowberg",
+     "confidence": 0.9302992820739746
+    },
+    "resnet18-in1k": {
+     "label": "snowberg",
+     "confidence": 0.9284529089927673
+    },
+    "resnet50-in1k": {
+     "label": "snowberg",
+     "confidence": 0.8618937134742737
+    },
+    "resnet50-ssl4eo": {
+     "label": "snowberg",
+     "confidence": 0.8958790898323059
+    },
+    "vit-small": {
+     "label": "snowberg",
+     "confidence": 0.9078969359397888
+    },
+    "convnext-tiny": {
+     "label": "snowberg",
+     "confidence": 0.9185016751289368
+    }
+   }
+  },
+  {
+   "sample_id": "rs-86ed6f0893c7",
+   "image": "gallery/rs-86ed6f0893c7.jpg",
+   "label": "sparse_residential",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "sparse_residential",
+     "confidence": 0.9547058343887329
+    },
+    "efficientnet-b0": {
+     "label": "sparse_residential",
+     "confidence": 0.7441660165786743
+    },
+    "resnet18-in1k": {
+     "label": "medium_residential",
+     "confidence": 0.38188815116882324
+    },
+    "resnet50-in1k": {
+     "label": "sparse_residential",
+     "confidence": 0.9318435192108154
+    },
+    "resnet50-ssl4eo": {
+     "label": "sparse_residential",
+     "confidence": 0.5670523047447205
+    },
+    "vit-small": {
+     "label": "sparse_residential",
+     "confidence": 0.8960317373275757
+    },
+    "convnext-tiny": {
+     "label": "sparse_residential",
+     "confidence": 0.9108961224555969
+    }
+   }
+  },
+  {
+   "sample_id": "rs-23d143883d83",
+   "image": "gallery/rs-23d143883d83.jpg",
+   "label": "stadium",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "stadium",
+     "confidence": 0.9476311206817627
+    },
+    "efficientnet-b0": {
+     "label": "stadium",
+     "confidence": 0.8084425926208496
+    },
+    "resnet18-in1k": {
+     "label": "stadium",
+     "confidence": 0.699488639831543
+    },
+    "resnet50-in1k": {
+     "label": "stadium",
+     "confidence": 0.9129501581192017
+    },
+    "resnet50-ssl4eo": {
+     "label": "stadium",
+     "confidence": 0.9107804894447327
+    },
+    "vit-small": {
+     "label": "stadium",
+     "confidence": 0.9095476865768433
+    },
+    "convnext-tiny": {
+     "label": "stadium",
+     "confidence": 0.933011531829834
+    }
+   }
+  },
+  {
+   "sample_id": "rs-7fcaf3a4597f",
+   "image": "gallery/rs-7fcaf3a4597f.jpg",
+   "label": "storage_tank",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "storage_tank",
+     "confidence": 0.9465681314468384
+    },
+    "efficientnet-b0": {
+     "label": "storage_tank",
+     "confidence": 0.7621638178825378
+    },
+    "resnet18-in1k": {
+     "label": "storage_tank",
+     "confidence": 0.8815745115280151
+    },
+    "resnet50-in1k": {
+     "label": "storage_tank",
+     "confidence": 0.8895865082740784
+    },
+    "resnet50-ssl4eo": {
+     "label": "storage_tank",
+     "confidence": 0.8108548521995544
+    },
+    "vit-small": {
+     "label": "storage_tank",
+     "confidence": 0.9017294645309448
+    },
+    "convnext-tiny": {
+     "label": "storage_tank",
+     "confidence": 0.9128158688545227
+    }
+   }
+  },
+  {
+   "sample_id": "rs-9ea80bef2fe1",
+   "image": "gallery/rs-9ea80bef2fe1.jpg",
+   "label": "tennis_court",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "tennis_court",
+     "confidence": 0.9437470436096191
+    },
+    "efficientnet-b0": {
+     "label": "tennis_court",
+     "confidence": 0.8763673901557922
+    },
+    "resnet18-in1k": {
+     "label": "tennis_court",
+     "confidence": 0.9753416180610657
+    },
+    "resnet50-in1k": {
+     "label": "tennis_court",
+     "confidence": 0.9898850917816162
+    },
+    "resnet50-ssl4eo": {
+     "label": "tennis_court",
+     "confidence": 0.977279543876648
+    },
+    "vit-small": {
+     "label": "tennis_court",
+     "confidence": 0.9053723216056824
+    },
+    "convnext-tiny": {
+     "label": "tennis_court",
+     "confidence": 0.9133897423744202
+    }
+   }
+  },
+  {
+   "sample_id": "rs-7eeb3803e810",
+   "image": "gallery/rs-7eeb3803e810.jpg",
+   "label": "terrace",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "terrace",
+     "confidence": 0.9805809259414673
+    },
+    "efficientnet-b0": {
+     "label": "terrace",
+     "confidence": 0.8430193066596985
+    },
+    "resnet18-in1k": {
+     "label": "terrace",
+     "confidence": 0.967971682548523
+    },
+    "resnet50-in1k": {
+     "label": "terrace",
+     "confidence": 0.9521172642707825
+    },
+    "resnet50-ssl4eo": {
+     "label": "terrace",
+     "confidence": 0.937761127948761
+    },
+    "vit-small": {
+     "label": "terrace",
+     "confidence": 0.9489947557449341
+    },
+    "convnext-tiny": {
+     "label": "terrace",
+     "confidence": 0.9356593489646912
+    }
+   }
+  },
+  {
+   "sample_id": "rs-d6ceb2528b94",
+   "image": "gallery/rs-d6ceb2528b94.jpg",
+   "label": "thermal_power_station",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "thermal_power_station",
+     "confidence": 0.959559440612793
+    },
+    "efficientnet-b0": {
+     "label": "thermal_power_station",
+     "confidence": 0.926634669303894
+    },
+    "resnet18-in1k": {
+     "label": "thermal_power_station",
+     "confidence": 0.9663328528404236
+    },
+    "resnet50-in1k": {
+     "label": "thermal_power_station",
+     "confidence": 0.8687010407447815
+    },
+    "resnet50-ssl4eo": {
+     "label": "thermal_power_station",
+     "confidence": 0.9171515107154846
+    },
+    "vit-small": {
+     "label": "thermal_power_station",
+     "confidence": 0.9221333265304565
+    },
+    "convnext-tiny": {
+     "label": "thermal_power_station",
+     "confidence": 0.8805519342422485
+    }
+   }
+  },
+  {
+   "sample_id": "rs-6c1a60789114",
+   "image": "gallery/rs-6c1a60789114.jpg",
+   "label": "wetland",
+   "kind": "correct",
+   "predictions": {
+    "mobilenetv3-large": {
+     "label": "wetland",
+     "confidence": 0.9698722958564758
+    },
+    "efficientnet-b0": {
+     "label": "wetland",
+     "confidence": 0.8662787675857544
+    },
+    "resnet18-in1k": {
+     "label": "wetland",
+     "confidence": 0.9867085218429565
+    },
+    "resnet50-in1k": {
+     "label": "wetland",
+     "confidence": 0.9667745232582092
+    },
+    "resnet50-ssl4eo": {
+     "label": "wetland",
+     "confidence": 0.9540043473243713
+    },
+    "vit-small": {
+     "label": "wetland",
+     "confidence": 0.9081867933273315
+    },
+    "convnext-tiny": {
+     "label": "wetland",
+     "confidence": 0.9258033633232117
+    }
+   }
+  }
+ ],
+ "corruption_examples": [],
+ "thumb_px": 160,
+ "model_names": {
+  "mobilenetv3-large": "MobileNetV3-Large",
+  "efficientnet-b0": "EfficientNet-B0",
+  "resnet18-in1k": "ResNet-18",
+  "resnet50-in1k": "ResNet-50",
+  "resnet50-ssl4eo": "ResNet-50 (SSL4EO-S12 MoCo)",
+  "vit-small": "ViT-S/16",
+  "convnext-tiny": "ConvNeXt-T"
+ }
+}
