@@ -3,8 +3,8 @@ __pycache__/
 .env
 node_modules/
 dist/
-data/
-!data/.gitkeep
+/data/*
+!/data/.gitkeep
 .pytest_cache/
 .ruff_cache/
 evaluation/tests/golden/*
