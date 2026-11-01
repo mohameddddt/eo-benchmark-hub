@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use EO-Bench Hub, please cite it as below, and cite the original dataset papers."
+title: "EO-Bench Hub: hidden-split benchmarks for Earth-observation models"
+authors:
+  - family-names: "Toubal"
+    given-names: "Mohamed Sahnoune"
+repository-code: "https://github.com/mohameddddt/eo-benchmark-hub"
+url: "https://mohameddddt.github.io/eo-benchmark-hub/"
+license: MIT

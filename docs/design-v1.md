@@ -1,3 +1,8 @@
+> **Historical document.** This is the original v1 design (v0.3). The current system differs in
+> important ways — content-hash sample ids, SQLite/inline evaluation by default, CI-aware
+> leaderboards, the EuroSAT-C robustness track, Kaggle-trained baselines. See the
+> [README](../README.md) and [ASSESSMENT.md](../ASSESSMENT.md).
+
 # EO-Benchmark Hub — Full System Design
 
 **Earth Observation Model Benchmarking Platform (SaaS)**
