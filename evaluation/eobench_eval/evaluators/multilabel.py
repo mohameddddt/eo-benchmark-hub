@@ -16,13 +16,14 @@ from pathlib import Path
 
 from eobench_eval.base import Evaluator
 from eobench_eval.registry import register
+from eobench_eval.stats import macro_ap_ci
 
 THRESHOLD = 0.5
 
 
 class MultilabelEvaluator(Evaluator):
     task_type = "multilabel_classification"
-    version = "multilabel/0.1.0"
+    version = "multilabel/0.2.0"
     metrics = {
         "map_macro": {"label": "mAP (macro)", "higher_is_better": True, "unit": "ratio",
                       "description": "Mean per-class average precision over classes present in the hidden split."},
@@ -35,6 +36,18 @@ class MultilabelEvaluator(Evaluator):
         "subset_accuracy": {"label": "Subset acc.", "higher_is_better": True, "unit": "ratio",
                             "description": "Fraction of samples whose full label set is exactly right."},
     }
+
+    def format_spec(self, config: dict) -> dict:
+        k = len(config["classes"])
+        return {
+            "file_type": "csv",
+            "header": f"sample_id,prob_00,…,prob_{k - 1:02d}",
+            "rows": "one per test_hidden patch",
+            "columns": [{"name": "sample_id", "description": "patch name from the public split manifest"}]
+                       + [{"name": f"prob_{i:02d}", "description": c} for i, c in enumerate(config["classes"])],
+            "example": "sample_id," + ",".join(f"prob_{i:02d}" for i in range(3)) + ",…\n"
+                       "S2A_MSIL2A_20170613T101031_N9999_R022_T33UUP_26_57,0.012,0.934,0.003,…",
+        }
 
     # ---- ground truth ----
     def load_ground_truth(self, gt_dir: Path, config: dict) -> dict[str, frozenset]:
@@ -137,6 +150,7 @@ class MultilabelEvaluator(Evaluator):
         f1_per_class = f1_score(y_true, y_pred, average=None, zero_division=0)
         f1_macro = float(np.mean(f1_per_class[defined]))
         return {
+            "ci": {"map_macro": macro_ap_ci(y_true, y_score)},
             "metrics": {
                 "map_macro": map_macro,
                 "map_micro": map_micro,

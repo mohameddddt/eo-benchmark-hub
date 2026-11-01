@@ -92,3 +92,27 @@ def test_corruptions_deterministic_and_monotone(img, name):
 def test_variant_id_roundtrip():
     vid = corruptions.variant_id("es-3f9a0c1d2e4b", "band_misregistration", 3)
     assert corruptions.parse_variant_id(vid) == ("es-3f9a0c1d2e4b", "band_misregistration", 3)
+
+
+def test_macro_ap_ci_brackets_sklearn_estimate():
+    from sklearn.metrics import average_precision_score
+
+    rng = np.random.default_rng(3)
+    y = (rng.random((800, 6)) < 0.25).astype(int)
+    s = np.clip(y * 0.4 + rng.random((800, 6)) * 0.7, 0, 1)
+    point = np.mean([average_precision_score(y[:, j], s[:, j]) for j in range(6)])
+    lo, hi = stats.macro_ap_ci(y, s, n_boot=300)
+    assert lo < point < hi and hi - lo < 0.1
+
+
+def test_bigearthnet_manifest_keeps_official_split():
+    patches = [(f"P{i:04d}", ["Arable land", "Pastures"] if i % 2 else ["Urban fabric"],
+                ["train", "validation", "test"][i % 3]) for i in range(3000)]
+    rows = splits.bigearthnet_manifest(patches, fraction=0.1)
+    assert rows == splits.bigearthnet_manifest(list(reversed(patches)), fraction=0.1)
+    by = {}
+    for r in rows:
+        by.setdefault(r["split"], 0)
+        by[r["split"]] += 1
+    assert by == {"train": 100, "val": 100, "test_public": 50, "test_hidden": 50}
+    assert all("|" in r["labels"] or r["labels"] == "Urban fabric" for r in rows)

@@ -49,6 +49,17 @@ RESISC45_CLASSES = [
 
 LANDCOVERAI_CLASSES = ["background", "building", "woodland", "water", "road"]
 
+# BigEarthNet 19-class nomenclature, alphabetical: prob_00..prob_18 follow this order.
+BIGEARTHNET_CLASSES = [
+    "Agro-forestry areas", "Arable land", "Beaches, dunes, sands", "Broad-leaved forest",
+    "Coastal wetlands", "Complex cultivation patterns", "Coniferous forest",
+    "Industrial or commercial units", "Inland waters", "Inland wetlands",
+    "Land principally occupied by agriculture, with significant areas of natural vegetation",
+    "Marine waters", "Mixed forest", "Moors, heathland and sclerophyllous vegetation",
+    "Natural grassland and sparsely vegetated areas", "Pastures", "Permanent crops",
+    "Transitional woodland, shrub", "Urban fabric",
+]
+
 
 def content_id(data: bytes, prefix: str) -> str:
     """Label-free, mirror-stable sample id derived from the raw file bytes."""
@@ -152,6 +163,38 @@ def landcoverai_manifest(train: Iterable[str], val: Iterable[str], test: Iterabl
     public = set(shuffled[: len(shuffled) // 2])
     rows += [{"sample_id": t, "split": "test_public" if t in public else "test_hidden"}
              for t in test]
+    rows.sort(key=lambda r: r["sample_id"])
+    return rows
+
+
+def bigearthnet_manifest(patches: Iterable[tuple[str, Iterable[str], str]], fraction: float = 0.10,
+                         seed: int = SEED) -> list[dict]:
+    """patches: (patch_id, labels, official_split) from reBEN metadata.parquet.
+
+    A seeded `fraction` of each official split is kept; official train/validation
+    map to train/val and the official test sample is halved into test_public /
+    test_hidden. Reusing the official geographic split keeps reBEN's low spatial
+    correlation between training and test patches. Patch names carry no label
+    information, so they stay as ids. Labels are '|'-joined (names contain commas).
+    """
+    by_split: dict[str, list[tuple[str, str]]] = {}
+    for pid, labels, split in patches:
+        by_split.setdefault(split, []).append((pid, "|".join(sorted(labels))))
+    rows = []
+    for split, items in sorted(by_split.items()):
+        items.sort()
+        rng = random.Random(f"{seed}-bigearthnet-{split}")
+        keep = rng.sample(items, round(len(items) * fraction))
+        keep.sort()
+        if split == "test":
+            shuffled = keep[:]
+            random.Random(f"{seed}-bigearthnet-hidden").shuffle(shuffled)
+            public = {pid for pid, _ in shuffled[: len(shuffled) // 2]}
+            rows += [{"sample_id": pid, "labels": lab, "split": "test_public" if pid in public else "test_hidden"}
+                     for pid, lab in keep]
+        else:
+            rows += [{"sample_id": pid, "labels": lab, "split": {"train": "train", "validation": "val"}[split]}
+                     for pid, lab in keep]
     rows.sort(key=lambda r: r["sample_id"])
     return rows
 

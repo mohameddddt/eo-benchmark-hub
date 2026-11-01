@@ -72,3 +72,32 @@ def miou_ci(per_tile_cm: np.ndarray) -> list[float]:
     sums = np.concatenate([per_tile_cm[chunk].sum(axis=1)       # chunked: bounded memory
                            for chunk in np.array_split(idx, 10)])
     return percentile_ci(miou_from_confusion(sums))
+
+
+def macro_ap_ci(y_true: np.ndarray, scores: np.ndarray, n_boot: int = N_BOOT) -> list[float]:
+    """Bootstrap CI for macro average precision (multi-label).
+
+    A resample is a vector of per-sample multiplicities, so each class needs one
+    sort; AP is then evaluated for all resamples at once with weighted
+    cumulative sums. Classes without positives in a resample are skipped,
+    matching the point estimate's "classes present" convention.
+    """
+    n, k = y_true.shape
+    idx = resample_indices(n, n_boot)
+    counts = np.bincount((idx + (np.arange(n_boot) * n)[:, None]).ravel(),
+                         minlength=n_boot * n).reshape(n_boot, n).astype(np.float32)
+    total = np.zeros(n_boot)
+    valid = np.zeros(n_boot)
+    for j in range(k):
+        y = y_true[:, j].astype(bool)
+        if not y.any():
+            continue
+        order = np.argsort(-scores[:, j], kind="stable")
+        w, yo = counts[:, order], y[order]
+        wy = w * yo
+        prec = np.cumsum(wy, axis=1) / np.maximum(np.cumsum(w, axis=1), 1e-12)
+        pos = wy.sum(axis=1)
+        has = pos > 0
+        total += np.where(has, (prec * wy).sum(axis=1) / np.maximum(pos, 1e-12), 0.0)
+        valid += has
+    return percentile_ci(total / np.maximum(valid, 1))
