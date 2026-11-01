@@ -13,12 +13,8 @@ router = APIRouter(prefix="/auth", tags=["auth"])
 def register(body: schemas.RegisterIn, db: Session = Depends(get_db)):
     if db.query(models.User).filter(models.User.email == body.email.lower()).first():
         raise HTTPException(status.HTTP_409_CONFLICT, "An account with this email already exists")
-    user = models.User(
-        email=body.email.lower(),
-        password_hash=hash_password(body.password),
-        name=body.name,
-        affiliation=body.affiliation,
-    )
+    user = models.User(email=body.email.lower(), password_hash=hash_password(body.password),
+                       name=body.name.strip(), affiliation=body.affiliation)
     db.add(user)
     db.commit()
     db.refresh(user)
@@ -38,12 +34,19 @@ def me(user: models.User = Depends(get_current_user)):
     return user
 
 
+@router.patch("/me", response_model=schemas.UserOut)
+def update_me(body: schemas.UserUpdateIn, user: models.User = Depends(get_current_user),
+              db: Session = Depends(get_db)):
+    for field, value in body.model_dump(exclude_unset=True).items():
+        setattr(user, field, value)
+    db.commit()
+    db.refresh(user)
+    return user
+
+
 @router.post("/tokens", response_model=schemas.ApiTokenCreatedOut, status_code=201)
-def create_token(
-    body: schemas.ApiTokenCreateIn,
-    user: models.User = Depends(get_current_user),
-    db: Session = Depends(get_db),
-):
+def create_token(body: schemas.ApiTokenCreateIn, user: models.User = Depends(get_current_user),
+                 db: Session = Depends(get_db)):
     plaintext, prefix, token_hash = generate_api_token()
     row = models.ApiToken(user_id=user.id, name=body.name, prefix=prefix, token_hash=token_hash)
     db.add(row)
@@ -58,11 +61,7 @@ def list_tokens(user: models.User = Depends(get_current_user), db: Session = Dep
 
 
 @router.delete("/tokens/{token_id}", status_code=204)
-def revoke_token(
-    token_id: str,
-    user: models.User = Depends(get_current_user),
-    db: Session = Depends(get_db),
-):
+def revoke_token(token_id: str, user: models.User = Depends(get_current_user), db: Session = Depends(get_db)):
     row = db.get(models.ApiToken, token_id)
     if row is None or row.user_id != user.id:
         raise HTTPException(status.HTTP_404_NOT_FOUND, "Token not found")

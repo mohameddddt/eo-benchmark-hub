@@ -1,0 +1,4 @@
+# optional — the Docker Compose stack (Postgres + Redis + Celery workers)
+-r requirements.txt
+psycopg2-binary>=2.9.10
+celery[redis]>=5.4
